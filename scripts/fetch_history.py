@@ -37,18 +37,16 @@ CANDIDATES = {
 def clean_series(frame):
     if frame is None or frame.empty or "Close" not in frame:
         return []
-    close = frame["Close"]
-    # yfinance may return a one-column DataFrame for some versions.
-    if hasattr(close, "columns"):
-        if len(close.columns) != 1:
-            return []
-        close = close.iloc[:, 0]
     result = []
-    for stamp, value in close.dropna().items():
-        price = float(value)
-        if price <= 0:
+    for stamp, row in frame.dropna(subset=["Close"]).iterrows():
+        close = float(row["Close"])
+        if close <= 0:
             continue
-        result.append({"date": stamp.strftime("%Y-%m-%d"), "close": round(price, 8)})
+        item = {"date": stamp.strftime("%Y-%m-%d"), "close": round(close, 8)}
+        for key in ("Open", "High", "Low"):
+            if key in row and row[key] is not None:
+                item[key.lower()] = round(float(row[key]), 8)
+        result.append(item)
     return result
 
 def main():
@@ -94,6 +92,8 @@ def main():
                             "native_close": item["close"],
                             "native_currency": "GBX",
                             "eur_gbp": rate,
+                            **{k: round((item[k] / 100.0) / rate, 8)
+                               for k in ("open", "high", "low") if k in item},
                         })
                 prices = converted
                 quote_currency = "GBX"
