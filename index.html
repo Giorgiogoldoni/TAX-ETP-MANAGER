@@ -1,73 +1,60 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101827">
-  <title>TAX & ETP MANAGER</title>
-  <style>
-    :root{color-scheme:dark;--bg:#0b1220;--panel:#121d30;--line:#26364f;--text:#edf3fc;--muted:#9aabc2;--accent:#69b7a4;--warn:#e7bd70}
-    *{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#0b1220,#101b2d);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-    main{max-width:1120px;margin:auto;padding:32px 20px 60px}header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:28px}
-    h1{font-size:clamp(25px,4vw,38px);margin:0;letter-spacing:-.04em}h2{font-size:18px;margin:0 0 14px}
-    .sub,.muted{color:var(--muted)}.tag{border:1px solid #37695f;color:#9ce0cf;border-radius:99px;padding:5px 10px;font-size:12px}
-    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.panel{background:rgba(18,29,48,.94);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px}
-    .metric{font-size:26px;font-weight:700;margin-top:5px}.metric-label{font-size:13px;color:var(--muted)}
-    .notice{border-left:3px solid var(--warn);padding:10px 13px;background:#292516;color:#f0dfb8;border-radius:7px;margin:16px 0 22px}
-    .section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-    table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:11px 9px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-weight:600}
-    .empty{padding:22px;text-align:center;color:var(--muted)}a{color:#9ce0cf;text-decoration:none}a:hover{text-decoration:underline}
-    footer{color:var(--muted);font-size:12px;margin-top:22px}
-    @media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}main{padding:22px 14px 40px}}
-    @media(max-width:420px){.grid{grid-template-columns:1fr 1fr}.metric{font-size:22px}}
-  </style>
-</head>
-<body>
-<main>
-  <header>
-    <div><h1>TAX &amp; ETP MANAGER</h1><div class="sub">Controllo fiscale e strategico del portafoglio</div></div>
-    <span class="tag">ITALIA · WORK IN PROGRESS</span>
-  </header>
-
-  <div class="notice"><strong>Attenzione:</strong> nessun importo fiscale è ancora caricato. Le classificazioni degli strumenti saranno confermate solo dopo verifica di ISIN, documenti dell'emittente e fonti ufficiali.</div>
-
-  <section class="grid" aria-label="Riepilogo">
-    <div class="panel"><div class="metric-label">Strumenti censiti</div><div class="metric" id="count">—</div></div>
-    <div class="panel"><div class="metric-label">Minusvalenze disponibili</div><div class="metric">Da inserire</div></div>
-    <div class="panel"><div class="metric-label">Plusvalenze realizzate</div><div class="metric">Da inserire</div></div>
-    <div class="panel"><div class="metric-label">Classificazioni da verificare</div><div class="metric" id="pending">—</div></div>
-  </section>
-
-  <section class="panel">
-    <div class="section-head"><h2>Registro strumenti</h2><span class="muted" id="status">Caricamento archivio…</span></div>
-    <div style="overflow-x:auto">
-      <table><thead><tr><th>Ticker</th><th>ISIN</th><th>Tipo</th><th>Trattamento fiscale</th><th>Verifica</th></tr></thead><tbody id="instruments"><tr><td colspan="5" class="empty">Caricamento…</td></tr></tbody></table>
-    </div>
-  </section>
-
-  <section class="panel">
-    <h2>Priorità operative</h2>
-    <ol>
-      <li>Importare lo zainetto fiscale aggiornato dell'intermediario, senza dati identificativi.</li>
-      <li>Censire gli strumenti in portafoglio con ISIN, quantità e prezzo medio.</li>
-      <li>Verificare uno per uno gli ETN/ETC WisdomTree e la loro effettiva natura fiscale.</li>
-      <li>Separare distribuzioni, rimborsi, cedole e risultati da cessione.</li>
-      <li>Costruire scenari di compensazione considerando costi, spread e rischio di mercato.</li>
-    </ol>
-  </section>
-  <footer>Strumento di supporto informativo. Le decisioni fiscali e gli adempimenti vanno verificati con un professionista abilitato. Non caricare dati personali in questo repository pubblico.</footer>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101827">
+<title>TAX & ETP MANAGER — Market-first</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--panel:#121d30;--line:#26364f;--text:#edf3fc;--muted:#9aabc2;--accent:#69b7a4;--warn:#e7bd70;--bad:#df8585}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#0b1220,#101b2d);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1240px;margin:auto;padding:28px 18px 55px}header,.head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+h1{font-size:clamp(25px,4vw,38px);margin:0;letter-spacing:-.04em}h2{font-size:18px;margin:0 0 14px}.sub,.muted,.hint{color:var(--muted)}.tag{border:1px solid #37695f;color:#9ce0cf;border-radius:99px;padding:5px 10px;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:22px 0}.panel{background:rgba(18,29,48,.94);border:1px solid var(--line);border-radius:15px;padding:17px;margin-bottom:15px}
+.metric-label{font-size:13px;color:var(--muted)}.metric{font-size:26px;font-weight:700;margin-top:4px}.notice{border-left:3px solid var(--warn);padding:11px 14px;background:#292516;color:#f0dfb8;border-radius:7px;margin:17px 0}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:720px}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-weight:600}
+.pill{display:inline-block;border-radius:30px;padding:3px 8px;font-size:12px;background:#24334a}.good{color:#9ce0cf}.bad{color:#efaaaa}.empty{text-align:center;color:var(--muted);padding:22px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}.bar{height:8px;background:#26364f;border-radius:8px;overflow:hidden;min-width:80px}.bar>i{display:block;height:100%;background:var(--accent)}
+ul,ol{padding-left:20px}.hint{font-size:12px;margin-top:10px}footer{color:var(--muted);font-size:12px;margin-top:22px}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}main{padding:20px 12px 40px}.metric{font-size:22px}}
+</style></head>
+<body><main>
+<header><div><h1>TAX &amp; ETP MANAGER</h1><div class="sub">Market-first · Gestione dinamica del portafoglio</div></div><span class="tag">MOTORE DI MERCATO</span></header>
+<div class="notice"><strong>Feed non collegato:</strong> questa versione calcola i segnali solo sui dati inseriti in <code>data/market_snapshot.json</code>. Non mostra quotazioni in tempo reale e non inventa osservazioni mancanti.</div>
+<section class="grid">
+<div class="panel"><div class="metric-label">Posizioni in portafoglio</div><div class="metric" id="positions">—</div></div>
+<div class="panel"><div class="metric-label">Strumenti monitorati</div><div class="metric" id="watched">—</div></div>
+<div class="panel"><div class="metric-label">Segnali forti / positivi</div><div class="metric" id="positive">—</div></div>
+<div class="panel"><div class="metric-label">Segnali deboli</div><div class="metric" id="weak">—</div></div>
+</section>
+<section class="panel"><div class="head"><h2>Ranking dinamico</h2><span class="muted" id="market-date">In attesa dei dati</span></div>
+<div style="overflow-x:auto"><table><thead><tr><th>#</th><th>Strumento</th><th>Punteggio</th><th>Segnale</th><th>Copertura</th><th>Rischi rilevati</th></tr></thead><tbody id="ranking"><tr><td colspan="6" class="empty">Nessun dato di mercato importato.</td></tr></tbody></table></div>
+<div class="hint">Il punteggio combina trend, momentum, AO/EMA, forza relativa e breadth. La copertura indica quanti componenti sono effettivamente disponibili.</div></section>
+<div class="two">
+<section class="panel"><h2>Portafoglio</h2><div style="overflow-x:auto"><table><thead><tr><th>Ticker</th><th>Quantità</th><th>Prezzo medio</th><th>Valore</th></tr></thead><tbody id="portfolio"><tr><td colspan="4" class="empty">Posizioni non ancora caricate.</td></tr></tbody></table></div></section>
+<section class="panel"><h2>Regole del modello</h2><ul><li>ROC 38 e medie 38/200 per momentum e regime.</li><li>AO + EMA per conferma direzionale.</li><li>Forza relativa e breadth per selezione.</li><li>Volatilità e drawdown per evidenziare il rischio.</li><li>Nessuna decisione fiscale modifica il punteggio di mercato.</li></ul><div class="hint" id="model-config">Configurazione in caricamento…</div></section>
+</div>
+<section class="panel"><h2>Livello fiscale — separato</h2><p class="muted">Il modulo fiscale verrà applicato solo dopo aver individuato le operazioni candidate dal motore di mercato. Prima si decide se lo strumento merita di restare in portafoglio; poi si valuta il costo fiscale di un'eventuale vendita, la compensabilità e il reinvestimento.</p><p><a href="./data/tax_ledger.json">Registro fiscale</a> · <a href="./data/instruments.json">Anagrafica strumenti</a> · <a href="./data/strategy.json">Parametri modello</a></p></section>
+<footer>Supporto informativo, non consulenza finanziaria o fiscale. I segnali non sono ordini automatici. Verificare sempre fonte, data, liquidità, spread, costi e documentazione degli strumenti.</footer>
 </main>
-<script>
-fetch('./data/instruments.json').then(r=>{if(!r.ok)throw new Error('Archivio non disponibile');return r.json()}).then(data=>{
- const items=data.instruments||[];
- document.getElementById('count').textContent=items.length;
- document.getElementById('pending').textContent=items.filter(x=>x.tax_status!=='verified').length;
- const body=document.getElementById('instruments');
- body.innerHTML='';
- if(!items.length){body.innerHTML='<tr><td colspan="5" class="empty">Nessuno strumento censito. Il registro sarà popolato dopo l'importazione dei dati.</td></tr>';}
- items.forEach(x=>{const tr=document.createElement('tr');[x.ticker,x.isin,x.instrument_type,x.tax_treatment,x.tax_status].forEach(v=>{const td=document.createElement('td');td.textContent=v||'—';tr.appendChild(td)});body.appendChild(tr)});
- document.getElementById('status').textContent='Archivio aggiornato';
-}).catch(()=>{document.getElementById('status').textContent='Archivio non disponibile'});
-</script>
-</body>
-</html>
+<script type="module">
+import { evaluateSnapshot } from './modules/market-engine.js';
+const get = async path => { const r=await fetch(path); if(!r.ok) throw new Error(path); return r.json(); };
+const el=id=>document.getElementById(id);
+const fmt=n=>Number.isFinite(Number(n))?Number(n).toLocaleString('it-IT',{maximumFractionDigits:2}):'—';
+const cell=(tr,value,cls='')=>{const td=document.createElement('td');td.textContent=value??'—';if(cls)td.className=cls;tr.appendChild(td);};
+try{
+ const [portfolio,snapshot,strategy]=await Promise.all([get('./data/portfolio.json'),get('./data/market_snapshot.json'),get('./data/strategy.json')]);
+ const rows=evaluateSnapshot(snapshot,strategy);
+ el('positions').textContent=(portfolio.positions||[]).length;
+ el('watched').textContent=rows.length;
+ el('positive').textContent=rows.filter(x=>['Forte','Positivo'].includes(x.signal.label)).length;
+ el('weak').textContent=rows.filter(x=>['Debole','Molto debole'].includes(x.signal.label)).length;
+ el('market-date').textContent=snapshot.as_of?('Dati al '+snapshot.as_of+' · '+(snapshot.source||'fonte non indicata')):'Nessuna data di mercato';
+ el('model-config').textContent='Pesi: trend '+strategy.parameters.weights.trend+' · momentum '+strategy.parameters.weights.momentum+' · AO/EMA '+strategy.parameters.weights.ao_ema+' · forza relativa '+strategy.parameters.weights.relative_strength+' · breadth '+strategy.parameters.weights.breadth+'.';
+ const rank=el('ranking');rank.replaceChildren();
+ if(!rows.length){const tr=document.createElement('tr');cell(tr,'Nessuno strumento monitorato');tr.firstChild.colSpan=6;tr.firstChild.className='empty';rank.appendChild(tr);}
+ rows.forEach((x,i)=>{const tr=document.createElement('tr');cell(tr,i+1);cell(tr,x.ticker);cell(tr,x.signal.score===null?'—':fmt(x.signal.score)+'/100');cell(tr,x.signal.label,x.signal.score>=55?'good':x.signal.score!==null&&x.signal.score<45?'bad':'');cell(tr,x.signal.coverage+'/5');cell(tr,x.signal.riskFlags.join(' · ')||'—');rank.appendChild(tr);});
+ const body=el('portfolio');body.replaceChildren();
+ if(!(portfolio.positions||[]).length){const tr=document.createElement('tr');cell(tr,'Posizioni non ancora caricate');tr.firstChild.colSpan=4;tr.firstChild.className='empty';body.appendChild(tr);}
+ (portfolio.positions||[]).forEach(x=>{const tr=document.createElement('tr');cell(tr,x.ticker);cell(tr,fmt(x.quantity));cell(tr,fmt(x.average_price));cell(tr,fmt(x.market_value));body.appendChild(tr);});
+}catch(e){el('market-date').textContent='Errore di caricamento dati';console.error(e);}
+</script></body></html>
