@@ -71,15 +71,47 @@ def main():
             except Exception as exc:
                 errors.append(symbol + ": " + str(exc)[:180])
         if selected:
-            data[ticker] = {
-                "symbol": selected,
-                "source": "Yahoo Finance",
-                "price_basis": "unadjusted daily close",
-                "price_currency": "EUR (EUR trading line selected by exchange suffix)",
-                "prices": prices,
-                "first_date": prices[0]["date"],
-                "last_date": prices[-1]["date"],
-            }
+            quote_currency = "EUR"
+            conversion = "none"
+            if ticker == "3BAL" and selected == "3BAL.L":
+                # LSE quotes this same ISIN in GBX (pence), not EUR.
+                # Convert each daily close to EUR using daily EUR/GBP.
+                fx_frame = yf.Ticker("EURGBP=X").history(start=START, end=END,
+                                                         interval="1d", auto_adjust=False)
+                fx_prices = clean_series(fx_frame)
+                fx_by_date = {x["date"]: x["close"] for x in fx_prices}
+                fx_dates = sorted(fx_by_date)
+                converted = []
+                for item in prices:
+                    rate = fx_by_date.get(item["date"])
+                    if rate is None:
+                        prior = [d for d in fx_dates if d <= item["date"]]
+                        rate = fx_by_date[prior[-1]] if prior else None
+                    if rate and rate > 0:
+                        converted.append({
+                            "date": item["date"],
+                            "close": round((item["close"] / 100.0) / rate, 8),
+                            "native_close": item["close"],
+                            "native_currency": "GBX",
+                            "eur_gbp": rate,
+                        })
+                prices = converted
+                quote_currency = "GBX"
+                conversion = "GBX / 100 / daily EURGBP"
+            if len(prices) >= 5:
+                data[ticker] = {
+                    "symbol": selected,
+                    "source": "Yahoo Finance",
+                    "price_basis": "unadjusted daily close",
+                    "price_currency": "EUR",
+                    "quote_currency": quote_currency,
+                    "fx_conversion": conversion,
+                    "prices": prices,
+                    "first_date": prices[0]["date"],
+                    "last_date": prices[-1]["date"],
+                }
+            else:
+                unresolved.append({"ticker": ticker, "attempts": errors + ["insufficient FX data for EUR conversion"]})
         else:
             unresolved.append({"ticker": ticker, "attempts": errors})
 
