@@ -39,6 +39,11 @@ jobs:
             echo "No historical data changes."
           else
             git commit -m "Update daily portfolio price history"
+            for attempt in 1 2 3; do
             git pull --rebase origin main
-          git push
+            if git push; then exit 0; fi
+            echo "Push attempt $attempt failed; retrying after syncing with main."
+            sleep 2
+          done
+          exit 1
           fi
