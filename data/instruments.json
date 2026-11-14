@@ -1,5 +1,118 @@
 {
   "schema_version": 1,
-  "as_of": null,
-  "instruments": []
+  "as_of": "2026-11-14",
+  "instruments": [
+    {
+      "ticker": "DJLEV",
+      "isin": "FR0010468983",
+      "name": "Amundi EURO STOXX 50 Daily (2x) Leveraged UCITS ETF Acc",
+      "type": "ETF",
+      "leverage": "2x daily"
+    },
+    {
+      "ticker": "COPA",
+      "isin": "GB00B15KXQ89",
+      "name": "WisdomTree Copper",
+      "type": "ETC",
+      "leverage": "unleveraged"
+    },
+    {
+      "ticker": "3BAL",
+      "isin": "IE00BLS09N40",
+      "name": "WisdomTree Euro Stoxx Banks 3x Daily Lev",
+      "type": "ETN",
+      "leverage": "3x daily"
+    },
+    {
+      "ticker": "IWVL",
+      "isin": "IE00BP3QZB59",
+      "name": "iShares Edge MSCI World Value Factor UCITS ETF Acc",
+      "type": "ETF",
+      "leverage": "unleveraged"
+    },
+    {
+      "ticker": "IESZ",
+      "isin": "IE00BQN1KC32",
+      "name": "iShares MSCI Europe Mid-Cap Equal Weight UCITS ETF",
+      "type": "ETF",
+      "leverage": "unleveraged"
+    },
+    {
+      "ticker": "IBZL",
+      "isin": "IE00B0M63516",
+      "name": "iShares MSCI Brazil UCITS ETF Dist",
+      "type": "ETF",
+      "leverage": "unleveraged"
+    },
+    {
+      "ticker": "IMEU",
+      "isin": "IE00B1YZSC51",
+      "name": "iShares Core MSCI Europe UCITS ETF",
+      "type": "ETF",
+      "leverage": "unleveraged"
+    },
+    {
+      "ticker": "SPY4",
+      "isin": "IE00B4YBJ215",
+      "name": "SPDR S&P 400 US Mid Cap UCITS ETF Acc",
+      "type": "ETF",
+      "leverage": "unleveraged"
+    },
+    {
+      "ticker": "LCFE",
+      "isin": "JE00B2NFTD12",
+      "name": "WisdomTree Coffee 2x Daily Leveraged",
+      "type": "ETC",
+      "leverage": "2x daily"
+    },
+    {
+      "ticker": "LCOC",
+      "isin": "JE00B2NFV803",
+      "name": "WisdomTree Cocoa 2x Daily Leveraged",
+      "type": "ETC",
+      "leverage": "2x daily"
+    },
+    {
+      "ticker": "BNK",
+      "isin": "LU1834983477",
+      "name": "Amundi STOXX Europe 600 Banks UCITS ETF A",
+      "type": "ETF",
+      "leverage": "unleveraged"
+    },
+    {
+      "ticker": "WSPX",
+      "isin": "XS2427355958",
+      "name": "WisdomTree S&P 500",
+      "type": "ETN",
+      "leverage": "unleveraged"
+    },
+    {
+      "ticker": "WS5X",
+      "isin": "XS2427362145",
+      "name": "WisdomTree Euro Stoxx 50",
+      "type": "ETN",
+      "leverage": "unleveraged"
+    },
+    {
+      "ticker": "WRTY",
+      "isin": "XS3003324129",
+      "name": "WisdomTree Russell 2000",
+      "type": "ETN",
+      "leverage": "unleveraged"
+    },
+    {
+      "ticker": "WNAS",
+      "isin": "XS3003325795",
+      "name": "WisdomTree Nasdaq-100",
+      "type": "ETN",
+      "leverage": "unleveraged"
+    },
+    {
+      "ticker": "WWRD",
+      "isin": "XS3151433813",
+      "name": "WisdomTree World",
+      "type": "ETN",
+      "leverage": "unleveraged"
+    }
+  ]
 }
