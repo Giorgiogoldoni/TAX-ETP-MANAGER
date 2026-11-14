@@ -39,5 +39,6 @@ jobs:
             echo "No historical data changes."
           else
             git commit -m "Update daily portfolio price history"
-            git push
+            git pull --rebase origin main
+          git push
           fi
