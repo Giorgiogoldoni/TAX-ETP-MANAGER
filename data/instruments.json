@@ -147,6 +147,17 @@
       "identification_status": "verified",
       "exchange_ticker": "3EML.MI",
       "yahoo_symbol": "3EML.MI"
+    },
+    {
+      "ticker": "WSPE",
+      "isin": "XS3151431957",
+      "name": "WisdomTree S&P 500 EUR Daily Hedged",
+      "type": "ETN",
+      "leverage": "unleveraged",
+      "currency": "EUR",
+      "currency_hedged": true,
+      "exchange_ticker": "WSPE.MI",
+      "identification_status": "verified"
     }
   ]
-}
+}\n
