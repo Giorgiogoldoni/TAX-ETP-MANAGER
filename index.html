@@ -1,60 +1,89 @@
 <!doctype html>
 <html lang="it">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101827">
-<title>TAX & ETP MANAGER — Market-first</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>TAX & ETP MANAGER — Portafoglio</title>
 <style>
-:root{color-scheme:dark;--bg:#0b1220;--panel:#121d30;--line:#26364f;--text:#edf3fc;--muted:#9aabc2;--accent:#69b7a4;--warn:#e7bd70;--bad:#df8585}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#0b1220,#101b2d);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-main{max-width:1240px;margin:auto;padding:28px 18px 55px}header,.head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
-h1{font-size:clamp(25px,4vw,38px);margin:0;letter-spacing:-.04em}h2{font-size:18px;margin:0 0 14px}.sub,.muted,.hint{color:var(--muted)}.tag{border:1px solid #37695f;color:#9ce0cf;border-radius:99px;padding:5px 10px;font-size:12px}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:22px 0}.panel{background:rgba(18,29,48,.94);border:1px solid var(--line);border-radius:15px;padding:17px;margin-bottom:15px}
-.metric-label{font-size:13px;color:var(--muted)}.metric{font-size:26px;font-weight:700;margin-top:4px}.notice{border-left:3px solid var(--warn);padding:11px 14px;background:#292516;color:#f0dfb8;border-radius:7px;margin:17px 0}
-table{width:100%;border-collapse:collapse;font-size:13px;min-width:720px}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-weight:600}
-.pill{display:inline-block;border-radius:30px;padding:3px 8px;font-size:12px;background:#24334a}.good{color:#9ce0cf}.bad{color:#efaaaa}.empty{text-align:center;color:var(--muted);padding:22px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}.bar{height:8px;background:#26364f;border-radius:8px;overflow:hidden;min-width:80px}.bar>i{display:block;height:100%;background:var(--accent)}
-ul,ol{padding-left:20px}.hint{font-size:12px;margin-top:10px}footer{color:var(--muted);font-size:12px;margin-top:22px}
-@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}main{padding:20px 12px 40px}.metric{font-size:22px}}
+:root{color-scheme:light;--bg:#fff;--panel:#fff;--line:#e5e7eb;--text:#172033;--muted:#667085;--accent:#176b57;--good:#087443;--bad:#c0392b;--soft:#f7f8fa}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1440px;margin:auto;padding:26px 20px 56px}header,.head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+h1{font-size:clamp(25px,4vw,36px);margin:0;letter-spacing:-.04em}h2{font-size:18px;margin:0 0 14px}.sub,.muted,.hint{color:var(--muted)}.tag{border:1px solid #d0d5dd;color:#344054;border-radius:99px;padding:5px 10px;font-size:12px;background:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:22px 0}.panel,.metric-card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px;margin-bottom:15px;box-shadow:0 1px 2px #1018280a}
+.metric-label{font-size:12px;color:var(--muted)}.metric{font-size:25px;font-weight:700;margin-top:4px;letter-spacing:-.03em}
+.notice{border:1px solid #f2d7a0;padding:11px 14px;background:#fffbeb;color:#7a4b00;border-radius:8px;margin:17px 0}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:800px}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-weight:600;background:#fafafa}
+.pill{display:inline-block;border-radius:30px;padding:3px 8px;font-size:12px;background:#f2f4f7}.good{color:var(--good)}.bad{color:var(--bad)}.empty{text-align:center;color:var(--muted);padding:22px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.chart-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.chart-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.chart-title{font-weight:650;font-size:14px}.chart-meta{font-size:12px;color:var(--muted)}.chart-value{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.chart{width:100%;height:150px;display:block;margin-top:8px;overflow:visible}.chart-grid{stroke:#e9edf2;stroke-width:1}.chart-line{fill:none;stroke:#176b57;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.chart-area{fill:#176b57;opacity:.08}
+.chart-foot{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:2px}
+.hint{font-size:12px;margin-top:10px}footer{color:var(--muted);font-size:12px;margin-top:22px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.charts{grid-template-columns:1fr}.two{grid-template-columns:1fr}main{padding:18px 12px 40px}}
+@media(max-width:440px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.metric{font-size:21px}}
 </style></head>
 <body><main>
-<header><div><h1>TAX &amp; ETP MANAGER</h1><div class="sub">Market-first · Gestione dinamica del portafoglio</div></div><span class="tag">MOTORE DI MERCATO</span></header>
-<div class="notice"><strong>Feed non collegato:</strong> questa versione calcola i segnali solo sui dati inseriti in <code>data/market_snapshot.json</code>. Non mostra quotazioni in tempo reale e non inventa osservazioni mancanti.</div>
+<header><div><h1>TAX &amp; ETP MANAGER</h1><div class="sub">Portafoglio · andamento storico · gestione market-first</div></div><span class="tag">SFONDO BIANCO</span></header>
+<div class="notice" id="status">Caricamento delle serie storiche dal 1° gennaio 2026…</div>
 <section class="grid">
-<div class="panel"><div class="metric-label">Posizioni in portafoglio</div><div class="metric" id="positions">—</div></div>
-<div class="panel"><div class="metric-label">Strumenti monitorati</div><div class="metric" id="watched">—</div></div>
-<div class="panel"><div class="metric-label">Segnali forti / positivi</div><div class="metric" id="positive">—</div></div>
-<div class="panel"><div class="metric-label">Segnali deboli</div><div class="metric" id="weak">—</div></div>
+<div class="metric-card"><div class="metric-label">Posizioni</div><div class="metric" id="positions">—</div></div>
+<div class="metric-card"><div class="metric-label">Valore di mercato</div><div class="metric" id="market-value">—</div></div>
+<div class="metric-card"><div class="metric-label">Costo di carico</div><div class="metric" id="cost-value">—</div></div>
+<div class="metric-card"><div class="metric-label">Risultato latente</div><div class="metric" id="pnl">—</div></div>
 </section>
-<section class="panel"><div class="head"><h2>Ranking dinamico</h2><span class="muted" id="market-date">In attesa dei dati</span></div>
-<div style="overflow-x:auto"><table><thead><tr><th>#</th><th>Strumento</th><th>Punteggio</th><th>Segnale</th><th>Copertura</th><th>Rischi rilevati</th></tr></thead><tbody id="ranking"><tr><td colspan="6" class="empty">Nessun dato di mercato importato.</td></tr></tbody></table></div>
-<div class="hint">Il punteggio combina trend, momentum, AO/EMA, forza relativa e breadth. La copertura indica quanti componenti sono effettivamente disponibili.</div></section>
-<div class="two">
-<section class="panel"><h2>Portafoglio</h2><div style="overflow-x:auto"><table><thead><tr><th>Ticker</th><th>Quantità</th><th>Prezzo medio</th><th>Valore</th></tr></thead><tbody id="portfolio"><tr><td colspan="4" class="empty">Posizioni non ancora caricate.</td></tr></tbody></table></div></section>
-<section class="panel"><h2>Regole del modello</h2><ul><li>ROC 38 e medie 38/200 per momentum e regime.</li><li>AO + EMA per conferma direzionale.</li><li>Forza relativa e breadth per selezione.</li><li>Volatilità e drawdown per evidenziare il rischio.</li><li>Nessuna decisione fiscale modifica il punteggio di mercato.</li></ul><div class="hint" id="model-config">Configurazione in caricamento…</div></section>
-</div>
-<section class="panel"><h2>Livello fiscale — separato</h2><p class="muted">Il modulo fiscale verrà applicato solo dopo aver individuato le operazioni candidate dal motore di mercato. Prima si decide se lo strumento merita di restare in portafoglio; poi si valuta il costo fiscale di un'eventuale vendita, la compensabilità e il reinvestimento.</p><p><a href="./data/tax_ledger.json">Registro fiscale</a> · <a href="./data/instruments.json">Anagrafica strumenti</a> · <a href="./data/strategy.json">Parametri modello</a></p></section>
-<footer>Supporto informativo, non consulenza finanziaria o fiscale. I segnali non sono ordini automatici. Verificare sempre fonte, data, liquidità, spread, costi e documentazione degli strumenti.</footer>
+<section class="panel"><div class="head"><h2>Andamento di ogni strumento</h2><span class="muted" id="history-date">Dal 01/01/2026</span></div>
+<div class="charts" id="charts"><div class="empty">In attesa delle serie storiche…</div></div>
+<div class="hint">Grafici basati sui prezzi di chiusura giornalieri non rettificati. La variazione mostrata confronta il primo dato disponibile dal 1° gennaio 2026 con l'ultima chiusura acquisita. Gli strumenti duplicati nel portafoglio hanno grafici separati ma condividono la stessa serie.</div></section>
+<section class="panel"><h2>Posizioni e prezzi</h2><div style="overflow-x:auto"><table><thead><tr><th>Strumento</th><th>ISIN</th><th>Qtà</th><th>Carico medio</th><th>Ultima chiusura</th><th>Valore</th><th>P/L latente</th><th>Da inizio 2026</th></tr></thead><tbody id="portfolio"><tr><td colspan="8" class="empty">Dati in caricamento…</td></tr></tbody></table></div></section>
+<section class="panel"><h2>Qualità dei dati</h2><div id="coverage" class="muted">Verifica delle serie storiche…</div><div class="hint">Fonte storica automatizzata: Yahoo Finance, quando il simbolo di quotazione è disponibile. I dati non sono tick-by-tick. Le posizioni non abbinate a un simbolo affidabile restano senza grafico e senza valorizzazione.</div></section>
+<footer>Supporto informativo, non consulenza finanziaria o fiscale. Le performance di prezzo non includono necessariamente distribuzioni, imposte, commissioni o cambi. Verificare ISIN e sede di quotazione prima di utilizzare i dati per decisioni operative.</footer>
 </main>
-<script type="module">
-import { evaluateSnapshot } from './modules/market-engine.js';
-const get = async path => { const r=await fetch(path); if(!r.ok) throw new Error(path); return r.json(); };
-const el=id=>document.getElementById(id);
-const fmt=n=>Number.isFinite(Number(n))?Number(n).toLocaleString('it-IT',{maximumFractionDigits:2}):'—';
-const cell=(tr,value,cls='')=>{const td=document.createElement('td');td.textContent=value??'—';if(cls)td.className=cls;tr.appendChild(td);};
-try{
- const [portfolio,snapshot,strategy]=await Promise.all([get('./data/portfolio.json'),get('./data/market_snapshot.json'),get('./data/strategy.json')]);
- const rows=evaluateSnapshot(snapshot,strategy);
- el('positions').textContent=(portfolio.positions||[]).length;
- el('watched').textContent=rows.length;
- el('positive').textContent=rows.filter(x=>['Forte','Positivo'].includes(x.signal.label)).length;
- el('weak').textContent=rows.filter(x=>['Debole','Molto debole'].includes(x.signal.label)).length;
- el('market-date').textContent=snapshot.as_of?('Dati al '+snapshot.as_of+' · '+(snapshot.source||'fonte non indicata')):'Nessuna data di mercato';
- el('model-config').textContent='Pesi: trend '+strategy.parameters.weights.trend+' · momentum '+strategy.parameters.weights.momentum+' · AO/EMA '+strategy.parameters.weights.ao_ema+' · forza relativa '+strategy.parameters.weights.relative_strength+' · breadth '+strategy.parameters.weights.breadth+'.';
- const rank=el('ranking');rank.replaceChildren();
- if(!rows.length){const tr=document.createElement('tr');cell(tr,'Nessuno strumento monitorato');tr.firstChild.colSpan=6;tr.firstChild.className='empty';rank.appendChild(tr);}
- rows.forEach((x,i)=>{const tr=document.createElement('tr');cell(tr,i+1);cell(tr,x.ticker);cell(tr,x.signal.score===null?'—':fmt(x.signal.score)+'/100');cell(tr,x.signal.label,x.signal.score>=55?'good':x.signal.score!==null&&x.signal.score<45?'bad':'');cell(tr,x.signal.coverage+'/5');cell(tr,x.signal.riskFlags.join(' · ')||'—');rank.appendChild(tr);});
- const body=el('portfolio');body.replaceChildren();
- if(!(portfolio.positions||[]).length){const tr=document.createElement('tr');cell(tr,'Posizioni non ancora caricate');tr.firstChild.colSpan=4;tr.firstChild.className='empty';body.appendChild(tr);}
- (portfolio.positions||[]).forEach(x=>{const tr=document.createElement('tr');cell(tr,x.ticker);cell(tr,fmt(x.quantity));cell(tr,fmt(x.average_price));cell(tr,fmt(x.market_value));body.appendChild(tr);});
-}catch(e){el('market-date').textContent='Errore di caricamento dati';console.error(e);}
+<script>
+const $=id=>document.getElementById(id);
+const euro=n=>Number.isFinite(n)?n.toLocaleString('it-IT',{style:'currency',currency:'EUR'}):'—';
+const pct=n=>Number.isFinite(n)?(n>=0?'+':'')+n.toLocaleString('it-IT',{maximumFractionDigits:2})+'%':'—';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function sparkline(points){
+ if(!points||points.length<2)return '<div class="empty">Serie storica non disponibile</div>';
+ const vals=points.map(p=>p.close),min=Math.min(...vals),max=Math.max(...vals),span=max-min||1,w=640,h=150,pad=8;
+ const xy=vals.map((v,i)=>[pad+i*(w-2*pad)/(vals.length-1),h-pad-(v-min)*(h-2*pad)/span]);
+ const line=xy.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+ const area=line+' L'+xy[xy.length-1][0]+','+(h-pad)+' L'+xy[0][0]+','+(h-pad)+' Z';
+ return '<svg class="chart" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="Grafico prezzi giornalieri"><line class="chart-grid" x1="0" y1="35" x2="'+w+'" y2="35"/><line class="chart-grid" x1="0" y1="75" x2="'+w+'" y2="75"/><line class="chart-grid" x1="0" y1="115" x2="'+w+'" y2="115"/><path class="chart-area" d="'+area+'"/><path class="chart-line" d="'+line+'"/></svg>';
+}
+(async()=>{
+ try{
+  const [p,h,i]=await Promise.all(['./data/portfolio.json','./data/history.json','./data/instruments.json'].map(x=>fetch(x).then(r=>{if(!r.ok)throw Error(x);return r.json()})));
+  const hist=h.instruments||{}, inst=Object.fromEntries((i.instruments||[]).map(x=>[x.ticker,x]));
+  const rows=(p.positions||[]).map(x=>{
+   const series=hist[x.ticker]?.prices||[],last=series.at(-1),first=series[0],qty=Number(x.quantity),cost=Number(x.average_cost);
+   const value=last?qty*last.close:NaN,invested=qty*cost,pnl=value-invested,fromStart=first&&last?(last.close/first.close-1)*100:NaN;
+   return {...x,series,last,first,value,invested,pnl,fromStart,info:inst[x.ticker]};
+  });
+  const valued=rows.filter(x=>Number.isFinite(x.value));
+  const total=valued.reduce((s,x)=>s+x.value,0),cost=valued.reduce((s,x)=>s+x.invested,0),pnl=total-cost;
+  $('positions').textContent=rows.length;
+  $('market-value').textContent=euro(total);
+  $('cost-value').textContent=euro(cost);
+  $('pnl').textContent=euro(pnl);$('pnl').className='metric '+(pnl>=0?'good':'bad');
+  $('history-date').textContent='Dal 01/01/2026 · aggiornato '+(h.fetched_at||'data non indicata');
+  $('status').textContent=h.status==='ok'?'Serie storiche caricate. Ultima data disponibile: '+(h.latest_date||'—')+'.': 'Dati storici parziali: '+(h.message||'alcuni simboli non sono stati trovati.');
+  $('status').style.background=h.status==='ok'?'#ecfdf3':'#fffbeb';$('status').style.borderColor=h.status==='ok'?'#abefc6':'#f2d7a0';$('status').style.color=h.status==='ok'?'#05603a':'#7a4b00';
+  const charts=$('charts');charts.replaceChildren();
+  rows.forEach(x=>{
+   const div=document.createElement('article');div.className='chart-card';
+   const change=x.fromStart;
+   div.innerHTML='<div class="chart-head"><div><div class="chart-title">'+esc(x.raw_name)+'</div><div class="chart-meta">'+esc(x.ticker||'ISIN da identificare')+' · '+esc(x.isin||'')+'</div></div><div class="chart-value">'+pct(change)+'<div class="chart-meta">'+(x.last?euro(x.last.close):'Serie assente')+'</div></div></div>'+sparkline(x.series)+'<div class="chart-foot"><span>'+(x.first?x.first.date:'—')+'</span><span>'+(x.last?x.last.date:'—')+'</span></div>';
+   charts.appendChild(div);
+  });
+  const body=$('portfolio');body.replaceChildren();
+  rows.forEach(x=>{
+   const tr=document.createElement('tr'),vals=[x.raw_name,x.isin||'Da identificare',x.quantity,euro(x.average_cost),x.last?euro(x.last.close):'—',Number.isFinite(x.value)?euro(x.value):'—',Number.isFinite(x.pnl)?euro(x.pnl):'—',pct(x.fromStart)];
+   vals.forEach((v,j)=>{const td=document.createElement('td');td.textContent=v;if(j===6)td.className=x.pnl>=0?'good':'bad';tr.appendChild(td)});body.appendChild(tr);
+  });
+  const failed=rows.filter(x=>!x.last);
+  $('coverage').textContent=valued.length+' posizioni valorizzate su '+rows.length+'. '+(failed.length?'Serie mancanti: '+failed.map(x=>x.raw_name).join('; '):'Tutte le posizioni hanno una serie.');
+ }catch(e){$('status').textContent='Dati storici non ancora disponibili: '+e.message+'. Il recupero viene avviato dal workflow GitHub Actions.';console.error(e)}
+})();
 </script></body></html>
