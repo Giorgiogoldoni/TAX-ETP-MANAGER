@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "model_name": "Market-first dynamic model",
+  "objective": "trend_momentum_relative_strength_risk",
+  "currency": "EUR",
+  "parameters": {
+    "roc_period": 38,
+    "moving_average_fast": 38,
+    "moving_average_slow": 200,
+    "ema_period": 20,
+    "weights": {
+      "trend": 30,
+      "momentum": 25,
+      "ao_ema": 15,
+      "relative_strength": 20,
+      "breadth": 10
+    },
+    "thresholds": {
+      "strong": 70,
+      "positive": 55,
+      "neutral": 45,
+      "weak": 30
+    },
+    "risk_flags": {
+      "below_ma200": true,
+      "negative_roc": true,
+      "high_volatility": true
+    }
+  },
+  "indicators": [
+    "ROC38",
+    "MA38",
+    "MA200",
+    "AO",
+    "EMA20",
+    "relative_strength",
+    "market_breadth",
+    "volatility",
+    "drawdown"
+  ],
+  "notes": "Pesi iniziali configurabili. Calcolo incompleto se mancano dati; non costituisce segnale automatico di acquisto/vendita."
+}
