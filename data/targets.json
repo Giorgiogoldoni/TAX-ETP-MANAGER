@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-14",
+  "currency": "EUR",
+  "description": "Pesi strategici obiettivo dei portafogli modello; non rappresentano posizioni correnti.",
+  "portfolios": [
+    {
+      "id": "core-satellite",
+      "name": "Portafoglio 1 · Core + satellite",
+      "short_name": "Core + satellite",
+      "description": "Allocazione diversificata con ETF core, ETN satellite e liquidità.",
+      "note": "Allocazione già delineata insieme: 70% ETF, 15% ETN non a leva e 15% liquidità. Pesi indicativi da rivedere prima di nuovi acquisti.",
+      "allocations": [
+        {
+          "ticker": "IMEU",
+          "name": "iShares Core MSCI Europe",
+          "type": "ETF",
+          "weight": 25
+        },
+        {
+          "ticker": "SPY4",
+          "name": "SPDR S&P 400 US Mid Cap",
+          "type": "ETF",
+          "weight": 20
+        },
+        {
+          "ticker": "IESZ",
+          "name": "iShares MSCI Europe Mid-Cap Equal Weight",
+          "type": "ETF",
+          "weight": 15
+        },
+        {
+          "ticker": "IWVL",
+          "name": "iShares Edge MSCI World Value",
+          "type": "ETF",
+          "weight": 10
+        },
+        {
+          "ticker": "WWRD",
+          "name": "WisdomTree World",
+          "type": "ETN",
+          "weight": 5
+        },
+        {
+          "ticker": "WRTY",
+          "name": "WisdomTree Russell 2000",
+          "type": "ETN",
+          "weight": 5
+        },
+        {
+          "ticker": "WS5X",
+          "name": "WisdomTree Euro Stoxx 50",
+          "type": "ETN",
+          "weight": 5
+        },
+        {
+          "name": "Liquidità",
+          "type": "Liquidità",
+          "weight": 15
+        }
+      ]
+    },
+    {
+      "id": "etp-no-leverage",
+      "name": "Portafoglio 2 · ETP senza leva",
+      "short_name": "ETP senza leva",
+      "description": "Portafoglio autonomo composto esclusivamente da ETP/ETN non a leva.",
+      "note": "Proposta iniziale: pesi assegnati per costruire una base globale e diversificare tra USA, Europa e small cap. È un modello separato, non una fotografia degli investimenti attuali.",
+      "allocations": [
+        {
+          "ticker": "WWRD",
+          "name": "WisdomTree World",
+          "type": "ETN",
+          "weight": 35
+        },
+        {
+          "ticker": "WSPX",
+          "name": "WisdomTree S&P 500",
+          "type": "ETN",
+          "weight": 25
+        },
+        {
+          "ticker": "WNAS",
+          "name": "WisdomTree Nasdaq-100",
+          "type": "ETN",
+          "weight": 15
+        },
+        {
+          "ticker": "WS5X",
+          "name": "WisdomTree Euro Stoxx 50",
+          "type": "ETN",
+          "weight": 15
+        },
+        {
+          "ticker": "WRTY",
+          "name": "WisdomTree Russell 2000",
+          "type": "ETN",
+          "weight": 10
+        }
+      ]
+    }
+  ]
+}
