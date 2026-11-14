@@ -16,7 +16,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;min-width:800px}th,td{t
 .pill{display:inline-block;border-radius:30px;padding:3px 8px;font-size:12px;background:#f2f4f7}.good{color:var(--good)}.bad{color:var(--bad)}.empty{text-align:center;color:var(--muted);padding:22px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:15px}.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .chart-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
-.chart-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.chart-title{font-weight:650;font-size:14px}.chart-meta{font-size:12px;color:var(--muted)}.chart-value{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.chart-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.chart-title{font-weight:650;font-size:14px}.ticker-link{color:#176b57;text-decoration:none;font-weight:750}.ticker-link:hover{text-decoration:underline}.chart-meta{font-size:12px;color:var(--muted)}.chart-value{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
 .chart{width:100%;height:150px;display:block;margin-top:8px;overflow:visible}.chart-grid{stroke:#e9edf2;stroke-width:1}.chart-line{fill:none;stroke:#176b57;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.chart-area{fill:#176b57;opacity:.08}
 .chart-foot{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:2px}
 .hint{font-size:12px;margin-top:10px}footer{color:var(--muted);font-size:12px;margin-top:22px}
@@ -74,13 +74,13 @@ function sparkline(points){
   rows.forEach(x=>{
    const div=document.createElement('article');div.className='chart-card';
    const change=x.fromStart;
-   div.innerHTML='<div class="chart-head"><div><div class="chart-title">'+esc(x.raw_name)+'</div><div class="chart-meta">'+esc(x.ticker||'ISIN da identificare')+' · '+esc(x.isin||'')+'</div></div><div class="chart-value">'+pct(change)+'<div class="chart-meta">'+(x.last?euro(x.last.close):'Serie assente')+'</div></div></div>'+sparkline(x.series)+'<div class="chart-foot"><span>'+(x.first?x.first.date:'—')+'</span><span>'+(x.last?x.last.date:'—')+'</span></div>';
+   div.innerHTML='<div class="chart-head"><div><div class="chart-title">'+esc(x.raw_name)+'</div><div class="chart-meta">'+(x.ticker?'<a class="ticker-link" href="./chart.html?ticker='+encodeURIComponent(x.ticker)+'">'+esc(x.ticker)+'</a>':'ISIN da identificare')+' · '+esc(x.isin||'')+'</div></div><div class="chart-value">'+pct(change)+'<div class="chart-meta">'+(x.last?euro(x.last.close):'Serie assente')+'</div></div></div>'+sparkline(x.series)+'<div class="chart-foot"><span>'+(x.first?x.first.date:'—')+'</span><span>'+(x.last?x.last.date:'—')+'</span></div>';
    charts.appendChild(div);
   });
   const body=$('portfolio');body.replaceChildren();
   rows.forEach(x=>{
    const tr=document.createElement('tr'),vals=[x.raw_name,x.isin||'Da identificare',x.quantity,euro(x.average_cost),x.last?euro(x.last.close):'—',Number.isFinite(x.value)?euro(x.value):'—',Number.isFinite(x.pnl)?euro(x.pnl):'—',pct(x.fromStart)];
-   vals.forEach((v,j)=>{const td=document.createElement('td');td.textContent=v;if(j===6)td.className=x.pnl>=0?'good':'bad';tr.appendChild(td)});body.appendChild(tr);
+   vals.forEach((v,j)=>{const td=document.createElement('td');if(j===0&&x.ticker){td.innerHTML='<a class="ticker-link" href="./chart.html?ticker='+encodeURIComponent(x.ticker)+'">'+esc(x.ticker)+'</a><div class="chart-meta">'+esc(x.raw_name)+'</div>'}else td.textContent=v;if(j===6)td.className=x.pnl>=0?'good':'bad';tr.appendChild(td)});body.appendChild(tr);
   });
   const failed=rows.filter(x=>!x.last);
   $('coverage').textContent=valued.length+' posizioni valorizzate su '+rows.length+'. '+(failed.length?'Serie mancanti: '+failed.map(x=>x.raw_name).join('; '):'Tutte le posizioni hanno una serie.');
