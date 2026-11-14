@@ -2,7 +2,7 @@
   "schema_version": 1,
   "period_start": "2026-01-01",
   "period_end_exclusive": "2026-11-15",
-  "fetched_at": "2026-11-14T15:00:02+00:00",
+  "fetched_at": "2026-11-14T15:00:45+00:00",
   "latest_date": "2026-11-13",
   "source": "Yahoo Finance chart history",
   "status": "ok",
@@ -12,887 +12,1549 @@
       "symbol": "3BAL.L",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "GBX",
+      "fx_conversion": "GBX / 100 / daily EURGBP",
       "prices": [
         {
           "date": "2026-01-02",
-          "close": 5653.0
+          "close": 64.82426541,
+          "native_close": 5653.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87204999
         },
         {
           "date": "2026-01-05",
-          "close": 5731.0
+          "close": 65.80019902,
+          "native_close": 5731.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87097001
         },
         {
           "date": "2026-01-06",
-          "close": 5617.0
+          "close": 64.89365314,
+          "native_close": 5617.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86557001
         },
         {
           "date": "2026-01-07",
-          "close": 5388.0
+          "close": 62.23793043,
+          "native_close": 5388.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86571002
         },
         {
           "date": "2026-01-08",
-          "close": 5529.0
+          "close": 63.72972933,
+          "native_close": 5529.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86756998
         },
         {
           "date": "2026-01-09",
-          "close": 5625.5
+          "close": 64.84128265,
+          "native_close": 5625.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86758
         },
         {
           "date": "2026-01-12",
-          "close": 5734.5
+          "close": 66.08241492,
+          "native_close": 5734.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86778003
         },
         {
           "date": "2026-01-13",
-          "close": 5851.0
+          "close": 67.53309788,
+          "native_close": 5851.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86638999
         },
         {
           "date": "2026-01-14",
-          "close": 5887.0
+          "close": 67.89219283,
+          "native_close": 5887.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86711001
         },
         {
           "date": "2026-01-15",
-          "close": 5926.0
+          "close": 68.39717759,
+          "native_close": 5926.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86641002
         },
         {
           "date": "2026-01-16",
-          "close": 5893.0
+          "close": 67.93083495,
+          "native_close": 5893.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86750001
         },
         {
           "date": "2026-01-19",
-          "close": 5719.5
+          "close": 65.95136238,
+          "native_close": 5719.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86723
         },
         {
           "date": "2026-01-20",
-          "close": 5592.0
+          "close": 64.47149972,
+          "native_close": 5592.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86736
         },
         {
           "date": "2026-01-21",
-          "close": 5548.0
+          "close": 63.58739255,
+          "native_close": 5548.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.8725
         },
         {
           "date": "2026-01-22",
-          "close": 5911.0
+          "close": 67.95737078,
+          "native_close": 5911.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86980999
         },
         {
           "date": "2026-01-23",
-          "close": 5660.0
+          "close": 65.01338397,
+          "native_close": 5660.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87058997
         },
         {
           "date": "2026-01-26",
-          "close": 5879.0
+          "close": 67.73978047,
+          "native_close": 5879.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86787999
         },
         {
           "date": "2026-01-27",
-          "close": 6166.0
+          "close": 71.02050219,
+          "native_close": 6166.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.8682
         },
         {
           "date": "2026-01-28",
-          "close": 5901.0
+          "close": 67.88532697,
+          "native_close": 5901.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86926001
         },
         {
           "date": "2026-01-29",
-          "close": 5800.0
+          "close": 66.95140329,
+          "native_close": 5800.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86629999
         },
         {
           "date": "2026-01-30",
-          "close": 6099.0
+          "close": 70.37361826,
+          "native_close": 6099.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86666
         },
         {
           "date": "2026-02-02",
-          "close": 6409.0
+          "close": 73.98984325,
+          "native_close": 6409.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86619997
         },
         {
           "date": "2026-02-03",
-          "close": 6594.0
+          "close": 76.41939287,
+          "native_close": 6594.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86286998
         },
         {
           "date": "2026-02-04",
-          "close": 6377.0
+          "close": 73.92937467,
+          "native_close": 6377.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86258
         },
         {
           "date": "2026-02-05",
-          "close": 5789.0
+          "close": 66.93259414,
+          "native_close": 5789.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86489999
         },
         {
           "date": "2026-02-06",
-          "close": 5909.0
+          "close": 67.8415622,
+          "native_close": 5909.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87099999
         },
         {
           "date": "2026-02-09",
-          "close": 6324.0
+          "close": 72.78083953,
+          "native_close": 6324.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86891001
         },
         {
           "date": "2026-02-10",
-          "close": 6135.0
+          "close": 70.52453702,
+          "native_close": 6135.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86991
         },
         {
           "date": "2026-02-11",
-          "close": 5817.5
+          "close": 66.71903877,
+          "native_close": 5817.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87194002
         },
         {
           "date": "2026-02-12",
-          "close": 5518.0
+          "close": 63.30450019,
+          "native_close": 5518.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87165999
         },
         {
           "date": "2026-02-13",
-          "close": 4999.5
+          "close": 57.37055973,
+          "native_close": 4999.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87143999
         },
         {
           "date": "2026-02-16",
-          "close": 5191.5
+          "close": 59.70672938,
+          "native_close": 5191.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86949998
         },
         {
           "date": "2026-02-17",
-          "close": 5391.0
+          "close": 61.99972327,
+          "native_close": 5391.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86952001
         },
         {
           "date": "2026-02-18",
-          "close": 5729.0
+          "close": 65.57320758,
+          "native_close": 5729.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87368
         },
         {
           "date": "2026-02-19",
-          "close": 5569.0
+          "close": 63.75865965,
+          "native_close": 5569.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87344998
         },
         {
           "date": "2026-02-20",
-          "close": 5808.0
+          "close": 66.43408712,
+          "native_close": 5808.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87424999
         },
         {
           "date": "2026-02-23",
-          "close": 5878.0
+          "close": 67.21862789,
+          "native_close": 5878.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87445998
         },
         {
           "date": "2026-02-24",
-          "close": 5575.0
+          "close": 63.80324494,
+          "native_close": 5575.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87378001
         },
         {
           "date": "2026-02-25",
-          "close": 5891.0
+          "close": 67.531007,
+          "native_close": 5891.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87234002
         },
         {
           "date": "2026-02-26",
-          "close": 5891.0
+          "close": 67.60385586,
+          "native_close": 5891.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.8714
         },
         {
           "date": "2026-02-27",
-          "close": 5606.0
+          "close": 64.08541747,
+          "native_close": 5606.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87476999
         },
         {
           "date": "2026-03-02",
-          "close": 5036.0
+          "close": 57.41844941,
+          "native_close": 5036.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87707001
         },
         {
           "date": "2026-03-03",
-          "close": 4367.0
+          "close": 50.07281139,
+          "native_close": 4367.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87212998
         },
         {
           "date": "2026-03-04",
-          "close": 4684.5
+          "close": 53.86959522,
+          "native_close": 4684.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.8696
         },
         {
           "date": "2026-03-05",
-          "close": 4314.0
+          "close": 49.57367046,
+          "native_close": 4314.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87022001
         },
         {
           "date": "2026-03-09",
-          "close": 4051.5
+          "close": 46.77056385,
+          "native_close": 4051.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86624998
         },
         {
           "date": "2026-03-10",
-          "close": 4538.5
+          "close": 52.44880325,
+          "native_close": 4538.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86532003
         },
         {
           "date": "2026-03-11",
-          "close": 4412.0
+          "close": 50.99457746,
+          "native_close": 4412.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86519003
         },
         {
           "date": "2026-03-12",
-          "close": 4042.0
+          "close": 46.85833364,
+          "native_close": 4042.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86260003
         },
         {
           "date": "2026-03-13",
-          "close": 3890.0
+          "close": 45.08472062,
+          "native_close": 3890.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86282003
         },
         {
           "date": "2026-03-16",
-          "close": 3947.0
+          "close": 45.72891844,
+          "native_close": 3947.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86312997
         },
         {
           "date": "2026-03-17",
-          "close": 4000.5
+          "close": 46.32192027,
+          "native_close": 4000.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86363
         },
         {
           "date": "2026-03-18",
-          "close": 4150.5
+          "close": 48.05154265,
+          "native_close": 4150.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86375999
         },
         {
           "date": "2026-03-19",
-          "close": 3790.0
+          "close": 43.85711094,
+          "native_close": 3790.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86417001
         },
         {
           "date": "2026-03-20",
-          "close": 3598.0
+          "close": 41.72610046,
+          "native_close": 3598.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86229002
         },
         {
           "date": "2026-03-23",
-          "close": 3836.0
+          "close": 44.23941875,
+          "native_close": 3836.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.8671
         },
         {
           "date": "2026-03-24",
-          "close": 3763.0
+          "close": 43.52352032,
+          "native_close": 3763.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86458999
         },
         {
           "date": "2026-03-25",
-          "close": 4006.0
+          "close": 46.27469047,
+          "native_close": 4006.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86570001
         },
         {
           "date": "2026-03-26",
-          "close": 3757.0
+          "close": 43.42750189,
+          "native_close": 3757.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86511999
         },
         {
           "date": "2026-03-27",
-          "close": 3667.0
+          "close": 42.39649598,
+          "native_close": 3667.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86492997
         },
         {
           "date": "2026-03-30",
-          "close": 3645.0
+          "close": 41.99163575,
+          "native_close": 3645.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86803001
         },
         {
           "date": "2026-03-31",
-          "close": 3778.5
+          "close": 43.44601537,
+          "native_close": 3778.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86970001
         },
         {
           "date": "2026-04-01",
-          "close": 4311.0
+          "close": 49.33227942,
+          "native_close": 4311.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87387002
         },
         {
           "date": "2026-04-02",
-          "close": 4068.0
+          "close": 46.69153676,
+          "native_close": 4068.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87124997
         },
         {
           "date": "2026-04-07",
-          "close": 4079.5
+          "close": 46.78057504,
+          "native_close": 4079.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87204999
         },
         {
           "date": "2026-04-08",
-          "close": 4794.5
+          "close": 54.98153649,
+          "native_close": 4794.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87202001
         },
         {
           "date": "2026-04-09",
-          "close": 4797.5
+          "close": 55.11263708,
+          "native_close": 4797.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87049001
         },
         {
           "date": "2026-04-10",
-          "close": 5009.5
+          "close": 57.54870876,
+          "native_close": 5009.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87048
         },
         {
           "date": "2026-04-13",
-          "close": 4954.0
+          "close": 56.83800104,
+          "native_close": 4954.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87159997
         },
         {
           "date": "2026-04-14",
-          "close": 5301.0
+          "close": 60.90303239,
+          "native_close": 5301.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87040001
         },
         {
           "date": "2026-04-15",
-          "close": 5301.0
+          "close": 60.99272828,
+          "native_close": 5301.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86912
         },
         {
           "date": "2026-04-16",
-          "close": 5129.0
+          "close": 58.96486507,
+          "native_close": 5129.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86984003
         },
         {
           "date": "2026-04-17",
-          "close": 5618.0
+          "close": 64.50205368,
+          "native_close": 5618.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87098002
         },
         {
           "date": "2026-04-20",
-          "close": 5322.0
+          "close": 61.12323418,
+          "native_close": 5322.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.8707
         },
         {
           "date": "2026-04-21",
-          "close": 5125.0
+          "close": 58.84987389,
+          "native_close": 5125.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87085998
         },
         {
           "date": "2026-04-22",
-          "close": 4949.0
+          "close": 56.93086326,
+          "native_close": 4949.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86930001
         },
         {
           "date": "2026-04-23",
-          "close": 4793.5
+          "close": 55.28580124,
+          "native_close": 4793.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86703998
         },
         {
           "date": "2026-04-24",
-          "close": 4644.0
+          "close": 53.5275873,
+          "native_close": 4644.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86759001
         },
         {
           "date": "2026-04-27",
-          "close": 4718.0
+          "close": 54.47030697,
+          "native_close": 4718.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86615998
         },
         {
           "date": "2026-04-28",
-          "close": 4883.0
+          "close": 56.3915425,
+          "native_close": 4883.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86590999
         },
         {
           "date": "2026-04-29",
-          "close": 4838.0
+          "close": 55.83768062,
+          "native_close": 4838.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86644
         },
         {
           "date": "2026-04-30",
-          "close": 4837.0
+          "close": 55.83902716,
+          "native_close": 4837.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86624002
         },
         {
           "date": "2026-05-01",
-          "close": 4890.5
+          "close": 56.71591529,
+          "native_close": 4890.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86228001
         },
         {
           "date": "2026-05-05",
-          "close": 4681.5
+          "close": 54.18340191,
+          "native_close": 4681.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86400998
         },
         {
           "date": "2026-05-06",
-          "close": 5213.0
+          "close": 60.37058483,
+          "native_close": 5213.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.8635
         },
         {
           "date": "2026-05-07",
-          "close": 5197.0
+          "close": 60.13097677,
+          "native_close": 5197.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86427999
         },
         {
           "date": "2026-05-08",
-          "close": 5031.0
+          "close": 58.1396706,
+          "native_close": 5031.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86532998
         },
         {
           "date": "2026-05-11",
-          "close": 5053.0
+          "close": 58.37771574,
+          "native_close": 5053.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86557001
         },
         {
           "date": "2026-05-12",
-          "close": 4852.0
+          "close": 56.04453993,
+          "native_close": 4852.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86574
         },
         {
           "date": "2026-05-13",
-          "close": 4921.0
+          "close": 56.77399806,
+          "native_close": 4921.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86677003
         },
         {
           "date": "2026-05-14",
-          "close": 5083.0
+          "close": 58.68701932,
+          "native_close": 5083.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86611998
         },
         {
           "date": "2026-05-15",
-          "close": 4923.0
+          "close": 56.53097354,
+          "native_close": 4923.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87085003
         },
         {
           "date": "2026-05-18",
-          "close": 4868.0
+          "close": 55.79113852,
+          "native_close": 4868.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.87254
         },
         {
           "date": "2026-05-19",
-          "close": 4859.0
+          "close": 55.99990715,
+          "native_close": 4859.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86768001
         },
         {
           "date": "2026-05-20",
-          "close": 5248.0
+          "close": 60.57248384,
+          "native_close": 5248.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.8664
         },
         {
           "date": "2026-05-21",
-          "close": 5133.0
+          "close": 59.31909377,
+          "native_close": 5133.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86532003
         },
         {
           "date": "2026-05-22",
-          "close": 5255.0
+          "close": 60.75706283,
+          "native_close": 5255.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86492002
         },
         {
           "date": "2026-05-26",
-          "close": 5543.0
+          "close": 64.30394506,
+          "native_close": 5543.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86199999
         },
         {
           "date": "2026-05-27",
-          "close": 5579.0
+          "close": 64.51575376,
+          "native_close": 5579.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86475003
         },
         {
           "date": "2026-05-28",
-          "close": 5487.0
+          "close": 63.36686334,
+          "native_close": 5487.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86590999
         },
         {
           "date": "2026-05-29",
-          "close": 5702.5
+          "close": 65.81756753,
+          "native_close": 5702.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86641002
         },
         {
           "date": "2026-06-01",
-          "close": 5478.0
+          "close": 63.25927295,
+          "native_close": 5478.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86596
         },
         {
           "date": "2026-06-02",
-          "close": 5601.0
+          "close": 64.79564246,
+          "native_close": 5601.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86440998
         },
         {
           "date": "2026-06-03",
-          "close": 5362.0
+          "close": 62.07527436,
+          "native_close": 5362.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86378998
         },
         {
           "date": "2026-06-04",
-          "close": 5484.0
+          "close": 63.42890923,
+          "native_close": 5484.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86458999
         },
         {
           "date": "2026-06-05",
-          "close": 5382.0
+          "close": 62.22684775,
+          "native_close": 5382.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86489999
         },
         {
           "date": "2026-06-08",
-          "close": 5291.0
+          "close": 61.23984351,
+          "native_close": 5291.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86398
         },
         {
           "date": "2026-06-09",
-          "close": 5279.0
+          "close": 61.06066811,
+          "native_close": 5279.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86454999
         },
         {
           "date": "2026-06-10",
-          "close": 5167.0
+          "close": 59.91349753,
+          "native_close": 5167.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86241001
         },
         {
           "date": "2026-06-11",
-          "close": 5218.0
+          "close": 60.45789358,
+          "native_close": 5218.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86308002
         },
         {
           "date": "2026-06-12",
-          "close": 5864.0
+          "close": 67.95767632,
+          "native_close": 5864.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86289001
         },
         {
           "date": "2026-06-15",
-          "close": 6241.0
+          "close": 72.34348627,
+          "native_close": 6241.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86268997
         },
         {
           "date": "2026-06-16",
-          "close": 6601.0
+          "close": 76.40046119,
+          "native_close": 6601.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86400002
         },
         {
           "date": "2026-06-17",
-          "close": 7003.0
+          "close": 80.98481607,
+          "native_close": 7003.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86473
         },
         {
           "date": "2026-06-18",
-          "close": 7013.0
+          "close": 81.06576993,
+          "native_close": 7013.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86510003
         },
         {
           "date": "2026-06-19",
-          "close": 7094.5
+          "close": 81.74705409,
+          "native_close": 7094.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86786002
         },
         {
           "date": "2026-06-22",
-          "close": 7209.0
+          "close": 83.06639128,
+          "native_close": 7209.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86786002
         },
         {
           "date": "2026-06-23",
-          "close": 7005.0
+          "close": 81.2098588,
+          "native_close": 7005.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86258
         },
         {
           "date": "2026-06-24",
-          "close": 6716.0
+          "close": 77.90821952,
+          "native_close": 6716.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86203998
         },
         {
           "date": "2026-06-25",
-          "close": 6841.0
+          "close": 79.32054032,
+          "native_close": 6841.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86245
         },
         {
           "date": "2026-06-26",
-          "close": 6670.0
+          "close": 77.43838288,
+          "native_close": 6670.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86132997
         },
         {
           "date": "2026-06-29",
-          "close": 6588.0
+          "close": 76.36490178,
+          "native_close": 6588.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86269999
         },
         {
           "date": "2026-06-30",
-          "close": 6849.0
+          "close": 79.51286626,
+          "native_close": 6849.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86137003
         },
         {
           "date": "2026-07-01",
-          "close": 6828.0
+          "close": 79.27275536,
+          "native_close": 6828.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86132997
         },
         {
           "date": "2026-07-02",
-          "close": 7214.0
+          "close": 84.22355219,
+          "native_close": 7214.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85653001
         },
         {
           "date": "2026-07-03",
-          "close": 7345.0
+          "close": 85.79604986,
+          "native_close": 7345.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85610002
         },
         {
           "date": "2026-07-06",
-          "close": 7486.0
+          "close": 87.40323676,
+          "native_close": 7486.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85649002
         },
         {
           "date": "2026-07-07",
-          "close": 7387.0
+          "close": 86.4806033,
+          "native_close": 7387.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85417998
         },
         {
           "date": "2026-07-08",
-          "close": 6630.5
+          "close": 77.61961155,
+          "native_close": 6630.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85422999
         },
         {
           "date": "2026-07-09",
-          "close": 6997.0
+          "close": 82.07720815,
+          "native_close": 6997.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85249001
         },
         {
           "date": "2026-07-10",
-          "close": 7129.0
+          "close": 83.64229201,
+          "native_close": 7129.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85232002
         },
         {
           "date": "2026-07-13",
-          "close": 7071.0
+          "close": 83.0027018,
+          "native_close": 7071.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85189998
         },
         {
           "date": "2026-07-14",
-          "close": 7228.0
+          "close": 84.76404717,
+          "native_close": 7228.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85272002
         },
         {
           "date": "2026-07-15",
-          "close": 7099.0
+          "close": 83.2492915,
+          "native_close": 7099.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85273999
         },
         {
           "date": "2026-07-16",
-          "close": 7178.0
+          "close": 84.75216862,
+          "native_close": 7178.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84693998
         },
         {
           "date": "2026-07-17",
-          "close": 6859.0
+          "close": 80.77108774,
+          "native_close": 6859.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84919
         },
         {
           "date": "2026-07-20",
-          "close": 6929.0
+          "close": 81.53011349,
+          "native_close": 6929.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84987003
         },
         {
           "date": "2026-07-21",
-          "close": 7315.0
+          "close": 86.07907844,
+          "native_close": 7315.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84979999
         },
         {
           "date": "2026-07-22",
-          "close": 7547.0
+          "close": 88.55486406,
+          "native_close": 7547.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85224003
         },
         {
           "date": "2026-07-23",
-          "close": 6923.0
+          "close": 81.1444397,
+          "native_close": 6923.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85316998
         },
         {
           "date": "2026-07-24",
-          "close": 7332.0
+          "close": 85.79853759,
+          "native_close": 7332.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85456002
         },
         {
           "date": "2026-07-27",
-          "close": 7609.0
+          "close": 89.15577948,
+          "native_close": 7609.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85345
         },
         {
           "date": "2026-07-28",
-          "close": 7543.0
+          "close": 88.17787442,
+          "native_close": 7543.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85543001
         },
         {
           "date": "2026-07-29",
-          "close": 7178.0
+          "close": 83.76804295,
+          "native_close": 7178.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85689002
         },
         {
           "date": "2026-07-30",
-          "close": 7716.0
+          "close": 89.94789282,
+          "native_close": 7716.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85782999
         },
         {
           "date": "2026-07-31",
-          "close": 7812.0
+          "close": 91.25955321,
+          "native_close": 7812.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85601997
         },
         {
           "date": "2026-08-03",
-          "close": 8228.0
+          "close": 96.16306338,
+          "native_close": 8228.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85562998
         },
         {
           "date": "2026-08-04",
-          "close": 8442.0
+          "close": 98.51101568,
+          "native_close": 8442.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85696
         },
         {
           "date": "2026-08-05",
-          "close": 8511.0
+          "close": 99.27101066,
+          "native_close": 8511.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85734999
         },
         {
           "date": "2026-08-06",
-          "close": 8641.0
+          "close": 100.71212599,
+          "native_close": 8641.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85799003
         },
         {
           "date": "2026-08-07",
-          "close": 8584.0
+          "close": 100.22417336,
+          "native_close": 8584.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85648
         },
         {
           "date": "2026-08-10",
-          "close": 8629.5
+          "close": 100.741304,
+          "native_close": 8629.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85659999
         },
         {
           "date": "2026-08-11",
-          "close": 8656.0
+          "close": 101.29426477,
+          "native_close": 8656.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85453999
         },
         {
           "date": "2026-08-12",
-          "close": 8687.0
+          "close": 101.66774067,
+          "native_close": 8687.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85444999
         },
         {
           "date": "2026-08-13",
-          "close": 8770.0
+          "close": 102.7052324,
+          "native_close": 8770.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85390002
         },
         {
           "date": "2026-08-14",
-          "close": 8810.0
+          "close": 103.04937487,
+          "native_close": 8810.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85492998
         },
         {
           "date": "2026-08-17",
-          "close": 8676.0
+          "close": 101.5497004,
+          "native_close": 8676.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85435998
         },
         {
           "date": "2026-08-18",
-          "close": 8394.0
+          "close": 98.20185547,
+          "native_close": 8394.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85477
         },
         {
           "date": "2026-08-19",
-          "close": 7993.0
+          "close": 93.46788905,
+          "native_close": 7993.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85516
         },
         {
           "date": "2026-08-20",
-          "close": 7978.0
+          "close": 92.95334856,
+          "native_close": 7978.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85828
         },
         {
           "date": "2026-08-21",
-          "close": 8213.0
+          "close": 95.87458199,
+          "native_close": 8213.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85663998
         },
         {
           "date": "2026-08-24",
-          "close": 8375.0
+          "close": 97.88910187,
+          "native_close": 8375.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85556
         },
         {
           "date": "2026-08-25",
-          "close": 8279.0
+          "close": 96.77721019,
+          "native_close": 8279.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85547
         },
         {
           "date": "2026-08-26",
-          "close": 8513.0
+          "close": 99.52534954,
+          "native_close": 8513.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85535997
         },
         {
           "date": "2026-08-27",
-          "close": 8013.0
+          "close": 93.48204083,
+          "native_close": 8013.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85716999
         },
         {
           "date": "2026-08-28",
-          "close": 8286.0
+          "close": 96.67709191,
+          "native_close": 8286.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85707998
         },
         {
           "date": "2026-09-01",
-          "close": 8153.0
+          "close": 95.08537151,
+          "native_close": 8153.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85743999
         },
         {
           "date": "2026-09-02",
-          "close": 8304.0
+          "close": 96.82723029,
+          "native_close": 8304.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85760999
         },
         {
           "date": "2026-09-03",
-          "close": 8681.0
+          "close": 101.03820274,
+          "native_close": 8681.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85917997
         },
         {
           "date": "2026-09-04",
-          "close": 8665.0
+          "close": 100.81677059,
+          "native_close": 8665.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85948002
         },
         {
           "date": "2026-09-07",
-          "close": 8737.0
+          "close": 101.6958993,
+          "native_close": 8737.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85913002
         },
         {
           "date": "2026-09-08",
-          "close": 8689.0
+          "close": 101.23500296,
+          "native_close": 8689.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85829997
         },
         {
           "date": "2026-09-09",
-          "close": 8419.0
+          "close": 98.0652503,
+          "native_close": 8419.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85851002
         },
         {
           "date": "2026-09-10",
-          "close": 8370.0
+          "close": 97.48654869,
+          "native_close": 8370.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85857999
         },
         {
           "date": "2026-09-11",
-          "close": 8701.0
+          "close": 101.24740975,
+          "native_close": 8701.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85938001
         },
         {
           "date": "2026-09-14",
-          "close": 8414.0
+          "close": 98.16366055,
+          "native_close": 8414.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85714
         },
         {
           "date": "2026-09-15",
-          "close": 8174.0
+          "close": 95.55986813,
+          "native_close": 8174.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85538
         },
         {
           "date": "2026-09-16",
-          "close": 8288.0
+          "close": 96.77946819,
+          "native_close": 8288.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85637999
         },
         {
           "date": "2026-09-17",
-          "close": 8601.5
+          "close": 100.36405145,
+          "native_close": 8601.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85702997
         },
         {
           "date": "2026-09-18",
-          "close": 8021.0
+          "close": 93.35971709,
+          "native_close": 8021.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85914999
         },
         {
           "date": "2026-09-21",
-          "close": 8390.0
+          "close": 97.86995891,
+          "native_close": 8390.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85725999
         },
         {
           "date": "2026-09-22",
-          "close": 8214.0
+          "close": 95.8057281,
+          "native_close": 8214.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85736001
         },
         {
           "date": "2026-09-23",
-          "close": 8140.0
+          "close": 94.88064266,
+          "native_close": 8140.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85791999
         },
         {
           "date": "2026-09-24",
-          "close": 7953.0
+          "close": 92.51116695,
+          "native_close": 7953.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85968
         },
         {
           "date": "2026-09-25",
-          "close": 8266.0
+          "close": 96.00464576,
+          "native_close": 8266.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.861
         },
         {
           "date": "2026-09-28",
-          "close": 8181.0
+          "close": 95.1168502,
+          "native_close": 8181.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.86009997
         },
         {
           "date": "2026-09-29",
-          "close": 8086.0
+          "close": 94.26000187,
+          "native_close": 8086.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85784
         },
         {
           "date": "2026-09-30",
-          "close": 7807.0
+          "close": 91.07878357,
+          "native_close": 7807.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85716999
         },
         {
           "date": "2026-10-01",
-          "close": 6829.0
+          "close": 79.97048879,
+          "native_close": 6829.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85394001
         },
         {
           "date": "2026-10-02",
-          "close": 6709.0
+          "close": 78.72565403,
+          "native_close": 6709.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.85219997
         },
         {
           "date": "2026-10-05",
-          "close": 7042.0
+          "close": 82.87631221,
+          "native_close": 7042.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84969997
         },
         {
           "date": "2026-10-06",
-          "close": 7355.0
+          "close": 86.67829346,
+          "native_close": 7355.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84854001
         },
         {
           "date": "2026-10-07",
-          "close": 6606.0
+          "close": 77.88349217,
+          "native_close": 6606.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84819001
         },
         {
           "date": "2026-10-08",
-          "close": 6149.0
+          "close": 72.55286097,
+          "native_close": 6149.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84751999
         },
         {
           "date": "2026-10-09",
-          "close": 6221.0
+          "close": 73.40759706,
+          "native_close": 6221.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84745997
         },
         {
           "date": "2026-10-12",
-          "close": 6460.0
+          "close": 76.33226898,
+          "native_close": 6460.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84630001
         },
         {
           "date": "2026-10-13",
-          "close": 6469.0
+          "close": 76.57524536,
+          "native_close": 6469.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84478998
         },
         {
           "date": "2026-10-14",
-          "close": 6381.0
+          "close": 75.5255202,
+          "native_close": 6381.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84487998
         },
         {
           "date": "2026-10-15",
-          "close": 6132.0
+          "close": 72.47113242,
+          "native_close": 6132.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84613001
         },
         {
           "date": "2026-10-16",
-          "close": 6257.0
+          "close": 74.06223913,
+          "native_close": 6257.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84482998
         },
         {
           "date": "2026-10-19",
-          "close": 5835.0
+          "close": 69.32234079,
+          "native_close": 5835.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84171999
         },
         {
           "date": "2026-10-20",
-          "close": 5783.0
+          "close": 68.640952,
+          "native_close": 5783.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.84249997
         },
         {
           "date": "2026-10-21",
-          "close": 5995.5
+          "close": 71.42091174,
+          "native_close": 5995.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83946002
         },
         {
           "date": "2026-10-22",
-          "close": 5245.0
+          "close": 62.54397232,
+          "native_close": 5245.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83860999
         },
         {
           "date": "2026-10-23",
-          "close": 5219.0
+          "close": 62.34619296,
+          "native_close": 5219.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83710003
         },
         {
           "date": "2026-10-26",
-          "close": 5440.0
+          "close": 64.87853087,
+          "native_close": 5440.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83849001
         },
         {
           "date": "2026-10-27",
-          "close": 5645.5
+          "close": 67.42666891,
+          "native_close": 5645.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83727998
         },
         {
           "date": "2026-10-28",
-          "close": 5519.0
+          "close": 66.00569441,
+          "native_close": 5519.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83613998
         },
         {
           "date": "2026-10-29",
-          "close": 5480.0
+          "close": 65.47974668,
+          "native_close": 5480.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.8369
         },
         {
           "date": "2026-10-30",
-          "close": 5118.5
+          "close": 61.23853156,
+          "native_close": 5118.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83582997
         },
         {
           "date": "2026-11-02",
-          "close": 5339.0
+          "close": 64.05749534,
+          "native_close": 5339.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83346999
         },
         {
           "date": "2026-11-03",
-          "close": 5292.5
+          "close": 63.41361359,
+          "native_close": 5292.5,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83459997
         },
         {
           "date": "2026-11-04",
-          "close": 5983.0
+          "close": 71.7231293,
+          "native_close": 5983.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83418
         },
         {
           "date": "2026-11-05",
-          "close": 6065.0
+          "close": 72.75584506,
+          "native_close": 6065.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83361
         },
         {
           "date": "2026-11-06",
-          "close": 5852.0
+          "close": 70.13422819,
+          "native_close": 5852.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.8344
         },
         {
           "date": "2026-11-09",
-          "close": 6384.0
+          "close": 76.51373508,
+          "native_close": 6384.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83436
         },
         {
           "date": "2026-11-10",
-          "close": 6692.0
+          "close": 80.1561939,
+          "native_close": 6692.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83486998
         },
         {
           "date": "2026-11-11",
-          "close": 6714.0
+          "close": 80.25340569,
+          "native_close": 6714.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83660001
         },
         {
           "date": "2026-11-12",
-          "close": 6640.0
+          "close": 79.46005362,
+          "native_close": 6640.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83564001
         },
         {
           "date": "2026-11-13",
-          "close": 6579.0
+          "close": 78.78853107,
+          "native_close": 6579.0,
+          "native_currency": "GBX",
+          "eur_gbp": 0.83502001
         }
       ],
       "first_date": "2026-01-02",
@@ -902,7 +1564,9 @@
       "symbol": "BNK.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -1800,7 +2464,9 @@
       "symbol": "COPA.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -2698,7 +3364,9 @@
       "symbol": "DJLEV.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -3596,7 +4264,9 @@
       "symbol": "IBZL.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -4494,7 +5164,9 @@
       "symbol": "IESZ.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -5392,7 +6064,9 @@
       "symbol": "IMEU.AS",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -6294,7 +6968,9 @@
       "symbol": "IWVL.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -7192,7 +7868,9 @@
       "symbol": "LCFE.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -8090,7 +8768,9 @@
       "symbol": "LCOC.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -8988,7 +9668,9 @@
       "symbol": "SPY4.PA",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -9886,7 +10568,9 @@
       "symbol": "WNAS.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -10784,7 +11468,9 @@
       "symbol": "WRTY.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -11682,7 +12368,9 @@
       "symbol": "WS5X.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -12584,7 +13272,9 @@
       "symbol": "WSPX.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
@@ -13482,7 +14172,9 @@
       "symbol": "WWRD.MI",
       "source": "Yahoo Finance",
       "price_basis": "unadjusted daily close",
-      "price_currency": "EUR (EUR trading line selected by exchange suffix)",
+      "price_currency": "EUR",
+      "quote_currency": "EUR",
+      "fx_conversion": "none",
       "prices": [
         {
           "date": "2026-01-02",
