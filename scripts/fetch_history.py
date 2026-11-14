@@ -10,6 +10,7 @@ import yfinance as yf
 ROOT = Path(__file__).resolve().parents[1]
 PORTFOLIO = ROOT / "data" / "portfolio.json"
 OUT = ROOT / "data" / "history.json"
+WATCHLIST = ROOT / "data" / "watchlist.json"
 START = "2026-01-01"
 END = (date.today() + timedelta(days=1)).isoformat()
 
@@ -32,6 +33,10 @@ CANDIDATES = {
     "WRTY": ["WRTY.MI", "WRTY.DE"],
     "WNAS": ["WNAS.MI", "WNAS.DE"],
     "WWRD": ["WWRD.MI", "WWRD.DE"],
+    "IWMO": ["IWMO.MI", "IS3R.DE", "IWMO.L"],
+    "4EML": ["4EML.MI", "4EML.L", "4EML.DE"],
+    "LCCN": ["LCCN.MI", "LCCN.PA"],
+    "HSTE": ["HSTE.MI", "HSTE.L"],
 }
 
 def clean_series(frame):
@@ -51,7 +56,8 @@ def clean_series(frame):
 
 def main():
     portfolio = json.loads(PORTFOLIO.read_text(encoding="utf-8"))
-    tickers = sorted({p.get("ticker") for p in portfolio.get("positions", []) if p.get("ticker")})
+    watchlist = json.loads(WATCHLIST.read_text(encoding="utf-8")) if WATCHLIST.exists() else {"tickers": []}
+    tickers = sorted({p.get("ticker") for p in portfolio.get("positions", []) if p.get("ticker")} | set(watchlist.get("tickers", [])))
     data, unresolved = {}, []
     for ticker in tickers:
         attempts = CANDIDATES.get(ticker, [ticker + ".MI"])
@@ -115,7 +121,30 @@ def main():
         else:
             unresolved.append({"ticker": ticker, "attempts": errors})
 
-    all_dates = [v["last_date"] for v in data.values()]
+    # Broad market risk gauges: implied volatility indices, not portfolio instruments.
+    market_indices = {}
+    market_symbols = {"VIX": "^VIX", "VSTOXX": "^V2TX"}
+    for name, symbol in market_symbols.items():
+        try:
+            frame = yf.Ticker(symbol).history(start=START, end=END, interval="1d",
+                                              auto_adjust=False, actions=False)
+            series = clean_series(frame)
+            if series:
+                market_indices[name] = {
+                    "symbol": symbol,
+                    "name": "CBOE Volatility Index" if name == "VIX" else "EURO STOXX 50 Volatility (VSTOXX)",
+                    "source": "Yahoo Finance",
+                    "unit": "index points",
+                    "prices": series,
+                    "first_date": series[0]["date"],
+                    "last_date": series[-1]["date"],
+                }
+            else:
+                print(f"MARKET INDEX UNRESOLVED {name}: {symbol}")
+        except Exception as exc:
+            print(f"MARKET INDEX ERROR {name}: {str(exc)[:180]}")
+
+    all_dates = [v["last_date"] for v in data.values()] + [v["last_date"] for v in market_indices.values()]
     payload = {
         "schema_version": 1,
         "period_start": START,
@@ -127,6 +156,7 @@ def main():
         "message": (f"Scaricate {len(data)} serie; {len(unresolved)} simboli non risolti."
                     if unresolved else f"Scaricate {len(data)} serie storiche."),
         "instruments": data,
+        "market_indices": market_indices,
         "unresolved": unresolved,
     }
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
