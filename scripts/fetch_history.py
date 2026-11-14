@@ -18,7 +18,7 @@ END = (date.today() + timedelta(days=1)).isoformat()
 CANDIDATES = {
     "DJLEV": ["DJLEV.MI", "DJLEV.PA"],
     "COPA": ["COPA.MI", "COPA.L"],
-    "3BAL": ["3BAL.MI", "3BAL.L"],
+    "3BAL": ["3BAL.MI", "0LJI.DE", "3BAL.L"],
     "IWVL": ["IWVL.MI", "IWVL.L"],
     "IESZ": ["IESZ.MI", "IESZ.DE"],
     "IBZL": ["IBZL.MI", "IBZL.L"],
