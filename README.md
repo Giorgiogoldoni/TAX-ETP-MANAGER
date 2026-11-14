@@ -1,35 +1,53 @@
 # TAX & ETP MANAGER
 
-Gestore autonomo per analisi fiscale e operativa di ETF, ETN, ETC e certificati per un investitore fiscalmente residente in Italia.
+Sistema autonomo di **gestione dinamica di mercato** per ETF, ETN, ETC e certificati, con modulo fiscale italiano separato.
 
-## Obiettivi
+## Priorità strategica
 
-- Inventario degli strumenti con ISIN, emittente, forma giuridica e trattamento fiscale documentato.
-- Distinzione tra redditi di capitale e redditi diversi.
-- Monitoraggio di plusvalenze, minusvalenze e scadenze fiscali.
-- Pianificazione delle vendite senza confondere rendimento economico e recupero fiscale.
-- Analisi del portafoglio cedolare e degli strumenti in perdita (tra cui STHE e STHY, da censire con ISIN e documentazione aggiornata).
+La priorità è la qualità delle decisioni di investimento: selezione, mantenimento, riduzione e sostituzione degli strumenti in base a trend, momentum, forza relativa e rischio. La fiscalità è un livello successivo di ottimizzazione del risultato netto; non deve alterare un segnale di mercato valido.
 
-## Principi di progetto
+## Architettura
 
-1. **La classificazione fiscale non si deduce dal ticker o dal nome commerciale.** Si verifica tramite ISIN, prospetto, KID, documentazione dell'emittente e fonti fiscali ufficiali.
-2. **ETF, ETN, ETC e certificati non sono categorie fiscalmente intercambiabili.** La forma giuridica e la documentazione del singolo strumento determinano il trattamento.
-3. **Distribuzioni e risultati da cessione vanno registrati separatamente.** Non ogni provento o perdita è compensabile con ogni altra voce.
-4. **Nessuna operazione viene suggerita solo per generare una minusvalenza.** Si valutano costi, rischio, liquidità, spread, orizzonte e coerenza con il portafoglio.
-5. **Ogni classificazione deve avere fonte, data di verifica e livello di confidenza.** I casi non verificati restano "da verificare".
+- `index.html`: dashboard operativa.
+- `data/portfolio.json`: posizioni e prezzi di carico.
+- `data/instruments.json`: anagrafica strumenti, ISIN e caratteristiche.
+- `data/market_snapshot.json`: osservazioni di mercato importate o aggiornate.
+- `data/strategy.json`: parametri e pesi del modello.
+- `modules/market-engine.js`: calcolo trasparente dei segnali.
+- `data/tax_ledger.json`: registro fiscale separato.
 
-## Moduli previsti
+## Modello di mercato iniziale
 
-- `data/`: portafoglio, strumenti e movimenti fiscali.
-- `modules/`: motore di classificazione e analisi.
-- `reports/`: report e controlli.
-- `index.html`: dashboard web.
-- `.github/workflows/`: controlli automatici e pubblicazione.
+Il modello è predisposto per integrare gli strumenti già utilizzati nel progetto dell'investitore:
+
+- ROC 38 e medie mobili 38/200: momentum e filtro di regime.
+- AO ed EMA: conferma della direzione.
+- Forza relativa e breadth: selezione e ampiezza del mercato.
+- Volatilità e drawdown: controllo del rischio.
+
+Il motore non inventa dati: se un indicatore o un prezzo manca, il relativo contributo è marcato come non disponibile e il segnale resta incompleto. Pesi e soglie sono configurabili in `data/strategy.json`.
+
+## Regole decisionali
+
+1. Il segnale di mercato è calcolato senza usare la posizione fiscale.
+2. Il punteggio è una sintesi informativa, non una previsione né un ordine automatico.
+3. Un dato mancante non viene trattato come neutrale o positivo.
+4. Nessuna operazione viene suggerita solo per generare una minusvalenza.
+5. Prima di una vendita si valuta separatamente l'effetto fiscale, i costi, lo spread e la coerenza del reinvestimento.
+6. Le classificazioni fiscali si verificano per ISIN, prospetto/KID, documentazione dell'emittente e fonti ufficiali.
+
+## Aggiornamento dati
+
+La dashboard legge file JSON versionati nel repository. In questa prima fase non esiste ancora un feed prezzi automatico: i dati devono essere importati o aggiornati da una fonte affidabile, indicando data, valuta e fonte. Non presentare mai la dashboard come quotazione in tempo reale.
+
+## Prossimi sviluppi
+
+1. Importazione del portafoglio reale e delle watchlist.
+2. Collegamento ai dati storici e calcolo degli indicatori.
+3. Backtest e calibrazione del modello senza overfitting.
+4. Ranking dinamico e proposte di rotazione.
+5. Simulatore fiscale delle operazioni candidate.
 
 ## Avvertenza
 
-Il progetto è uno strumento di organizzazione e supporto all'analisi, non sostituisce il parere di un commercialista o di un intermediario fiscale. Le regole fiscali devono essere verificate sulle fonti ufficiali e aggiornate alla data dell'operazione. Non inserire credenziali, dati bancari o documenti fiscali personali nel repository pubblico.
-
-## Avvio
-
-Aprire `index.html` in un browser oppure pubblicare il repository con GitHub Pages dalle impostazioni del progetto.
+Strumento di supporto informativo, non consulenza finanziaria o fiscale personalizzata. Le regole fiscali vanno verificate con l'intermediario o un professionista. Non inserire credenziali, dati bancari o documenti personali nel repository pubblico.
