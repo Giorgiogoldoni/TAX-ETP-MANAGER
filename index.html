@@ -14,7 +14,7 @@ h1{font-size:clamp(25px,4vw,36px);margin:0;letter-spacing:-.04em}h2{font-size:18
 .notice{border:1px solid #f2d7a0;padding:11px 14px;background:#fffbeb;color:#7a4b00;border-radius:8px;margin:17px 0}
 table{width:100%;border-collapse:collapse;font-size:13px;min-width:800px}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-weight:600;background:#fafafa}
 .pill{display:inline-block;border-radius:30px;padding:3px 8px;font-size:12px;background:#f2f4f7}.good{color:var(--good)}.bad{color:var(--bad)}.empty{text-align:center;color:var(--muted);padding:22px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.risk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.risk-card{border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}.risk-number{font-size:27px;font-weight:750;letter-spacing:-.03em}.risk-note{font-size:12px;color:var(--muted)}.watchlist{display:flex;flex-wrap:wrap;gap:9px}.watch-chip{display:inline-flex;gap:7px;align-items:center;border:1px solid var(--line);border-radius:9px;padding:8px 11px;text-decoration:none;color:var(--text);background:#fff}.watch-chip b{color:var(--accent)}
 .chart-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
 .chart-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.chart-title{font-weight:650;font-size:14px}.ticker-link{color:#176b57;text-decoration:none;font-weight:750}.ticker-link:hover{text-decoration:underline}.chart-meta{font-size:12px;color:var(--muted)}.chart-value{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
 .chart{width:100%;height:150px;display:block;margin-top:8px;overflow:visible}.chart-grid{stroke:#e9edf2;stroke-width:1}.chart-line{fill:none;stroke:#176b57;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.chart-area{fill:#176b57;opacity:.08}
@@ -32,6 +32,8 @@ table{width:100%;border-collapse:collapse;font-size:13px;min-width:800px}th,td{t
 <div class="metric-card"><div class="metric-label">Costo di carico</div><div class="metric" id="cost-value">—</div></div>
 <div class="metric-card"><div class="metric-label">Risultato latente</div><div class="metric" id="pnl">—</div></div>
 </section>
+<section class="panel" id="market-risk"><div class="head"><h2>Rischio di mercato · VIX e VSTOXX</h2><span class="muted" id="risk-date">Dati in caricamento…</span></div><div class="risk-grid" id="risk-grid"><div class="empty">Caricamento volatilità…</div></div><div class="hint">Indicatori di volatilità implicita: servono come filtro di rischio e contesto, non generano da soli segnali automatici di acquisto o vendita. VSTOXX verrà mostrato quando il fornitore renderà disponibile una serie storica affidabile.</div></section>
+<section class="panel"><div class="head"><h2>Watchlist · strumenti da monitorare</h2><span class="muted">Apri il grafico cliccando sul ticker</span></div><div class="watchlist" id="watchlist"><span class="muted">Caricamento…</span></div></section>
 <section class="panel"><div class="head"><h2>Andamento di ogni strumento</h2><span class="muted" id="history-date">Dal 01/01/2026</span></div>
 <div class="charts" id="charts"><div class="empty">In attesa delle serie storiche…</div></div>
 <div class="hint">Grafici basati sui prezzi di chiusura giornalieri non rettificati. La variazione mostrata confronta il primo dato disponibile dal 1° gennaio 2026 con l'ultima chiusura acquisita. Gli strumenti duplicati nel portafoglio hanno grafici separati ma condividono la stessa serie.</div></section>
@@ -56,6 +58,20 @@ function sparkline(points){
  try{
   const [p,h,i]=await Promise.all(['./data/portfolio.json','./data/history.json','./data/instruments.json'].map(x=>fetch(x).then(r=>{if(!r.ok)throw Error(x);return r.json()})));
   const hist=h.instruments||{}, inst=Object.fromEntries((i.instruments||[]).map(x=>[x.ticker,x]));
+  // Market volatility gauges: latest close, 5-session change and compact history.
+  const risk=h.market_indices||{}, riskGrid=$('risk-grid'); riskGrid.replaceChildren();
+  const riskLabel=(name,last)=>{if(!last)return 'Serie non disponibile';if(name==='VIX')return last<15?'Volatilità contenuta':last<20?'Volatilità moderata':last<30?'Volatilità elevata':'Stress di mercato';return last<15?'Volatilità contenuta':last<20?'Volatilità moderata':last<30?'Volatilità elevata':'Stress di mercato';};
+  ['VIX','VSTOXX'].forEach(name=>{
+   const item=risk[name], series=item?.prices||[], last=series.at(-1), prev=series.at(-6)||series.at(-2);
+   const change=last&&prev?(last.close/prev.close-1)*100:NaN;
+   const card=document.createElement('article');card.className='risk-card';
+   card.innerHTML='<div class="chart-head"><div><div class="chart-title">'+name+'</div><div class="chart-meta">'+(item?.name||'Indice di volatilità implicita')+'</div></div><div class="chart-value"><div class="risk-number">'+(last?last.close.toLocaleString('it-IT',{minimumFractionDigits:2,maximumFractionDigits:2}):'—')+'</div><div class="chart-meta">'+pct(change)+' · 5 sedute</div></div></div>'+sparkline(series)+'<div class="risk-note">'+(last?riskLabel(name,last.close)+' · ultima chiusura '+last.date:'Dato non disponibile dal feed storico')+'</div>';
+   riskGrid.appendChild(card);
+  });
+  $('risk-date').textContent='Ultima seduta: '+(risk.VIX?.prices?.at(-1)?.date||h.latest_date||'—');
+  const watch=(await fetch('./data/watchlist.json').then(r=>r.ok?r.json():{tickers:[]})).tickers||[];
+  const watchBox=$('watchlist');watchBox.replaceChildren();
+  watch.forEach(t=>{const a=document.createElement('a');a.className='watch-chip';a.href='./chart.html?ticker='+encodeURIComponent(t);a.innerHTML='<b>'+esc(t)+'</b><span class="chart-meta">'+(hist[t]?.prices?.at(-1)?euro(hist[t].prices.at(-1).close):'Serie assente')+'</span>';watchBox.appendChild(a)});
   const rows=(p.positions||[]).map(x=>{
    const series=hist[x.ticker]?.prices||[],last=series.at(-1),first=series[0],qty=Number(x.quantity),cost=Number(x.average_cost);
    const value=last?qty*last.close:NaN,invested=qty*cost,pnl=value-invested,fromStart=first&&last?(last.close/first.close-1)*100:NaN;
