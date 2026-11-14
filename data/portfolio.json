@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": null,
+  "as_of": "2026-11-14",
   "currency": "EUR",
   "cost_basis_type": "average_purchase_price",
   "positions": [
@@ -10,7 +10,10 @@
       "quantity": 1,
       "average_cost": 15.96,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "DJLEV",
+      "isin": "FR0010468983",
+      "instrument_type": "ETF",
+      "identification_status": "verified"
     },
     {
       "id": "pos-002",
@@ -18,7 +21,10 @@
       "quantity": 1,
       "average_cost": 21.11,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "COPA",
+      "isin": "GB00B15KXQ89",
+      "instrument_type": "ETC",
+      "identification_status": "verified"
     },
     {
       "id": "pos-003",
@@ -26,7 +32,11 @@
       "quantity": 1,
       "average_cost": 3.38,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "3BAL",
+      "isin": "IE00BLS09N40",
+      "instrument_type": "ETN",
+      "leverage": "3x daily",
+      "identification_status": "verified"
     },
     {
       "id": "pos-004",
@@ -34,7 +44,10 @@
       "quantity": 1,
       "average_cost": 57.14,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "IWVL",
+      "isin": "IE00BP3QZB59",
+      "instrument_type": "ETF",
+      "identification_status": "verified"
     },
     {
       "id": "pos-005",
@@ -42,7 +55,10 @@
       "quantity": 10,
       "average_cost": 5.62,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "IESZ",
+      "isin": "IE00BQN1KC32",
+      "instrument_type": "ETF",
+      "identification_status": "verified"
     },
     {
       "id": "pos-006",
@@ -50,7 +66,10 @@
       "quantity": 1,
       "average_cost": 20.81,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "IBZL",
+      "isin": "IE00B0M63516",
+      "instrument_type": "ETF",
+      "identification_status": "verified"
     },
     {
       "id": "pos-007",
@@ -58,7 +77,10 @@
       "quantity": 10,
       "average_cost": 24.95,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "IMEU",
+      "isin": "IE00B1YZSC51",
+      "instrument_type": "ETF",
+      "identification_status": "probable"
     },
     {
       "id": "pos-008",
@@ -66,7 +88,10 @@
       "quantity": 1,
       "average_cost": 64.19,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "SPY4",
+      "isin": "IE00B4YBJ215",
+      "instrument_type": "ETF",
+      "identification_status": "verified"
     },
     {
       "id": "pos-009",
@@ -74,7 +99,11 @@
       "quantity": 1,
       "average_cost": 0.58,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "LCFE",
+      "isin": "JE00B2NFTD12",
+      "instrument_type": "ETC",
+      "leverage": "2x daily",
+      "identification_status": "verified"
     },
     {
       "id": "pos-010",
@@ -82,7 +111,11 @@
       "quantity": 1,
       "average_cost": 12.08,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "LCOC",
+      "isin": "JE00B2NFV803",
+      "instrument_type": "ETC",
+      "leverage": "2x daily",
+      "identification_status": "verified"
     },
     {
       "id": "pos-011",
@@ -90,7 +123,10 @@
       "quantity": 4,
       "average_cost": 15.54,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "BNK",
+      "isin": "LU1834983477",
+      "instrument_type": "ETF",
+      "identification_status": "verified"
     },
     {
       "id": "pos-012",
@@ -98,7 +134,10 @@
       "quantity": 1,
       "average_cost": 38,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "WSPX",
+      "isin": "XS2427355958",
+      "instrument_type": "ETN",
+      "identification_status": "verified"
     },
     {
       "id": "pos-013",
@@ -106,7 +145,10 @@
       "quantity": 1,
       "average_cost": 43.42,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "WS5X",
+      "isin": "XS2427362145",
+      "instrument_type": "ETN",
+      "identification_status": "verified"
     },
     {
       "id": "pos-014",
@@ -114,7 +156,7 @@
       "quantity": 1,
       "average_cost": 9.21,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "identification_status": "needs_confirmation"
     },
     {
       "id": "pos-015",
@@ -122,7 +164,10 @@
       "quantity": 1,
       "average_cost": 32.97,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "WRTY",
+      "isin": "XS3003324129",
+      "instrument_type": "ETN",
+      "identification_status": "verified"
     },
     {
       "id": "pos-016",
@@ -130,7 +175,10 @@
       "quantity": 1,
       "average_cost": 36.66,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "WNAS",
+      "isin": "XS3003325795",
+      "instrument_type": "ETN",
+      "identification_status": "verified"
     },
     {
       "id": "pos-017",
@@ -138,7 +186,10 @@
       "quantity": 1,
       "average_cost": 27.11,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "WSPX",
+      "isin": "XS2427355958",
+      "instrument_type": "ETN",
+      "identification_status": "verified"
     },
     {
       "id": "pos-018",
@@ -146,7 +197,10 @@
       "quantity": 1,
       "average_cost": 24.1,
       "currency": "EUR",
-      "identification_status": "unverified"
+      "ticker": "WWRD",
+      "isin": "XS3151433813",
+      "instrument_type": "ETN",
+      "identification_status": "verified"
     }
   ]
 }
