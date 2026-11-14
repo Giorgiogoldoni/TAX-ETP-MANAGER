@@ -27,7 +27,7 @@ h1{font-size:clamp(25px,4vw,36px);margin:0;letter-spacing:-.045em}h2{font-size:1
 .pill{display:inline-block;border-radius:30px;padding:3px 8px;font-size:11px;background:#f1f4f7;color:#475467}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
 .risk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}.risk-card{border:1px solid var(--line);border-radius:13px;padding:13px;min-width:0}.risk-number{font-size:26px;font-weight:750;letter-spacing:-.03em}.risk-note{font-size:12px;color:var(--muted)}
-.chart{width:100%;height:85px;display:block;margin-top:5px}.chart-grid{stroke:#e9edf2;stroke-width:1}.chart-line{fill:none;stroke:#176b57;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}.chart-area{fill:#176b57;opacity:.08}
+.chart{width:100%;height:85px;display:block;margin-top:5px}.performance-panel{margin:16px 0}.performance-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}.performance-toolbar select{padding:9px 12px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text);font:inherit}.performance-chart{width:100%;height:360px;display:block}.performance-legend{display:flex;flex-wrap:wrap;gap:9px 15px;margin:10px 0}.performance-legend span{display:inline-flex;align-items:center;gap:6px;font-size:12px}.performance-legend i{display:inline-block;width:18px;height:3px;border-radius:3px}.contribution-table{width:100%;border-collapse:collapse;font-size:12px;min-width:520px}.contribution-table th,.contribution-table td{padding:8px;border-bottom:1px solid var(--line);text-align:right}.contribution-table th:first-child,.contribution-table td:first-child{text-align:left}.positive{color:var(--good);font-weight:700}.negative{color:var(--bad);font-weight:700}.chart-grid{stroke:#e9edf2;stroke-width:1}.chart-line{fill:none;stroke:#176b57;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}.chart-area{fill:#176b57;opacity:.08}
 .watchlist{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}.watch-chip{display:inline-flex;gap:7px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px 11px;text-decoration:none;color:var(--text);background:#fff}.watch-chip b{color:var(--accent)}
 table{width:100%;border-collapse:collapse;font-size:13px;min-width:650px}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-weight:650;background:#fafbfd}.ticker-link{color:var(--accent);text-decoration:none;font-weight:750}.ticker-link:hover{text-decoration:underline}
 .hint{font-size:12px;margin-top:12px}footer{color:var(--muted);font-size:12px;margin-top:22px;padding:8px 2px}
@@ -43,6 +43,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;min-width:650px}th,td{t
 <div class="metric-card"><div class="metric-label">Ultimo aggiornamento dati</div><div class="metric" id="updated" style="font-size:17px">—</div></div>
 </section>
 <section class="portfolios" id="portfolios"><div class="portfolio-card">Caricamento portafogli…</div></section>
+<section class="panel performance-panel"><div class="head"><div><h2>Performance e contributo dei singoli ETF/ETN</h2><div class="hint">Base 100 · confronto omogeneo · linea portafoglio ponderata sui pesi iniziali</div></div><span class="muted" id="performance-period">—</span></div><div class="performance-toolbar"><label for="performance-select">Portafoglio da analizzare</label><select id="performance-select"></select><span class="muted" id="performance-status">Calcolo serie…</span></div><svg id="performance-chart" class="performance-chart" viewBox="0 0 1100 360" role="img" aria-label="Confronto della performance del portafoglio e dei singoli strumenti"></svg><div id="performance-legend" class="performance-legend"></div><div class="hint">La linea del portafoglio rappresenta un investimento iniziale a pesi fissi, con liquidità stabile e pesi che evolvono con i prezzi (buy-and-hold, senza ribilanciamenti). La performance usa il prezzo rettificato quando disponibile; include le rettifiche per distribuzioni registrate dalla fonte, ma non costi, imposte o commissioni. È una simulazione dei pesi obiettivo, non il rendimento del conto reale.</div><h3 style="font-size:14px;margin:16px 0 6px">Contributo alla performance del portafoglio</h3><div style="overflow-x:auto"><table class="contribution-table"><thead><tr><th>Strumento</th><th>Peso iniziale</th><th>Rendimento</th><th>Contributo (punti %)</th></tr></thead><tbody id="contribution-body"><tr><td colspan="4">Calcolo…</td></tr></tbody></table></div></section>
 <section class="two">
 <div class="panel"><div class="head"><h2>Rischio di mercato</h2><span class="muted" id="risk-date">—</span></div><div class="risk-grid" id="risk-grid"></div><div class="hint">VIX e VSTOXX misurano la volatilità implicita attesa. Sono indicatori di contesto, non segnali autonomi di acquisto o vendita.</div></div>
 <div class="panel"><div class="head"><h2>Watchlist</h2><span class="muted">Strumenti da monitorare</span></div><div class="watchlist" id="watchlist">Caricamento…</div><div class="hint">La watchlist non è inclusa automaticamente nei due portafogli modello.</div></div>
@@ -68,6 +69,26 @@ function sparkline(points){
  const line=xy.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
  return '<svg class="chart" viewBox="0 0 '+w+' '+h+'"><line class="chart-grid" x1="0" y1="42" x2="'+w+'" y2="42"/><path class="chart-line" d="'+line+'"/></svg>';
 }
+
+function drawPerformance(portfolio,hist){
+ const svg=$('performance-chart'),allocations=(portfolio.allocations||[]).filter(x=>x.ticker&&Number(x.weight)>0);
+ const allDates=allocations.map(a=>new Map((hist.instruments?.[a.ticker]?.prices||[]).map(p=>[p.date,p])));
+ const dates=allDates.length?Array.from(allDates[0].keys()).filter(d=>allDates.every(m=>m.has(d))):[];
+ if(dates.length<2){svg.innerHTML='<text x="24" y="35">Serie comuni insufficienti per costruire il grafico</text>';$('performance-status').textContent='Dati non sufficienti';return}
+ const cash=(portfolio.allocations||[]).filter(x=>!x.ticker).reduce((s,x)=>s+Number(x.weight||0),0);
+ const series=allocations.map((a,i)=>{const prices=dates.map(d=>allDates[i].get(d));const field=prices[0].adjclose?'adjclose':'close';const base=Number(prices[0][field]??prices[0].close);return {ticker:a.ticker,name:a.name||a.ticker,weight:Number(a.weight),values:prices.map(p=>100*Number(p[field]??p.close)/base),field}});
+ const portfolioValues=dates.map((d,j)=>cash+series.reduce((s,x)=>s+x.weight*x.values[j]/100,0));
+ const sets=[...series.map((x,i)=>({name:x.ticker,values:x.values,color:colors[i%colors.length],weight:x.weight})),{name:'PORTAFOGLIO',values:portfolioValues,color:'#172033',weight:null}];
+ const vals=sets.flatMap(s=>s.values).filter(Number.isFinite),min=Math.min(...vals),max=Math.max(...vals),span=max-min||1,lo=min-span*.08,hi=max+span*.08,W=1100,H=360,L=62,R=18,T=18,B=34;
+ let grid='';for(let k=0;k<5;k++){const y=T+k*(H-T-B)/4,v=hi-k*(hi-lo)/4;grid+='<line x1="'+L+'" y1="'+y+'" x2="'+(W-R)+'" y2="'+y+'" stroke="#e8edf2"/><text x="'+(L-9)+'" y="'+(y+4)+'" text-anchor="end" font-size="12" fill="#697586">'+v.toFixed(1)+'</text>'}
+ const paths=sets.map(s=>{const d=s.values.map((v,i)=>{const x=L+i*(W-L-R)/(dates.length-1),y=H-B-(v-lo)/(hi-lo)*(H-T-B);return (i?'L':'M')+x.toFixed(1)+','+y.toFixed(1)}).join(' ');return '<path d="'+d+'" fill="none" stroke="'+s.color+'" stroke-width="'+(s.name==='PORTAFOGLIO'?4:2)+'" stroke-linecap="round" stroke-linejoin="round"/>'}).join('');
+ const first=dates[0],last=dates.at(-1);svg.innerHTML=grid+paths+'<text x="'+L+'" y="'+(H-7)+'" font-size="12" fill="#697586">'+first+'</text><text x="'+(W-R)+'" y="'+(H-7)+'" text-anchor="end" font-size="12" fill="#697586">'+last+'</text>';
+ $('performance-period').textContent=first+' → '+last+' · '+dates.length+' sedute';
+ $('performance-status').textContent='Indice finale portafoglio '+portfolioValues.at(-1).toFixed(2)+' · rendimento '+pct(portfolioValues.at(-1)-100);
+ $('performance-legend').innerHTML=sets.map(s=>'<span><i style="background:'+s.color+'"></i>'+s.name+(s.weight===null?' (portafoglio)':' ('+s.weight+'%)')+'</span>').join('');
+ const rows=series.map(s=>({ticker:s.ticker,weight:s.weight,ret:s.values.at(-1)-100,contrib:s.weight*(s.values.at(-1)-100)/100})).sort((a,b)=>b.contrib-a.contrib);
+ $('contribution-body').innerHTML=rows.map(r=>'<tr><td><a class="ticker-link" href="./chart.html?ticker='+encodeURIComponent(r.ticker)+'">'+esc(r.ticker)+'</a></td><td>'+r.weight.toFixed(1)+'%</td><td class="'+(r.ret>=0?'positive':'negative')+'">'+pct(r.ret)+'</td><td class="'+(r.contrib>=0?'positive':'negative')+'">'+(r.contrib>=0?'+':'')+r.contrib.toFixed(2)+' p.p.</td></tr>').join('')+(cash?'<tr><td>Liquidità</td><td>'+cash.toFixed(1)+'%</td><td>0,00%</td><td>0,00 p.p.</td></tr>':'');
+}
 function portfolioCard(portfolio,index){
  const items=portfolio.allocations||[];
  const legend=items.map((x,i)=>'<div class="legend-item"><span class="swatch" style="background:'+colors[i%colors.length]+'"></span><span class="legend-name">'+esc(x.ticker||x.name)+'</span><span class="legend-value">'+x.weight+'%</span></div>').join('');
@@ -84,6 +105,7 @@ function portfolioCard(portfolio,index){
   ]);
   const portfolios=targets.portfolios||[],allItems=portfolios.flatMap(p=>p.allocations||[]),watchTickers=watchData.tickers||[],master=(instruments.instruments||[]),tickers=[...new Set([...allItems.map(x=>x.ticker),...watchTickers,...master.map(x=>x.ticker)].filter(Boolean))];
   $('portfolios').innerHTML=portfolios.map(portfolioCard).join('');
+  const performanceSelect=$('performance-select');performanceSelect.innerHTML=portfolios.map((p,i)=>'<option value="'+i+'">'+esc(p.name)+'</option>').join('');performanceSelect.addEventListener('change',()=>drawPerformance(portfolios[Number(performanceSelect.value)],hist));if(portfolios.length)drawPerformance(portfolios[0],hist);
   $('instrument-count').textContent=tickers.length;
   $('updated').textContent=hist.fetched_at?new Date(hist.fetched_at).toLocaleString('it-IT',{dateStyle:'short',timeStyle:'short'}):'—';
   const risk=hist.market_indices||{},riskGrid=$('risk-grid');riskGrid.replaceChildren();
