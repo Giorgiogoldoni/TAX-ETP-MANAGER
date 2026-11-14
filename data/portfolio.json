@@ -2,5 +2,151 @@
   "schema_version": 1,
   "as_of": null,
   "currency": "EUR",
-  "positions": []
+  "cost_basis_type": "average_purchase_price",
+  "positions": [
+    {
+      "id": "pos-001",
+      "raw_name": "AMUNDI ES50 D2XL A",
+      "quantity": 1,
+      "average_cost": 15.96,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-002",
+      "raw_name": "WISDOMTREE COPPER",
+      "quantity": 1,
+      "average_cost": 21.11,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-003",
+      "raw_name": "WISD EUR ST BK 3XDL",
+      "quantity": 1,
+      "average_cost": 3.38,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-004",
+      "raw_name": "ISH E M WL VL FAC A",
+      "quantity": 1,
+      "average_cost": 57.14,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-005",
+      "raw_name": "ISH MSCI EU M-C EQ W",
+      "quantity": 10,
+      "average_cost": 5.62,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-006",
+      "raw_name": "ISH MSCI BRAZ DIST",
+      "quantity": 1,
+      "average_cost": 20.81,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-007",
+      "raw_name": "ISH CORE MSCI EU",
+      "quantity": 10,
+      "average_cost": 24.95,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-008",
+      "raw_name": "SPDR S&P 400 US MID",
+      "quantity": 1,
+      "average_cost": 64.19,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-009",
+      "raw_name": "WISD COFFEE 2X DL LV",
+      "quantity": 1,
+      "average_cost": 0.58,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-010",
+      "raw_name": "WISD COCOA 2X DL LV",
+      "quantity": 1,
+      "average_cost": 12.08,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-011",
+      "raw_name": "AMUNDI STX 600 BANKS",
+      "quantity": 4,
+      "average_cost": 15.54,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-012",
+      "raw_name": "WISDOMTREE S&P 500",
+      "quantity": 1,
+      "average_cost": 38,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-013",
+      "raw_name": "WISDOMTREE EUR STOXX",
+      "quantity": 1,
+      "average_cost": 43.42,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-014",
+      "raw_name": "GRANITESHARES 3X LM",
+      "quantity": 1,
+      "average_cost": 9.21,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-015",
+      "raw_name": "WISDOM RUSS2000 ETN",
+      "quantity": 1,
+      "average_cost": 32.97,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-016",
+      "raw_name": "WISDOM NAS100 ETN",
+      "quantity": 1,
+      "average_cost": 36.66,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-017",
+      "raw_name": "WISDOMTREE S&P 500",
+      "quantity": 1,
+      "average_cost": 27.11,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    },
+    {
+      "id": "pos-018",
+      "raw_name": "WISDOMTREE WORLD",
+      "quantity": 1,
+      "average_cost": 24.1,
+      "currency": "EUR",
+      "identification_status": "unverified"
+    }
+  ]
 }
