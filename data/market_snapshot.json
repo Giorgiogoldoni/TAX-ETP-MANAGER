@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "as_of": null,
+  "source": null,
+  "currency": "EUR",
+  "status": "empty",
+  "instruments": [],
+  "fields": [
+    "ticker",
+    "price",
+    "ma38",
+    "ma200",
+    "roc38",
+    "ao",
+    "ema20",
+    "relative_strength",
+    "breadth",
+    "volatility_annualized",
+    "drawdown"
+  ],
+  "note": "Inserire osservazioni aggiornate con data e fonte. Nessun dato di mercato viene simulato."
+}
