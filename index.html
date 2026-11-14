@@ -2,104 +2,109 @@
 <html lang="it">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffffff">
-<title>TAX & ETP MANAGER — Portafoglio</title>
+<meta name="theme-color" content="#f5f7fb">
+<title>TAX & ETP MANAGER — Dashboard</title>
 <style>
-:root{color-scheme:light;--bg:#fff;--panel:#fff;--line:#e5e7eb;--text:#172033;--muted:#667085;--accent:#176b57;--good:#087443;--bad:#c0392b;--soft:#f7f8fa}
-*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-main{max-width:1440px;margin:auto;padding:26px 20px 56px}header,.head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
-h1{font-size:clamp(25px,4vw,36px);margin:0;letter-spacing:-.04em}h2{font-size:18px;margin:0 0 14px}.sub,.muted,.hint{color:var(--muted)}.tag{border:1px solid #d0d5dd;color:#344054;border-radius:99px;padding:5px 10px;font-size:12px;background:#fff}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:22px 0}.panel,.metric-card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px;margin-bottom:15px;box-shadow:0 1px 2px #1018280a}
-.metric-label{font-size:12px;color:var(--muted)}.metric{font-size:25px;font-weight:700;margin-top:4px;letter-spacing:-.03em}
-.notice{border:1px solid #f2d7a0;padding:11px 14px;background:#fffbeb;color:#7a4b00;border-radius:8px;margin:17px 0}
-table{width:100%;border-collapse:collapse;font-size:13px;min-width:800px}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-weight:600;background:#fafafa}
-.pill{display:inline-block;border-radius:30px;padding:3px 8px;font-size:12px;background:#f2f4f7}.good{color:var(--good)}.bad{color:var(--bad)}.empty{text-align:center;color:var(--muted);padding:22px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.risk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.risk-card{border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}.risk-number{font-size:27px;font-weight:750;letter-spacing:-.03em}.risk-note{font-size:12px;color:var(--muted)}.watchlist{display:flex;flex-wrap:wrap;gap:9px}.watch-chip{display:inline-flex;gap:7px;align-items:center;border:1px solid var(--line);border-radius:9px;padding:8px 11px;text-decoration:none;color:var(--text);background:#fff}.watch-chip b{color:var(--accent)}
-.chart-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
-.chart-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.chart-title{font-weight:650;font-size:14px}.ticker-link{color:#176b57;text-decoration:none;font-weight:750}.ticker-link:hover{text-decoration:underline}.chart-meta{font-size:12px;color:var(--muted)}.chart-value{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
-.chart{width:100%;height:150px;display:block;margin-top:8px;overflow:visible}.chart-grid{stroke:#e9edf2;stroke-width:1}.chart-line{fill:none;stroke:#176b57;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.chart-area{fill:#176b57;opacity:.08}
-.chart-foot{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:2px}
-.hint{font-size:12px;margin-top:10px}footer{color:var(--muted);font-size:12px;margin-top:22px}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.charts{grid-template-columns:1fr}.two{grid-template-columns:1fr}main{padding:18px 12px 40px}}
-@media(max-width:440px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.metric{font-size:21px}}
+:root{color-scheme:light;--bg:#f5f7fb;--panel:#fff;--line:#e6eaf0;--text:#172033;--muted:#697586;--accent:#176b57;--good:#087443;--bad:#c0392b;--shadow:0 8px 24px #1822300a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1440px;margin:auto;padding:28px 22px 56px}
+header,.head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+h1{font-size:clamp(25px,4vw,36px);margin:0;letter-spacing:-.045em}h2{font-size:18px;margin:0}.sub,.muted,.hint{color:var(--muted)}
+.tag{border:1px solid #d8e4df;color:#176b57;border-radius:99px;padding:6px 11px;font-size:12px;background:#eff8f4;font-weight:700}
+.notice{border:1px solid #cfe6db;padding:12px 15px;background:#f0faf5;color:#176b57;border-radius:12px;margin:20px 0}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0}
+.metric-card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:var(--shadow)}
+.metric-label{font-size:12px;color:var(--muted)}.metric{font-size:25px;font-weight:750;margin-top:4px;letter-spacing:-.035em}
+.portfolios{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.portfolio-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:var(--shadow);min-width:0}
+.portfolio-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:12px}
+.portfolio-title{font-size:18px;font-weight:750;letter-spacing:-.02em}.portfolio-desc{font-size:12px;color:var(--muted);margin-top:3px}
+.pie-layout{display:grid;grid-template-columns:minmax(145px, .85fr) minmax(0,1.15fr);gap:12px;align-items:center}
+.pie{width:100%;max-width:245px;aspect-ratio:1;display:block;margin:auto}
+.legend{display:grid;gap:8px}.legend-item{display:grid;grid-template-columns:11px 1fr auto;gap:8px;align-items:center;font-size:12px}
+.swatch{width:10px;height:10px;border-radius:3px}.legend-name{min-width:0}.legend-value{font-weight:750;font-variant-numeric:tabular-nums}
+.alloc-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:12px}.alloc-table th,.alloc-table td{text-align:left;padding:8px 7px;border-bottom:1px solid var(--line)}.alloc-table th{color:var(--muted);font-weight:650;background:#fafbfd}.alloc-table td:last-child,.alloc-table th:last-child{text-align:right}
+.pill{display:inline-block;border-radius:30px;padding:3px 8px;font-size:11px;background:#f1f4f7;color:#475467}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.risk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}.risk-card{border:1px solid var(--line);border-radius:13px;padding:13px;min-width:0}.risk-number{font-size:26px;font-weight:750;letter-spacing:-.03em}.risk-note{font-size:12px;color:var(--muted)}
+.chart{width:100%;height:85px;display:block;margin-top:5px}.chart-grid{stroke:#e9edf2;stroke-width:1}.chart-line{fill:none;stroke:#176b57;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}.chart-area{fill:#176b57;opacity:.08}
+.watchlist{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}.watch-chip{display:inline-flex;gap:7px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px 11px;text-decoration:none;color:var(--text);background:#fff}.watch-chip b{color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:650px}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-weight:650;background:#fafbfd}.ticker-link{color:var(--accent);text-decoration:none;font-weight:750}.ticker-link:hover{text-decoration:underline}
+.hint{font-size:12px;margin-top:12px}footer{color:var(--muted);font-size:12px;margin-top:22px;padding:8px 2px}
+@media(max-width:950px){.portfolios,.two{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:580px){main{padding:17px 12px 36px}.metrics{gap:8px}.metric-card{padding:12px}.metric{font-size:19px}.metric-label{font-size:11px}.portfolio-card,.panel{padding:15px}.pie-layout{grid-template-columns:minmax(125px,.8fr) minmax(0,1.2fr);gap:7px}.legend{gap:6px}.legend-item{font-size:11px}}
 </style></head>
 <body><main>
-<header><div><h1>TAX &amp; ETP MANAGER</h1><div class="sub">Portafoglio · andamento storico · gestione market-first</div></div><span class="tag">SFONDO BIANCO</span></header>
-<div class="notice" id="status">Caricamento delle serie storiche dal 1° gennaio 2026…</div>
-<section class="grid">
-<div class="metric-card"><div class="metric-label">Posizioni</div><div class="metric" id="positions">—</div></div>
-<div class="metric-card"><div class="metric-label">Valore di mercato</div><div class="metric" id="market-value">—</div></div>
-<div class="metric-card"><div class="metric-label">Costo di carico</div><div class="metric" id="cost-value">—</div></div>
-<div class="metric-card"><div class="metric-label">Risultato latente</div><div class="metric" id="pnl">—</div></div>
+<header><div><h1>TAX &amp; ETP MANAGER</h1><div class="sub">Dashboard strategica · portafogli modello · controllo del rischio</div></div><span class="tag">ALLOCazioni OBIETTIVO</span></header>
+<div class="notice" id="status">Caricamento dati e serie storiche…</div>
+<section class="metrics">
+<div class="metric-card"><div class="metric-label">Portafogli modello</div><div class="metric" id="portfolio-count">2</div></div>
+<div class="metric-card"><div class="metric-label">Strumenti in allocazione</div><div class="metric" id="instrument-count">—</div></div>
+<div class="metric-card"><div class="metric-label">Ultimo aggiornamento dati</div><div class="metric" id="updated" style="font-size:17px">—</div></div>
 </section>
-<section class="panel" id="market-risk"><div class="head"><h2>Rischio di mercato · VIX e VSTOXX</h2><span class="muted" id="risk-date">Dati in caricamento…</span></div><div class="risk-grid" id="risk-grid"><div class="empty">Caricamento volatilità…</div></div><div class="hint">Indicatori di volatilità implicita: servono come filtro di rischio e contesto, non generano da soli segnali automatici di acquisto o vendita. VSTOXX verrà mostrato quando il fornitore renderà disponibile una serie storica affidabile.</div></section>
-<section class="panel"><div class="head"><h2>Watchlist · strumenti da monitorare</h2><span class="muted">Apri il grafico cliccando sul ticker</span></div><div class="watchlist" id="watchlist"><span class="muted">Caricamento…</span></div></section>
-<section class="panel"><div class="head"><h2>Andamento di ogni strumento</h2><span class="muted" id="history-date">Dal 01/01/2026</span></div>
-<div class="charts" id="charts"><div class="empty">In attesa delle serie storiche…</div></div>
-<div class="hint">Grafici basati sui prezzi di chiusura giornalieri non rettificati. La variazione mostrata confronta il primo dato disponibile dal 1° gennaio 2026 con l'ultima chiusura acquisita. Gli strumenti duplicati nel portafoglio hanno grafici separati ma condividono la stessa serie.</div></section>
-<section class="panel"><h2>Posizioni e prezzi</h2><div style="overflow-x:auto"><table><thead><tr><th>Strumento</th><th>ISIN</th><th>Qtà</th><th>Carico medio</th><th>Ultima chiusura</th><th>Valore</th><th>P/L latente</th><th>Da inizio 2026</th></tr></thead><tbody id="portfolio"><tr><td colspan="8" class="empty">Dati in caricamento…</td></tr></tbody></table></div></section>
-<section class="panel"><h2>Qualità dei dati</h2><div id="coverage" class="muted">Verifica delle serie storiche…</div><div class="hint">Fonte storica automatizzata: Yahoo Finance, quando il simbolo di quotazione è disponibile. I dati non sono tick-by-tick. Le posizioni non abbinate a un simbolo affidabile restano senza grafico e senza valorizzazione.</div></section>
-<footer>Supporto informativo, non consulenza finanziaria o fiscale. Le performance di prezzo non includono necessariamente distribuzioni, imposte, commissioni o cambi. Verificare ISIN e sede di quotazione prima di utilizzare i dati per decisioni operative.</footer>
+<section class="portfolios" id="portfolios"><div class="portfolio-card">Caricamento portafogli…</div></section>
+<section class="two">
+<div class="panel"><div class="head"><h2>Rischio di mercato</h2><span class="muted" id="risk-date">—</span></div><div class="risk-grid" id="risk-grid"></div><div class="hint">VIX e VSTOXX misurano la volatilità implicita attesa. Sono indicatori di contesto, non segnali autonomi di acquisto o vendita.</div></div>
+<div class="panel"><div class="head"><h2>Watchlist</h2><span class="muted">Strumenti da monitorare</span></div><div class="watchlist" id="watchlist">Caricamento…</div><div class="hint">La watchlist non è inclusa automaticamente nei due portafogli modello.</div></div>
+</section>
+<section class="panel"><div class="head"><h2>Prezzi degli strumenti in allocazione</h2><span class="muted" id="price-date">—</span></div><div style="overflow-x:auto"><table><thead><tr><th>Portafoglio</th><th>Ticker</th><th>Strumento</th><th>Tipo</th><th>Ultima chiusura</th><th>Variazione da inizio serie</th></tr></thead><tbody id="prices"><tr><td colspan="6">Caricamento…</td></tr></tbody></table></div><div class="hint">Le percentuali delle torte sono pesi strategici obiettivo, non pesi ricavati dalle vecchie quantità del file portfolio.json. Non rappresentano posizioni detenute né valore corrente investito.</div></section>
+<footer>Supporto informativo, non consulenza finanziaria o fiscale. Gli ETP/ETN sono strumenti di debito dell'emittente e possono comportare rischio emittente e di struttura; l'assenza di leva non elimina tali rischi. Verificare KID, ISIN, mercato di quotazione, valuta e condizioni dell'emittente prima di operare.</footer>
 </main>
 <script>
 const $=id=>document.getElementById(id);
 const euro=n=>Number.isFinite(n)?n.toLocaleString('it-IT',{style:'currency',currency:'EUR'}):'—';
 const pct=n=>Number.isFinite(n)?(n>=0?'+':'')+n.toLocaleString('it-IT',{maximumFractionDigits:2})+'%':'—';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const colors=['#176b57','#4d8fba','#e5a54b','#7b70b2','#d16b72','#65a69a','#9b8067','#8292a8','#b5a24a'];
+function donut(items){
+ const total=items.reduce((s,x)=>s+x.weight,0);let angle=-90;
+ const paths=items.map((x,i)=>{const a=x.weight/total*360,start=angle;angle+=a;const r=84,cx=100,cy=100,rad=d=>d*Math.PI/180;const p1=[cx+r*Math.cos(rad(start)),cy+r*Math.sin(rad(start))],p2=[cx+r*Math.cos(rad(angle)),cy+r*Math.sin(rad(angle))];const large=a>180?1:0;return '<path d="M '+cx+' '+cy+' L '+p1.join(' ')+' A '+r+' '+r+' 0 '+large+' 1 '+p2.join(' ')+' Z" fill="'+colors[i%colors.length]+'" stroke="#fff" stroke-width="1.8"><title>'+esc(x.ticker||x.name)+': '+x.weight+'%</title></path>'}).join('');
+ return '<svg class="pie" viewBox="0 0 200 200" role="img" aria-label="Grafico a torta allocazione obiettivo">'+paths+'<circle cx="100" cy="100" r="48" fill="#fff"/><text x="100" y="96" text-anchor="middle" font-size="10" fill="#697586">PESO TOTALE</text><text x="100" y="116" text-anchor="middle" font-size="19" font-weight="750" fill="#172033">'+Math.round(total)+'%</text></svg>';
+}
 function sparkline(points){
- if(!points||points.length<2)return '<div class="empty">Serie storica non disponibile</div>';
- const vals=points.map(p=>p.close),min=Math.min(...vals),max=Math.max(...vals),span=max-min||1,w=640,h=150,pad=8;
+ if(!points||points.length<2)return '<div class="risk-note">Serie non disponibile</div>';
+ const vals=points.map(p=>p.close),min=Math.min(...vals),max=Math.max(...vals),span=max-min||1,w=500,h=85,pad=5;
  const xy=vals.map((v,i)=>[pad+i*(w-2*pad)/(vals.length-1),h-pad-(v-min)*(h-2*pad)/span]);
  const line=xy.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
- const area=line+' L'+xy[xy.length-1][0]+','+(h-pad)+' L'+xy[0][0]+','+(h-pad)+' Z';
- return '<svg class="chart" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="Grafico prezzi giornalieri"><line class="chart-grid" x1="0" y1="35" x2="'+w+'" y2="35"/><line class="chart-grid" x1="0" y1="75" x2="'+w+'" y2="75"/><line class="chart-grid" x1="0" y1="115" x2="'+w+'" y2="115"/><path class="chart-area" d="'+area+'"/><path class="chart-line" d="'+line+'"/></svg>';
+ return '<svg class="chart" viewBox="0 0 '+w+' '+h+'"><line class="chart-grid" x1="0" y1="42" x2="'+w+'" y2="42"/><path class="chart-line" d="'+line+'"/></svg>';
+}
+function portfolioCard(portfolio,index){
+ const items=portfolio.allocations||[];
+ const legend=items.map((x,i)=>'<div class="legend-item"><span class="swatch" style="background:'+colors[i%colors.length]+'"></span><span class="legend-name">'+esc(x.ticker||x.name)+'</span><span class="legend-value">'+x.weight+'%</span></div>').join('');
+ const rows=items.map(x=>'<tr><td>'+(x.ticker?'<a class="ticker-link" href="./chart.html?ticker='+encodeURIComponent(x.ticker)+'">'+esc(x.ticker)+'</a>':esc(x.name))+'</td><td>'+esc(x.name||'')+'</td><td><span class="pill">'+esc(x.type||'Liquidità')+'</span></td><td>'+x.weight+'%</td></tr>').join('');
+ return '<article class="portfolio-card"><div class="portfolio-head"><div><div class="portfolio-title">'+esc(portfolio.name)+'</div><div class="portfolio-desc">'+esc(portfolio.description)+'</div></div><span class="tag">'+(index===0?'CORE + SATELLITE':'SOLO ETP')+'</span></div><div class="pie-layout">'+donut(items)+'<div class="legend">'+legend+'</div></div><div style="overflow-x:auto"><table class="alloc-table"><thead><tr><th>Componente</th><th>Descrizione</th><th>Categoria</th><th>Peso</th></tr></thead><tbody>'+rows+'</tbody></table></div><div class="hint">'+esc(portfolio.note||'Pesi obiettivo modificabili.')+'</div></article>';
 }
 (async()=>{
  try{
-  const [p,h,i]=await Promise.all(['./data/portfolio.json','./data/history.json','./data/instruments.json'].map(x=>fetch(x).then(r=>{if(!r.ok)throw Error(x);return r.json()})));
-  const hist=h.instruments||{}, inst=Object.fromEntries((i.instruments||[]).map(x=>[x.ticker,x]));
-  // Market volatility gauges: latest close, 5-session change and compact history.
-  const risk=h.market_indices||{}, riskGrid=$('risk-grid'); riskGrid.replaceChildren();
-  const riskLabel=(name,last)=>{if(!last)return 'Serie non disponibile';if(name==='VIX')return last<15?'Volatilità contenuta':last<20?'Volatilità moderata':last<30?'Volatilità elevata':'Stress di mercato';return last<15?'Volatilità contenuta':last<20?'Volatilità moderata':last<30?'Volatilità elevata':'Stress di mercato';};
+  const [targets,hist,instruments,watchData]=await Promise.all([
+   fetch('./data/targets.json').then(r=>{if(!r.ok)throw Error('targets.json');return r.json()}),
+   fetch('./data/history.json').then(r=>{if(!r.ok)throw Error('history.json');return r.json()}),
+   fetch('./data/instruments.json').then(r=>{if(!r.ok)throw Error('instruments.json');return r.json()}),
+   fetch('./data/watchlist.json').then(r=>r.ok?r.json():{tickers:[]})
+  ]);
+  const portfolios=targets.portfolios||[],allItems=portfolios.flatMap(p=>p.allocations||[]),tickers=[...new Set(allItems.map(x=>x.ticker).filter(Boolean))];
+  $('portfolios').innerHTML=portfolios.map(portfolioCard).join('');
+  $('instrument-count').textContent=tickers.length;
+  $('updated').textContent=hist.fetched_at?new Date(hist.fetched_at).toLocaleString('it-IT',{dateStyle:'short',timeStyle:'short'}):'—';
+  const risk=hist.market_indices||{},riskGrid=$('risk-grid');riskGrid.replaceChildren();
   ['VIX','VSTOXX'].forEach(name=>{
-   const item=risk[name], series=item?.prices||[], last=series.at(-1), prev=series.at(-6)||series.at(-2);
-   const change=last&&prev?(last.close/prev.close-1)*100:NaN;
+   const item=risk[name],series=item?.prices||[],last=series.at(-1),prev=series.at(-6)||series.at(-2),change=last&&prev?(last.close/prev.close-1)*100:NaN;
    const card=document.createElement('article');card.className='risk-card';
-   card.innerHTML='<div class="chart-head"><div><div class="chart-title">'+name+'</div><div class="chart-meta">'+(item?.name||'Indice di volatilità implicita')+'</div></div><div class="chart-value"><div class="risk-number">'+(last?last.close.toLocaleString('it-IT',{minimumFractionDigits:2,maximumFractionDigits:2}):'—')+'</div><div class="chart-meta">'+pct(change)+' · 5 sedute</div></div></div>'+sparkline(series)+'<div class="risk-note">'+(last?riskLabel(name,last.close)+' · ultima chiusura '+last.date:'Dato non disponibile dal feed storico')+'</div>';
+   const label=last?(last.close<15?'Contenuta':last.close<20?'Moderata':last.close<30?'Elevata':'Stress di mercato'):'Dato non disponibile';
+   card.innerHTML='<div class="head"><div><b>'+name+'</b><div class="risk-note">'+esc(item?.name||'Volatilità implicita')+'</div></div><div style="text-align:right"><div class="risk-number">'+(last?last.close.toFixed(2):'—')+'</div><div class="risk-note">'+pct(change)+' · 5 sedute</div></div></div>'+sparkline(series)+'<div class="risk-note">'+label+(last?' · '+last.date:'')+'</div>';
    riskGrid.appendChild(card);
   });
-  $('risk-date').textContent='Ultima seduta: '+(risk.VIX?.prices?.at(-1)?.date||h.latest_date||'—');
-  const watch=(await fetch('./data/watchlist.json').then(r=>r.ok?r.json():{tickers:[]})).tickers||[];
-  const watchBox=$('watchlist');watchBox.replaceChildren();
-  watch.forEach(t=>{const a=document.createElement('a');a.className='watch-chip';a.href='./chart.html?ticker='+encodeURIComponent(t);a.innerHTML='<b>'+esc(t)+'</b><span class="chart-meta">'+(hist[t]?.prices?.at(-1)?euro(hist[t].prices.at(-1).close):'Serie assente')+'</span>';watchBox.appendChild(a)});
-  const rows=(p.positions||[]).map(x=>{
-   const series=hist[x.ticker]?.prices||[],last=series.at(-1),first=series[0],qty=Number(x.quantity),cost=Number(x.average_cost);
-   const value=last?qty*last.close:NaN,invested=qty*cost,pnl=value-invested,fromStart=first&&last?(last.close/first.close-1)*100:NaN;
-   return {...x,series,last,first,value,invested,pnl,fromStart,info:inst[x.ticker]};
-  });
-  const valued=rows.filter(x=>Number.isFinite(x.value));
-  const total=valued.reduce((s,x)=>s+x.value,0),cost=valued.reduce((s,x)=>s+x.invested,0),pnl=total-cost;
-  $('positions').textContent=rows.length;
-  $('market-value').textContent=euro(total);
-  $('cost-value').textContent=euro(cost);
-  $('pnl').textContent=euro(pnl);$('pnl').className='metric '+(pnl>=0?'good':'bad');
-  $('history-date').textContent='Dal 01/01/2026 · aggiornato '+(h.fetched_at||'data non indicata');
-  $('status').textContent=h.status==='ok'?'Serie storiche caricate. Ultima data disponibile: '+(h.latest_date||'—')+'.': 'Dati storici parziali: '+(h.message||'alcuni simboli non sono stati trovati.');
-  $('status').style.background=h.status==='ok'?'#ecfdf3':'#fffbeb';$('status').style.borderColor=h.status==='ok'?'#abefc6':'#f2d7a0';$('status').style.color=h.status==='ok'?'#05603a':'#7a4b00';
-  const charts=$('charts');charts.replaceChildren();
-  rows.forEach(x=>{
-   const div=document.createElement('article');div.className='chart-card';
-   const change=x.fromStart;
-   div.innerHTML='<div class="chart-head"><div><div class="chart-title">'+esc(x.raw_name)+'</div><div class="chart-meta">'+(x.ticker?'<a class="ticker-link" href="./chart.html?ticker='+encodeURIComponent(x.ticker)+'">'+esc(x.ticker)+'</a>':'ISIN da identificare')+' · '+esc(x.isin||'')+'</div></div><div class="chart-value">'+pct(change)+'<div class="chart-meta">'+(x.last?euro(x.last.close):'Serie assente')+'</div></div></div>'+sparkline(x.series)+'<div class="chart-foot"><span>'+(x.first?x.first.date:'—')+'</span><span>'+(x.last?x.last.date:'—')+'</span></div>';
-   charts.appendChild(div);
-  });
-  const body=$('portfolio');body.replaceChildren();
-  rows.forEach(x=>{
-   const tr=document.createElement('tr'),vals=[x.raw_name,x.isin||'Da identificare',x.quantity,euro(x.average_cost),x.last?euro(x.last.close):'—',Number.isFinite(x.value)?euro(x.value):'—',Number.isFinite(x.pnl)?euro(x.pnl):'—',pct(x.fromStart)];
-   vals.forEach((v,j)=>{const td=document.createElement('td');if(j===0&&x.ticker){td.innerHTML='<a class="ticker-link" href="./chart.html?ticker='+encodeURIComponent(x.ticker)+'">'+esc(x.ticker)+'</a><div class="chart-meta">'+esc(x.raw_name)+'</div>'}else td.textContent=v;if(j===6)td.className=x.pnl>=0?'good':'bad';tr.appendChild(td)});body.appendChild(tr);
-  });
-  const failed=rows.filter(x=>!x.last);
-  $('coverage').textContent=valued.length+' posizioni valorizzate su '+rows.length+'. '+(failed.length?'Serie mancanti: '+failed.map(x=>x.raw_name).join('; '):'Tutte le posizioni hanno una serie.');
- }catch(e){$('status').textContent='Dati storici non ancora disponibili: '+e.message+'. Il recupero viene avviato dal workflow GitHub Actions.';console.error(e)}
+  $('risk-date').textContent='Ultima seduta '+(hist.latest_date||'—');
+  const watch=$('watchlist');watch.replaceChildren();
+  (watchData.tickers||[]).forEach(t=>{const a=document.createElement('a');a.className='watch-chip';a.href='./chart.html?ticker='+encodeURIComponent(t);a.innerHTML='<b>'+esc(t)+'</b><span class="muted">'+(hist.instruments?.[t]?.prices?.at(-1)?euro(hist.instruments[t].prices.at(-1).close):'—')+'</span>';watch.appendChild(a)});
+  const inst=Object.fromEntries((instruments.instruments||[]).map(x=>[x.ticker,x])),body=$('prices');body.replaceChildren();
+  portfolios.forEach(p=>(p.allocations||[]).filter(x=>x.ticker).forEach(x=>{
+   const series=hist.instruments?.[x.ticker]?.prices||[],last=series.at(-1),first=series[0],tr=document.createElement('tr');
+   const cells=[p.short_name||p.name,x.ticker,x.name||inst[x.ticker]?.name||'',x.type||inst[x.ticker]?.type||'—',last?euro(last.close):'—',first&&last?pct((last.close/first.close-1)*100):'—'];
+   cells.forEach((v,j)=>{const td=document.createElement('td');if(j===1)td.innerHTML='<a class="ticker-link" href="./chart.html?ticker='+encodeURIComponent(x.ticker)+'">'+esc(v)+'</a>';else td.textContent=v;tr.appendChild(td)});body.appendChild(tr);
+  }));
+  $('price-date').textContent='Ultima chiusura '+(hist.latest_date||'—');
+  $('status').textContent='Dashboard aggiornata. Le allocazioni mostrate sono obiettivi strategici: le vecchie quantità delle posizioni vendute sono ignorate.';
+ }catch(e){$('status').textContent='Errore nel caricamento: '+e.message+'. Verifica la presenza dei file dati e il workflow GitHub Actions.';console.error(e)}
 })();
 </script></body></html>
