@@ -2,32 +2,78 @@
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grafico strumento | TAX & ETP MANAGER</title>
 <style>
 :root{color-scheme:light;--ink:#172033;--muted:#667085;--line:#e5e7eb;--green:#176b57}
-*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:14px/1.5 system-ui,sans-serif}main{max-width:1160px;margin:auto;padding:24px 16px 48px}a{color:var(--green);text-decoration:none}h1{font-size:clamp(24px,4vw,34px);margin:8px 0 2px}h2{font-size:16px;margin:0 0 8px}.muted{color:var(--muted)}.panel,.metric{border:1px solid var(--line);border-radius:12px;padding:15px;margin:14px 0;background:#fff}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:15px 0}.label{font-size:12px;color:var(--muted)}.value{font-size:20px;font-weight:700}.chart{width:100%;height:320px;display:block}.chart#roc,.chart#ao,.chart#rvgi{height:170px}svg text{font:11px system-ui;fill:#667085}.gridline{stroke:#e9edf2}.price{fill:none;stroke:#176b57;stroke-width:2}.ma38{fill:none;stroke:#d97706;stroke-width:1.7}.ma200{fill:none;stroke:#2563eb;stroke-width:1.7}.roc{fill:none;stroke:#7c3aed;stroke-width:1.8}.ao{fill:none;stroke:#0891b2;stroke-width:1.8}.signal{fill:none;stroke:#d97706;stroke-width:1.5}table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--muted)}@media(max-width:650px){.metrics{grid-template-columns:repeat(2,1fr)}.value{font-size:17px}}
+*{box-sizing:border-box}body{margin:0;background:#f7f8fa;color:var(--ink);font:14px/1.5 system-ui,sans-serif}main{max-width:1160px;margin:auto;padding:24px 16px 48px}a{color:var(--green);text-decoration:none}h1{font-size:clamp(24px,4vw,34px);margin:8px 0 2px}h2{font-size:16px;margin:0 0 5px}.muted{color:var(--muted)}.panel,.metric{border:1px solid var(--line);border-radius:12px;padding:15px;margin:14px 0;background:#fff}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:15px 0}.label{font-size:12px;color:var(--muted)}.value{font-size:20px;font-weight:700}.chart{width:100%;height:340px;display:block;overflow:visible}.chart.small{height:190px}.chart text{font:11px system-ui;fill:#667085}.gridline{stroke:#e9edf2}.price{fill:none;stroke:#176b57;stroke-width:2.4}.ma38{fill:none;stroke:#d97706;stroke-width:1.8}.ma200{fill:none;stroke:#2563eb;stroke-width:1.8}.roc{fill:none;stroke:#7c3aed;stroke-width:1.8}.ao{fill:none;stroke:#0891b2;stroke-width:1.8}.signal{fill:none;stroke:#d97706;stroke-width:1.6}.toplinks{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.tv-button{display:inline-block;background:#2962ff;color:white;padding:7px 11px;border-radius:8px;font-weight:700;font-size:12px}.status-error{color:#a12b24;background:#fff4f2;border-color:#f3c5c0}table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--muted)}@media(max-width:650px){.metrics{grid-template-columns:repeat(2,1fr)}.value{font-size:17px}.chart{height:270px}.chart.small{height:165px}}
 </style></head><body><main>
-<a href="./">← Torna al portafoglio</a><h1 id="title">Grafico strumento</h1><div id="subtitle" class="muted">Serie storica giornaliera dal 1° gennaio 2026</div>
-<div class="panel" id="status">Caricamento…</div><section class="metrics" id="metrics"></section>
-<section class="panel"><h2>Prezzo + MA38 + MA200</h2><div class="muted">Prezzo di chiusura e medie mobili</div><svg id="price" class="chart" viewBox="0 0 1000 320"></svg></section>
-<section class="panel"><h2>ROC 38</h2><div class="muted">Momentum a 38 sedute</div><svg id="roc" class="chart" viewBox="0 0 1000 170"></svg></section>
-<section class="panel"><h2>Awesome Oscillator + EMA 5</h2><div class="muted" id="aoNote">Calcolato sui dati OHLC</div><svg id="ao" class="chart" viewBox="0 0 1000 170"></svg></section>
-<section class="panel"><h2>RVGI + linea di segnale</h2><div class="muted" id="rvgiNote">Calcolato sui dati OHLC</div><svg id="rvgi" class="chart" viewBox="0 0 1000 170"></svg></section>
-<section class="panel"><h2>Lettura dei segnali</h2><table><thead><tr><th>Indicatore</th><th>Valore</th><th>Segnale descrittivo</th></tr></thead><tbody id="signals"></tbody></table><p class="muted">MA38/MA200 e ROC38 sono calcolati sui prezzi di chiusura. AO = SMA5 della mediana (High+Low)/2 meno SMA34, con EMA5 di segnale. RVGI usa lo smoothing 1-2-2-1 su close-open e high-low, con media 4 come segnale. Prezzi non rettificati: distribuzioni escluse.</p></section>
+<div class="toplinks"><a href="./">← Torna alla dashboard</a><a id="tv-link" class="tv-button" href="https://www.tradingview.com/" target="_blank" rel="noopener">Apri su TradingView ↗</a></div>
+<h1 id="title">Grafico strumento</h1><div id="subtitle" class="muted">Serie storica giornaliera</div>
+<div class="panel" id="status">Caricamento dati…</div><section class="metrics" id="metrics"></section>
+<section class="panel"><h2>Prezzo + MA38 + MA200</h2><div class="muted">Prezzo di chiusura, media a 38 sedute e media a 200 sedute</div><svg id="price" class="chart" viewBox="0 0 1000 340" preserveAspectRatio="none"></svg></section>
+<section class="panel"><h2>ROC 38</h2><div class="muted">Momentum a 38 sedute</div><svg id="roc" class="chart small" viewBox="0 0 1000 190" preserveAspectRatio="none"></svg></section>
+<section class="panel"><h2>Awesome Oscillator + EMA 5</h2><div class="muted" id="aoNote">Calcolato sui dati OHLC</div><svg id="ao" class="chart small" viewBox="0 0 1000 190" preserveAspectRatio="none"></svg></section>
+<section class="panel"><h2>RVGI + linea di segnale</h2><div class="muted" id="rvgiNote">Calcolato sui dati OHLC</div><svg id="rvgi" class="chart small" viewBox="0 0 1000 190" preserveAspectRatio="none"></svg></section>
+<section class="panel"><h2>Lettura dei segnali</h2><table><thead><tr><th>Indicatore</th><th>Valore</th><th>Segnale descrittivo</th></tr></thead><tbody id="signals"></tbody></table><p class="muted">MA38/MA200 e ROC38 sono calcolati sui prezzi di chiusura. AO = SMA5 della mediana (High+Low)/2 meno SMA34, con EMA5 di segnale. RVGI usa lo smoothing 1-2-2-1 su close-open e high-low, con media 4 come segnale. Prezzi non rettificati: distribuzioni escluse dagli indicatori tecnici.</p></section>
 </main><script>
-const $=id=>document.getElementById(id),fmt=n=>Number.isFinite(n)?n.toLocaleString('it-IT',{maximumFractionDigits:3}):'—',pct=n=>Number.isFinite(n)?(n>0?'+':'')+n.toFixed(2)+'%':'—';
+const $=id=>document.getElementById(id);
+const fmt=n=>Number.isFinite(n)?n.toLocaleString('it-IT',{maximumFractionDigits:3}):'—';
+const pct=n=>Number.isFinite(n)?(n>0?'+':'')+n.toFixed(2)+'%':'—';
 const sma=(a,k)=>a.map((v,i)=>i<k-1?null:a.slice(i-k+1,i+1).reduce((x,y)=>x+y,0)/k);
-const ema=(a,k)=>{let o=[],v=null,al=2/(k+1);a.forEach((x,i)=>{v=v===null?x:al*x+(1-al)*v;o.push(i<k-1?null:v)});return o};
-const roc=(a,k)=>a.map((v,i)=>i<k?null:(v/a[i-k]-1)*100);
-function draw(id,sets,height,includeZero){let svg=$(id),all=sets.flatMap(s=>s.data.filter(Number.isFinite));if(!all.length){svg.innerHTML='<text x="18" y="30">Dati non disponibili</text>';return}let lo=Math.min(...all),hi=Math.max(...all);if(includeZero){lo=Math.min(0,lo);hi=Math.max(0,hi)}let d=hi-lo||1;lo-=d*.08;hi+=d*.08;let w=1000,p=20,grid='';for(let j=0;j<5;j++){let y=p+j*(height-2*p)/4;grid+='<line class="gridline" x1="0" y1="'+y+'" x2="'+w+'" y2="'+y+'"/><text x="3" y="'+(y-3)+'">'+fmt(hi-j*(hi-lo)/4)+'</text>'}let paths=sets.map(s=>{let pts=[];s.data.forEach((v,i)=>{if(v==null||!Number.isFinite(v))return;let x=p+i*(w-2*p)/(s.data.length-1),y=height-p-(v-lo)/(hi-lo)*(height-2*p);pts.push((pts.length?'L':'M')+x.toFixed(1)+','+y.toFixed(1))});return '<path class="'+s.cls+'" d="'+pts.join(' ')+'"/>'}).join('');svg.innerHTML=grid+paths}
-(async()=>{try{let t=(new URLSearchParams(location.search).get('ticker')||'').trim().toUpperCase();if(!t)throw Error('Ticker mancante nella URL. Torna alla dashboard e seleziona uno strumento.');
-let urls=['./data/history.json','./data/instruments.json'];
-let responses=await Promise.all(urls.map(u=>fetch(u,{cache:'no-store'})));
-for(let j=0;j<responses.length;j++){if(!responses[j].ok)throw Error('Impossibile caricare '+urls[j]+' (HTTP '+responses[j].status+').')}
-let [h,i]=await Promise.all(responses.map(r=>r.json()));
-if(!h.instruments)throw Error('Il file storico non contiene la sezione instruments.');
-let entry=h.instruments[t];let z=entry?.prices;
-if(!Array.isArray(z)||!z.length)throw Error('Nessuna serie storica per '+t+'. Aggiorna i dati dal workflow GitHub Actions.');
-z=z.filter(x=>Number.isFinite(Number(x.close))).map(x=>({...x,close:Number(x.close)}));
-if(z.length<2)throw Error('Serie storica insufficiente per '+t+'.');let name=(i.instruments||[]).find(x=>x.ticker===t)?.name||t,c=z.map(x=>x.close),n=c.length,k=n-1,m38=sma(c,38),m200=sma(c,200),r=roc(c,38);$('title').textContent=t+' — '+name;$('subtitle').textContent=z[0].date+' → '+z[k].date+' · '+n+' sedute · ISIN '+(((i.instruments||[]).find(x=>x.ticker===t)||{}).isin||'—'));$('status').textContent='Fonte Yahoo Finance · aggiornamento dataset '+h.fetched_at+' · ultima chiusura '+fmt(c[k])+' EUR · serie prezzi non rettificati per indicatori tecnici';$('metrics').innerHTML=[['Ultima chiusura',fmt(c[k])+' €'],['ROC38',pct(r[k])],['MA38',fmt(m38[k])+' €'],['MA200',fmt(m200[k])+' €']].map(x=>'<div class="metric"><div class="label">'+x[0]+'</div><div class="value">'+x[1]+'</div></div>').join('');draw('price',[{data:c,cls:'price'},{data:m38,cls:'ma38'},{data:m200,cls:'ma200'}],320,false);draw('roc',[{data:r,cls:'roc'}],170,true);
-let ok=z.every(x=>Number.isFinite(x.high)&&Number.isFinite(x.low)&&Number.isFinite(x.open));if(ok){let med=z.map(x=>(x.high+x.low)/2),s5=sma(med,5),s34=sma(med,34),ao=s5.map((v,j)=>v==null||s34[j]==null?null:v-s34[j]),ae=ema(ao.map(v=>v==null?0:v),5).map((v,j)=>ao[j]==null?null:v);draw('ao',[{data:ao,cls:'ao'},{data:ae,cls:'signal'}],170,true);$('aoNote').textContent='AO: '+fmt(ao[k])+' · EMA5: '+fmt(ae[k]);let num=z.map(x=>x.close-x.open),den=z.map(x=>x.high-x.low),sm=a=>a.map((v,j)=>j<3?null:(a[j]+2*a[j-1]+2*a[j-2]+a[j-3])/6),sn=sm(num),sd=sm(den),rv=sn.map((v,j)=>v==null||!sd[j]?null:v/sd[j]),rs=sma(rv.map(v=>v==null?0:v),4).map((v,j)=>rv[j]==null?null:v);draw('rvgi',[{data:rv,cls:'ao'},{data:rs,cls:'signal'}],170,true);$('rvgiNote').textContent='RVGI: '+fmt(rv[k])+' · segnale: '+fmt(rs[k]);}else{$('aoNote').textContent='OHLC in aggiornamento: eseguire il workflow di aggiornamento storico.';$('rvgiNote').textContent='OHLC in aggiornamento: eseguire il workflow di aggiornamento storico.';draw('ao',[],170,true);draw('rvgi',[],170,true)}
-let rows=[['Prezzo / MA38',c[k]>m38[k]?'Sopra':'Sotto',c[k]>m38[k]?'positivo':'debole'],['Prezzo / MA200',c[k]>m200[k]?'Sopra':'Sotto',c[k]>m200[k]?'trend primario positivo':'trend primario debole'],['ROC38',pct(r[k]),r[k]>0?'momentum positivo':'momentum negativo'],['AO',ok?fmt((s5[k]||0)-(s34[k]||0)):'—',ok?'valutare rispetto allo zero e alla EMA5':'non disponibile'],['RVGI',ok?'calcolato':'—',ok?'confrontare linea e segnale':'non disponibile']];$('signals').innerHTML=rows.map(x=>'<tr><td>'+x[0]+'</td><td>'+x[1]+'</td><td>'+x[2]+'</td></tr>').join('');
-}catch(e){$('status').textContent='Errore grafico: '+e.message;console.error('TAX ETP chart error:',e)}})();
+const ema=(a,k)=>{const out=[];let value=null;const alpha=2/(k+1);a.forEach((x,i)=>{if(!Number.isFinite(x)){out.push(null);return}value=value===null?x:alpha*x+(1-alpha)*value;out.push(i<k-1?null:value)});return out};
+const roc=(a,k)=>a.map((v,i)=>i<k||!a[i-k]?null:(v/a[i-k]-1)*100);
+function draw(id,sets,height,zero=false){
+ const svg=$(id),valid=sets.flatMap(s=>(s.data||[]).filter(v=>Number.isFinite(v)));
+ if(!valid.length){svg.innerHTML='<text x="22" y="34">Serie non disponibile per questo indicatore</text>';return}
+ let min=Math.min(...valid),max=Math.max(...valid);if(zero){min=Math.min(0,min);max=Math.max(0,max)}
+ const span=max-min||1,lo=min-span*.08,hi=max+span*.08,w=1000,p=34,inner=height-2*p;
+ let grid='';for(let j=0;j<5;j++){const y=p+j*inner/4,val=hi-j*(hi-lo)/4;grid+='<line class="gridline" x1="'+p+'" y1="'+y+'" x2="'+(w-p)+'" y2="'+y+'"/><text x="'+(p-7)+'" y="'+(y-3)+'" text-anchor="end">'+fmt(val)+'</text>'}
+ const paths=sets.map(s=>{const points=[];(s.data||[]).forEach((v,i)=>{if(!Number.isFinite(v))return;const x=p+i*(w-2*p)/Math.max(1,s.data.length-1),y=height-p-(v-lo)/(hi-lo)*inner;points.push((points.length?'L':'M')+x.toFixed(1)+','+y.toFixed(1))});return '<path class="'+s.cls+'" d="'+points.join(' ')+'"/>'}).join('');
+ svg.setAttribute('viewBox','0 0 1000 '+height);svg.innerHTML=grid+paths;
+}
+function movingSignal(rows){
+ const close=rows.map(x=>x.close),high=rows.map(x=>x.high),low=rows.map(x=>x.low),open=rows.map(x=>x.open);
+ const m38=sma(close,38),m200=sma(close,200),r=roc(close,38);
+ const med=rows.map(x=>(x.high+x.low)/2),s5=sma(med,5),s34=sma(med,34),ao=s5.map((v,i)=>v==null||s34[i]==null?null:v-s34[i]),aoEma=ema(ao,5);
+ const smooth=a=>a.map((v,i)=>i<3?null:(a[i]+2*a[i-1]+2*a[i-2]+a[i-3])/6);
+ const numerator=smooth(rows.map(x=>x.close-x.open)),denominator=smooth(rows.map(x=>x.high-x.low));
+ const rvgi=numerator.map((v,i)=>v==null||!denominator[i]?null:v/denominator[i]),rvgiSignal=sma(rvgi,4);
+ return {close,m38,m200,r,ao,aoEma,rvgi,rvgiSignal};
+}
+(async()=>{
+ try{
+  const ticker=(new URLSearchParams(location.search).get('ticker')||'').trim().toUpperCase();
+  if(!ticker)throw Error('Ticker mancante nella URL. Torna alla dashboard e seleziona uno strumento.');
+  $('tv-link').href='https://www.tradingview.com/search/?query='+encodeURIComponent(ticker);
+  const response=await fetch('./data/history.json?v='+Date.now(),{cache:'no-store'});
+  if(!response.ok)throw Error('history.json non raggiungibile (HTTP '+response.status+').');
+  const h=await response.json();
+  const ir=await fetch('./data/instruments.json?v='+Date.now(),{cache:'no-store'});
+  if(!ir.ok)throw Error('instruments.json non raggiungibile (HTTP '+ir.status+').');
+  const master=await ir.json(),instrument=(master.instruments||[]).find(x=>x.ticker===ticker);
+  const entry=h.instruments&&h.instruments[ticker],raw=entry&&entry.prices;
+  if(!Array.isArray(raw)||!raw.length)throw Error('La serie storica di '+ticker+' non è presente nel dataset. Controllare il workflow di aggiornamento prezzi.');
+  const rows=raw.map(x=>({date:x.date,close:Number(x.close),open:Number(x.open),high:Number(x.high),low:Number(x.low)})).filter(x=>x.date&&Number.isFinite(x.close)&&x.close>0).sort((a,b)=>a.date.localeCompare(b.date));
+  if(rows.length<2)throw Error('Sono presenti meno di due prezzi validi per '+ticker+'.');
+  const ind=movingSignal(rows),last=rows.length-1;
+  $('title').textContent=ticker+' — '+(instrument?.name||ticker);
+  $('subtitle').textContent=rows[0].date+' → '+rows[last].date+' · '+rows.length+' sedute · ISIN '+(instrument?.isin||'—')+' · '+(entry.symbol||'');
+  $('status').textContent='Dati caricati correttamente · '+h.message+' · ultima chiusura '+fmt(ind.close[last])+' EUR · aggiornamento '+(h.fetched_at||'—');
+  $('metrics').innerHTML=[['Ultima chiusura',fmt(ind.close[last])+' €'],['ROC38',pct(ind.r[last])],['MA38',fmt(ind.m38[last])+' €'],['MA200',fmt(ind.m200[last])+' €']].map(x=>'<div class="metric"><div class="label">'+x[0]+'</div><div class="value">'+x[1]+'</div></div>').join('');
+  draw('price',[{data:ind.close,cls:'price'},{data:ind.m38,cls:'ma38'},{data:ind.m200,cls:'ma200'}],340);
+  draw('roc',[{data:ind.r,cls:'roc'}],190,true);
+  const hasOhlc=rows.every(x=>Number.isFinite(x.open)&&Number.isFinite(x.high)&&Number.isFinite(x.low));
+  if(hasOhlc){
+   draw('ao',[{data:ind.ao,cls:'ao'},{data:ind.aoEma,cls:'signal'}],190,true);
+   draw('rvgi',[{data:ind.rvgi,cls:'ao'},{data:ind.rvgiSignal,cls:'signal'}],190,true);
+   $('aoNote').textContent='AO: '+fmt(ind.ao[last])+' · EMA5: '+fmt(ind.aoEma[last]);
+   $('rvgiNote').textContent='RVGI: '+fmt(ind.rvgi[last])+' · segnale: '+fmt(ind.rvgiSignal[last]);
+  }else{
+   $('aoNote').textContent='Dati OHLC non disponibili per tutte le sedute.';
+   $('rvgiNote').textContent='Dati OHLC non disponibili per tutte le sedute.';
+   draw('ao',[],190,true);draw('rvgi',[],190,true);
+  }
+  const rowsSignal=[['Prezzo / MA38',ind.close[last]>=ind.m38[last]?'Sopra':'Sotto',ind.close[last]>=ind.m38[last]?'prezzo sopra la media a 38 sedute':'prezzo sotto la media a 38 sedute'],['Prezzo / MA200',ind.close[last]>=ind.m200[last]?'Sopra':'Sotto',ind.close[last]>=ind.m200[last]?'trend di lungo periodo sopra la media':'trend di lungo periodo sotto la media'],['ROC38',pct(ind.r[last]),ind.r[last]>0?'momentum positivo':'momentum negativo'],['AO',fmt(ind.ao[last]),ind.ao[last]>0?'sopra lo zero':'sotto lo zero'],['RVGI',fmt(ind.rvgi[last]),ind.rvgi[last]>=ind.rvgiSignal[last]?'sopra la linea di segnale':'sotto la linea di segnale']];
+  $('signals').innerHTML=rowsSignal.map(x=>'<tr><td>'+x[0]+'</td><td>'+x[1]+'</td><td>'+x[2]+'</td></tr>').join('');
+ }catch(e){
+  $('status').className='panel status-error';$('status').textContent='Problema nel grafico: '+e.message;console.error('TAX ETP single ticker chart:',e);
+ }
+})();
 </script></body></html>
