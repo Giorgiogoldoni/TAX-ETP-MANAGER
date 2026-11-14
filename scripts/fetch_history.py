@@ -2,6 +2,7 @@
 """Download daily closing prices from 2026-01-01 for portfolio instruments."""
 import json
 import os
+import urllib.request
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
@@ -123,7 +124,8 @@ def main():
 
     # Broad market risk gauges: implied volatility indices, not portfolio instruments.
     market_indices = {}
-    market_symbols = {"VIX": "^VIX", "VSTOXX": "^V2TX"}
+    # VIX from Yahoo Finance; VSTOXX from the official STOXX public history file.
+    market_symbols = {"VIX": "^VIX"}
     for name, symbol in market_symbols.items():
         try:
             frame = yf.Ticker(symbol).history(start=START, end=END, interval="1d",
@@ -132,7 +134,7 @@ def main():
             if series:
                 market_indices[name] = {
                     "symbol": symbol,
-                    "name": "CBOE Volatility Index" if name == "VIX" else "EURO STOXX 50 Volatility (VSTOXX)",
+                    "name": "CBOE Volatility Index",
                     "source": "Yahoo Finance",
                     "unit": "index points",
                     "prices": series,
@@ -143,6 +145,41 @@ def main():
                 print(f"MARKET INDEX UNRESOLVED {name}: {symbol}")
         except Exception as exc:
             print(f"MARKET INDEX ERROR {name}: {str(exc)[:180]}")
+
+    try:
+        url = "https://www.stoxx.com/document/Indices/Current/HistoricalData/h_v2tx.txt"
+        request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 TAX-ETP-MANAGER"})
+        with urllib.request.urlopen(request, timeout=30) as response:
+            lines = response.read().decode("utf-8").splitlines()
+        vstoxx = []
+        for line in lines[1:]:
+            parts = line.strip().split(";")
+            if len(parts) != 3:
+                continue
+            try:
+                day = datetime.strptime(parts[0], "%d.%m.%Y").date()
+                value = float(parts[2])
+            except (ValueError, TypeError):
+                continue
+            if START <= day.isoformat() < END and value > 0:
+                vstoxx.append({"date": day.isoformat(), "close": round(value, 4)})
+        vstoxx.sort(key=lambda x: x["date"])
+        if vstoxx:
+            market_indices["VSTOXX"] = {
+                "symbol": "V2TX",
+                "name": "EURO STOXX 50 Volatility (VSTOXX)",
+                "source": "STOXX official historical data",
+                "unit": "index points",
+                "prices": vstoxx,
+                "first_date": vstoxx[0]["date"],
+                "last_date": vstoxx[-1]["date"],
+            }
+            print(f"VSTOXX: official STOXX history {len(vstoxx)} daily closes "
+                  f"({vstoxx[0]['date']} — {vstoxx[-1]['date']})")
+        else:
+            print("MARKET INDEX UNRESOLVED VSTOXX: official STOXX history returned no rows")
+    except Exception as exc:
+        print(f"MARKET INDEX ERROR VSTOXX: {str(exc)[:180]}")
 
     all_dates = [v["last_date"] for v in data.values()] + [v["last_date"] for v in market_indices.values()]
     payload = {
