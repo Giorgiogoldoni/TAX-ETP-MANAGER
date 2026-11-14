@@ -1,22 +1,153 @@
 {
   "schema_version": 1,
-  "as_of": null,
-  "source": null,
+  "as_of": "2026-11-13",
+  "source": "Borsa Italiana; ultime chiusure/riferimenti disponibili per singola sede",
   "currency": "EUR",
-  "status": "empty",
-  "instruments": [],
-  "fields": [
-    "ticker",
-    "price",
-    "ma38",
-    "ma200",
-    "roc38",
-    "ao",
-    "ema20",
-    "relative_strength",
-    "breadth",
-    "volatility_annualized",
-    "drawdown"
-  ],
-  "note": "Inserire osservazioni aggiornate con data e fonte. Nessun dato di mercato viene simulato."
+  "status": "partial",
+  "instruments": [
+    {
+      "ticker": "DJLEV",
+      "isin": "FR0010468983",
+      "price": 86.81,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Euronext Paris",
+      "source": "https://www.borsaitaliana.it/borsa/etf/scheda/FR0010468983-XPAR.html?lang=it"
+    },
+    {
+      "ticker": "COPA",
+      "isin": "GB00B15KXQ89",
+      "price": 47.24,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etc-etn/scheda/GB00B15KXQ89-ETFP.html?lang=it"
+    },
+    {
+      "ticker": "3BAL",
+      "isin": "IE00BLS09N40",
+      "price": 78.79,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etc-etn/dettaglio.html?isin=IE00BLS09N40&lang=it"
+    },
+    {
+      "ticker": "IWVL",
+      "isin": "IE00BP3QZB59",
+      "price": 69.87,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etf/scheda/IE00BP3QZB59-ETFP.html"
+    },
+    {
+      "ticker": "IESZ",
+      "isin": "IE00BQN1KC32",
+      "price": 12.092,
+      "price_currency": "EUR",
+      "price_date": "2026-11-12",
+      "venue": "Borsa Italiana Milano; ultimo riferimento disponibile",
+      "source": "https://www.borsaitaliana.it/borsa/etf/scheda/IE00BQN1KC32-ETFP.html?lang=it"
+    },
+    {
+      "ticker": "IBZL",
+      "isin": "IE00B0M63516",
+      "price": 23.495,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etf/scheda/IE00B0M63516-ETFP.html"
+    },
+    {
+      "ticker": "IMEU",
+      "isin": "IE00B1YZSC51",
+      "price": 41.41,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Euronext Amsterdam",
+      "source": "https://www.borsaitaliana.it/borsa/etf/scheda/IE00B1YZSC51-XAMS.html?lang=it"
+    },
+    {
+      "ticker": "SPY4",
+      "isin": "IE00B4YBJ215",
+      "price": 103.7,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Euronext Paris",
+      "source": "https://www.borsaitaliana.it/borsa/etf/scheda/IE00B4YBJ215-XPAR.html?lang=it"
+    },
+    {
+      "ticker": "LCFE",
+      "isin": "JE00B2NFTD12",
+      "price": 2.4405,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etc-etn/scheda/JE00B2NFTD12-ETFP.html?lang=it"
+    },
+    {
+      "ticker": "LCOC",
+      "isin": "JE00B2NFV803",
+      "price": 14.83,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etc-etn/scheda/JE00B2NFV803-ETFP.html?lang=it"
+    },
+    {
+      "ticker": "BNK",
+      "isin": "LU1834983477",
+      "price": 71.01,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etf/scheda/LU1834983477-ETFP.html"
+    },
+    {
+      "ticker": "WSPX",
+      "isin": "XS2427355958",
+      "price": 41.595,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etc-etn/scheda/XS2427355958-ETFP.html?lang=it"
+    },
+    {
+      "ticker": "WS5X",
+      "isin": "XS2427362145",
+      "price": 46.81,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etc-etn/scheda/XS2427362145-ETFP.html?lang=it"
+    },
+    {
+      "ticker": "WRTY",
+      "isin": "XS3003324129",
+      "price": 36.725,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etc-etn/scheda/XS3003324129-ETFP.html?lang=it"
+    },
+    {
+      "ticker": "WNAS",
+      "isin": "XS3003325795",
+      "price": 36.88,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etc-etn/dettaglio.html?isin=XS3003325795"
+    },
+    {
+      "ticker": "WWRD",
+      "isin": "XS3151433813",
+      "price": 25.83,
+      "price_currency": "EUR",
+      "price_date": "2026-11-13",
+      "venue": "Borsa Italiana Milano",
+      "source": "https://www.borsaitaliana.it/borsa/etc-etn/dettaglio.html?isin=XS3151433813&lang=it"
+    }
+  ]
 }
