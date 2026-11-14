@@ -52,9 +52,9 @@ def clean_series(frame):
         if close <= 0:
             continue
         item = {"date": stamp.strftime("%Y-%m-%d"), "close": round(close, 8)}
-        for key in ("Open", "High", "Low"):
+        for key in ("Open", "High", "Low", "Adj Close"):
             if key in row and row[key] is not None:
-                item[key.lower()] = round(float(row[key]), 8)
+                item["adjclose" if key == "Adj Close" else key.lower()] = round(float(row[key]), 8)
         result.append(item)
     return result
 
@@ -107,7 +107,7 @@ def main():
                             "native_currency": "GBX",
                             "eur_gbp": rate,
                             **{k: round((item[k] / 100.0) / rate, 8)
-                               for k in ("open", "high", "low") if k in item},
+                               for k in ("open", "high", "low", "adjclose") if k in item},
                         })
                 prices = converted
                 quote_currency = "GBX"
