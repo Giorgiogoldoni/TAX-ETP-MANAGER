@@ -6,6 +6,7 @@ on:
     paths:
       - 'data/portfolio.json'
       - 'data/instruments.json'
+      - 'data/targets.json'
       - 'data/watchlist.json'
       - 'scripts/fetch_history.py'
       - '.github/workflows/update-history.yml'
