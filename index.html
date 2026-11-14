@@ -47,7 +47,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;min-width:650px}th,td{t
 <div class="panel"><div class="head"><h2>Rischio di mercato</h2><span class="muted" id="risk-date">—</span></div><div class="risk-grid" id="risk-grid"></div><div class="hint">VIX e VSTOXX misurano la volatilità implicita attesa. Sono indicatori di contesto, non segnali autonomi di acquisto o vendita.</div></div>
 <div class="panel"><div class="head"><h2>Watchlist</h2><span class="muted">Strumenti da monitorare</span></div><div class="watchlist" id="watchlist">Caricamento…</div><div class="hint">La watchlist non è inclusa automaticamente nei due portafogli modello.</div></div>
 </section>
-<section class="panel"><div class="head"><h2>Prezzi degli strumenti in allocazione</h2><span class="muted" id="price-date">—</span></div><div style="overflow-x:auto"><table><thead><tr><th>Portafoglio</th><th>Ticker</th><th>Strumento</th><th>Tipo</th><th>Ultima chiusura</th><th>Variazione da inizio serie</th></tr></thead><tbody id="prices"><tr><td colspan="6">Caricamento…</td></tr></tbody></table></div><div class="hint">Le percentuali delle torte sono pesi strategici obiettivo, non pesi ricavati dalle vecchie quantità del file portfolio.json. Non rappresentano posizioni detenute né valore corrente investito.</div></section>
+<section class="panel"><div class="head"><h2>Strumenti: portafogli + watchlist</h2><span class="muted" id="price-date">—</span></div><div style="overflow-x:auto"><table><thead><tr><th>Stato</th><th>Ticker</th><th>Strumento</th><th>Tipo</th><th>Ultima chiusura</th><th>Variazione da inizio serie</th></tr></thead><tbody id="prices"><tr><td colspan="6">Caricamento…</td></tr></tbody></table></div><div class="hint">Elenco unico degli strumenti presenti nei portafogli modello e nella watchlist. La colonna Stato distingue le due funzioni. Le percentuali delle torte sono pesi obiettivo, non posizioni correnti.</div></section>
 <footer>Supporto informativo, non consulenza finanziaria o fiscale. Gli ETP/ETN sono strumenti di debito dell'emittente e possono comportare rischio emittente e di struttura; l'assenza di leva non elimina tali rischi. Verificare KID, ISIN, mercato di quotazione, valuta e condizioni dell'emittente prima di operare.</footer>
 </main>
 <script>
@@ -82,7 +82,7 @@ function portfolioCard(portfolio,index){
    fetch('./data/instruments.json').then(r=>{if(!r.ok)throw Error('instruments.json');return r.json()}),
    fetch('./data/watchlist.json').then(r=>r.ok?r.json():{tickers:[]})
   ]);
-  const portfolios=targets.portfolios||[],allItems=portfolios.flatMap(p=>p.allocations||[]),tickers=[...new Set(allItems.map(x=>x.ticker).filter(Boolean))];
+  const portfolios=targets.portfolios||[],allItems=portfolios.flatMap(p=>p.allocations||[]),watchTickers=watchData.tickers||[],master=(instruments.instruments||[]),tickers=[...new Set([...allItems.map(x=>x.ticker),...watchTickers,...master.map(x=>x.ticker)].filter(Boolean))];
   $('portfolios').innerHTML=portfolios.map(portfolioCard).join('');
   $('instrument-count').textContent=tickers.length;
   $('updated').textContent=hist.fetched_at?new Date(hist.fetched_at).toLocaleString('it-IT',{dateStyle:'short',timeStyle:'short'}):'—';
@@ -97,12 +97,16 @@ function portfolioCard(portfolio,index){
   $('risk-date').textContent='Ultima seduta '+(hist.latest_date||'—');
   const watch=$('watchlist');watch.replaceChildren();
   (watchData.tickers||[]).forEach(t=>{const a=document.createElement('a');a.className='watch-chip';a.href='./chart.html?ticker='+encodeURIComponent(t);a.innerHTML='<b>'+esc(t)+'</b><span class="muted">'+(hist.instruments?.[t]?.prices?.at(-1)?euro(hist.instruments[t].prices.at(-1).close):'—')+'</span>';watch.appendChild(a)});
-  const inst=Object.fromEntries((instruments.instruments||[]).map(x=>[x.ticker,x])),body=$('prices');body.replaceChildren();
-  portfolios.forEach(p=>(p.allocations||[]).filter(x=>x.ticker).forEach(x=>{
-   const series=hist.instruments?.[x.ticker]?.prices||[],last=series.at(-1),first=series[0],tr=document.createElement('tr');
-   const cells=[p.short_name||p.name,x.ticker,x.name||inst[x.ticker]?.name||'',x.type||inst[x.ticker]?.type||'—',last?euro(last.close):'—',first&&last?pct((last.close/first.close-1)*100):'—'];
-   cells.forEach((v,j)=>{const td=document.createElement('td');if(j===1)td.innerHTML='<a class="ticker-link" href="./chart.html?ticker='+encodeURIComponent(x.ticker)+'">'+esc(v)+'</a>';else td.textContent=v;tr.appendChild(td)});body.appendChild(tr);
-  }));
+  const inst=Object.fromEntries(master.map(x=>[x.ticker,x])),body=$('prices');body.replaceChildren();
+  tickers.forEach(t=>{
+   const series=hist.instruments?.[t]?.prices||[],last=series.at(-1),first=series[0],tr=document.createElement('tr');
+   const inPortfolios=portfolios.filter(p=>(p.allocations||[]).some(x=>x.ticker===t)).map(p=>p.short_name||p.name);
+   const inWatch=watchTickers.includes(t);
+   const state=[...inPortfolios,inWatch?'Watchlist':null].filter(Boolean).join(' · ')||'Anagrafica';
+   const item=allItems.find(x=>x.ticker===t);
+   const cells=[state,t,item?.name||inst[t]?.name||'',inst[t]?.type||item?.type||'—',last?euro(last.close):'—',first&&last?pct((last.close/first.close-1)*100):'—'];
+   cells.forEach((v,j)=>{const td=document.createElement('td');if(j===1)td.innerHTML='<a class="ticker-link" href="./chart.html?ticker='+encodeURIComponent(t)+'">'+esc(v)+'</a>';else td.textContent=v;tr.appendChild(td)});body.appendChild(tr);
+  });
   $('price-date').textContent='Ultima chiusura '+(hist.latest_date||'—');
   $('status').textContent='Dashboard aggiornata. Le allocazioni mostrate sono obiettivi strategici: le vecchie quantità delle posizioni vendute sono ignorate.';
  }catch(e){$('status').textContent='Errore nel caricamento: '+e.message+'. Verifica la presenza dei file dati e il workflow GitHub Actions.';console.error(e)}
