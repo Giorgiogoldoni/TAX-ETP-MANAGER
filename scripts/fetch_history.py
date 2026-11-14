@@ -34,7 +34,7 @@ CANDIDATES = {
     "WNAS": ["WNAS.MI", "WNAS.DE"],
     "WWRD": ["WWRD.MI", "WWRD.DE"],
     "IWMO": ["IWMO.MI", "IS3R.DE", "IWMO.L"],
-    "4EML": ["4EML.MI", "4EML.L", "4EML.DE"],
+    "3EML": ["3EML.MI", "3EML.L", "3E3M.DE"],
     "LCCN": ["LCCN.MI", "LCCN.PA"],
     "HSTE": ["HSTE.MI", "HSTE.L"],
 }
