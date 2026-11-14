@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PORTFOLIO = ROOT / "data" / "portfolio.json"
 OUT = ROOT / "data" / "history.json"
 WATCHLIST = ROOT / "data" / "watchlist.json"
+INSTRUMENTS = ROOT / "data" / "instruments.json"
+TARGETS = ROOT / "data" / "targets.json"
 START = "2026-01-01"
 END = (date.today() + timedelta(days=1)).isoformat()
 
@@ -30,6 +32,7 @@ CANDIDATES = {
     "LCOC": ["LCOC.MI", "LCOC.L"],
     "BNK": ["BNK.MI", "BNK.PA"],
     "WSPX": ["WSPX.MI", "WSPX.DE"],
+    "WSPE": ["WSPE.MI"],
     "WS5X": ["WS5X.MI", "W5SX.MI", "W5SX.DE"],
     "WRTY": ["WRTY.MI", "WRTY.DE"],
     "WNAS": ["WNAS.MI", "WNAS.DE"],
@@ -58,7 +61,11 @@ def clean_series(frame):
 def main():
     portfolio = json.loads(PORTFOLIO.read_text(encoding="utf-8"))
     watchlist = json.loads(WATCHLIST.read_text(encoding="utf-8")) if WATCHLIST.exists() else {"tickers": []}
-    tickers = sorted({p.get("ticker") for p in portfolio.get("positions", []) if p.get("ticker")} | set(watchlist.get("tickers", [])))
+    instruments = json.loads(INSTRUMENTS.read_text(encoding="utf-8")) if INSTRUMENTS.exists() else {"instruments": []}
+    targets = json.loads(TARGETS.read_text(encoding="utf-8")) if TARGETS.exists() else {"portfolios": []}
+    master_tickers = {x.get("ticker") for x in instruments.get("instruments", []) if x.get("ticker")}
+    target_tickers = {x.get("ticker") for p in targets.get("portfolios", []) for x in p.get("allocations", []) if x.get("ticker")}
+    tickers = sorted({p.get("ticker") for p in portfolio.get("positions", []) if p.get("ticker")} | set(watchlist.get("tickers", [])) | master_tickers | target_tickers)
     data, unresolved = {}, []
     for ticker in tickers:
         attempts = CANDIDATES.get(ticker, [ticker + ".MI"])
