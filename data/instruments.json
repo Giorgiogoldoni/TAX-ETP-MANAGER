@@ -139,12 +139,14 @@
       "identification_status": "verified"
     },
     {
-      "ticker": "4EML",
-      "isin": null,
-      "name": "4EML — identificazione da verificare",
-      "type": "unverified",
-      "leverage": "unknown",
-      "identification_status": "needs_confirmation"
+      "ticker": "3EML",
+      "isin": "IE00BYTYHN28",
+      "name": "WisdomTree Emerging Markets 3x Daily Leveraged",
+      "type": "ETN",
+      "leverage": "3x daily",
+      "identification_status": "verified",
+      "exchange_ticker": "3EML.MI",
+      "yahoo_symbol": "3EML.MI"
     }
   ]
 }
