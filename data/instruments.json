@@ -113,6 +113,38 @@
       "name": "WisdomTree World",
       "type": "ETN",
       "leverage": "unleveraged"
+    },
+    {
+      "ticker": "IWMO",
+      "isin": "IE00BP3QZ825",
+      "name": "iShares Edge MSCI World Momentum Factor UCITS ETF",
+      "type": "ETF",
+      "leverage": "unleveraged",
+      "identification_status": "verified"
+    },
+    {
+      "ticker": "LCCN",
+      "isin": "LU1841731745",
+      "name": "Amundi MSCI China UCITS ETF Acc",
+      "type": "ETF",
+      "leverage": "unleveraged",
+      "identification_status": "verified"
+    },
+    {
+      "ticker": "HSTE",
+      "isin": "IE00BMWXKN31",
+      "name": "HSBC Hang Seng Tech UCITS ETF",
+      "type": "ETF",
+      "leverage": "unleveraged",
+      "identification_status": "verified"
+    },
+    {
+      "ticker": "4EML",
+      "isin": null,
+      "name": "4EML — identificazione da verificare",
+      "type": "unverified",
+      "leverage": "unknown",
+      "identification_status": "needs_confirmation"
     }
   ]
 }
