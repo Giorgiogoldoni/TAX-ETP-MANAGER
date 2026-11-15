@@ -35,7 +35,7 @@ def fx_history(symbol):
 def main():
     config = json.loads(CONFIG.read_text(encoding="utf-8"))
     etfs = config.get("verification_etfs", [])
-    fx = {"USD": fx_history("EURUSD=X")}
+    try:\n        fx = {"USD": fx_history("EURUSD=X")}\n    except Exception as exc:\n        print(f"FX USD/EUR non disponibile: {str(exc)[:160]}")\n        fx = {"USD": {}}
     instruments, unresolved = {}, []
 
     for etf in etfs:
