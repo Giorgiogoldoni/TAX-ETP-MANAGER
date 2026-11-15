@@ -41,6 +41,14 @@ CANDIDATES = {
     "3EML": ["3EML.MI", "3EML.L", "3E3M.DE"],
     "LCCN": ["LCCN.MI", "LCCN.PA"],
     "HSTE": ["HSTE.MI", "HSTE.L"],
+    "CSSPX": ["CSSPX.MI", "CSSPX.L"],
+    "SMEA": ["SMEA.MI", "SMEA.AS"],
+    "SJPA": ["SJPA.MI", "SJPA.L"],
+    "XMME": ["XMME.MI", "XMME.L"],
+    "IWQU": ["IWQU.MI", "IS3Q.DE", "IWQU.L"],
+    "CEMK": ["CEMK.DE"],
+    "XBLC": ["XBLC.MI", "XBLC.DE"],
+    "SGLN": ["SGLN.MI", "PPFB.DE", "SLGNI.PA"],
 }
 
 def clean_series(frame):
