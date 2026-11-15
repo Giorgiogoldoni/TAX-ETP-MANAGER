@@ -120,7 +120,7 @@ function portfolioCard(portfolio,index){
  const items=portfolio.allocations||[];
  const legend=items.map((x,i)=>'<div class="legend-item"><span class="swatch" style="background:'+colors[i%colors.length]+'"></span><span class="legend-name">'+esc(x.ticker||x.name)+'</span><span class="legend-value">'+x.weight+'%</span></div>').join('');
  const rows=items.map(x=>'<tr><td>'+(x.ticker?tickerCell(x.ticker):esc(x.name))+'</td><td>'+esc(x.name||'')+'</td><td><span class="pill">'+esc(x.type||'Liquidità')+'</span></td><td>'+x.weight+'%</td></tr>').join('');
- return '<article class="portfolio-card"><div class="portfolio-head"><div><div class="portfolio-title">'+esc(portfolio.name)+'</div><div class="portfolio-desc">'+esc(portfolio.description)+'</div></div><span class="tag">'+(index===0?'CORE + SATELLITE':'SOLO ETP')+'</span></div><div class="pie-layout">'+donut(items)+'<div class="legend">'+legend+'</div></div><div style="overflow-x:auto"><table class="alloc-table"><thead><tr><th>Componente</th><th>Descrizione</th><th>Categoria</th><th>Peso</th></tr></thead><tbody>'+rows+'</tbody></table></div><div class="hint">'+esc(portfolio.note||'Pesi obiettivo modificabili.')+'</div></article>';
+ return '<article class="portfolio-card"><div class="portfolio-head"><div><div class="portfolio-title">'+esc(portfolio.name)+'</div><div class="portfolio-desc">'+esc(portfolio.description)+'</div></div><span class="tag">'+(portfolio.badge|| (index===0?'CORE + SATELLITE':index===1?'SOLO ETP':'GLOBALE BILANCIATO'))+'</span></div><div class="pie-layout">'+donut(items)+'<div class="legend">'+legend+'</div></div><div style="overflow-x:auto"><table class="alloc-table"><thead><tr><th>Componente</th><th>Descrizione</th><th>Categoria</th><th>Peso</th></tr></thead><tbody>'+rows+'</tbody></table></div><div class="hint">'+esc(portfolio.note||'Pesi obiettivo modificabili.')+'</div></article>';
 }
 (async()=>{
  try{
@@ -133,7 +133,7 @@ function portfolioCard(portfolio,index){
   const portfolios=targets.portfolios||[],allItems=portfolios.flatMap(p=>p.allocations||[]),watchTickers=watchData.tickers||[],master=(instruments.instruments||[]),tickers=[...new Set([...allItems.map(x=>x.ticker),...watchTickers,...master.map(x=>x.ticker)].filter(Boolean))];
   $('portfolios').innerHTML=portfolios.map(portfolioCard).join('');
   const performanceSelect=$('performance-select');performanceSelect.innerHTML=portfolios.map((p,i)=>'<option value="'+i+'">'+esc(p.name)+'</option>').join('');performanceSelect.addEventListener('change',()=>drawPerformance(portfolios[Number(performanceSelect.value)],hist));if(portfolios.length)drawPerformance(portfolios[0],hist);
-  $('instrument-count').textContent=tickers.length;
+  $('portfolio-count').textContent=portfolios.length;$('instrument-count').textContent=tickers.length;
   $('updated').textContent=hist.fetched_at?new Date(hist.fetched_at).toLocaleString('it-IT',{dateStyle:'short',timeStyle:'short'}):'—';
   const risk=hist.market_indices||{},riskGrid=$('risk-grid');riskGrid.replaceChildren();
   ['VIX','VSTOXX'].forEach(name=>{
