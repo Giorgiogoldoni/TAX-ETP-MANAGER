@@ -54,7 +54,7 @@ function renderVerificationEtfs(){
  const ret=(prices,months)=>{
   if(!prices||prices.length<2)return null;
   const last=prices[prices.length-1],target=new Date(last.date+'T00:00:00Z');
-  target.setUTCMonth(target.getUTCMonth()-months);
+  target.setUTCDate(1);target.setUTCMonth(target.getUTCMonth()-months);
   const cutoff=target.toISOString().slice(0,10);
   let base=null;for(const p of prices){if(p.date<=cutoff)base=p;else break;}
   return base&&base.close>0?(last.close/base.close-1)*100:null;
