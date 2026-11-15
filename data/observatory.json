@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-11-15",
-  "status": "struttura iniziale: le opinioni e i flussi non sono ancora importati automaticamente",
+  "status": "pilota avviato: prima rilevazione manuale verificata su fonti ufficiali; flussi ETF e automazione non ancora attivi",
   "managers": [
     {
       "id": "blackrock",
@@ -16,11 +16,11 @@
       ],
       "sources": [
         {
-          "label": "Weekly Commentary",
+          "label": "Weekly Commentary · novembre 2026",
           "url": "https://www.blackrock.com/us/individual/insights/blackrock-investment-institute/weekly-commentary"
         },
         {
-          "label": "Investment Institute",
+          "label": "BlackRock Investment Institute",
           "url": "https://www.blackrock.com/institutions/en-global/institutional-insights"
         }
       ]
@@ -35,7 +35,7 @@
       ],
       "sources": [
         {
-          "label": "Research Center",
+          "label": "Global Investment Views · novembre 2026",
           "url": "https://research-center.amundi.com/article/global-investment-views-november-2026"
         }
       ]
@@ -47,12 +47,12 @@
       "focus": "Barometer, asset allocation, settori e rotazioni",
       "sources": [
         {
-          "label": "Barometer novembre 2026",
-          "url": "https://am.pictet.com/us/en/institutions/investment-views/multi-asset/2026/november-barometer-of-financial-markets-outlook"
+          "label": "Barometro · novembre 2026",
+          "url": "https://am.pictet.com/it/it/advisors/analisi-di-mercato/2026/barometro-novembre-2026"
         },
         {
-          "label": "Investment views",
-          "url": "https://am.pictet.com/"
+          "label": "Barometro dei mercati finanziari",
+          "url": "https://am.pictet.com/it/it/intermediaries/analisi-di-mercato/multi-asset/2026/barometro-dei-mercati-finanziari-previsioni-di-novembre"
         }
       ]
     },
@@ -66,12 +66,12 @@
       ],
       "sources": [
         {
-          "label": "Capital Markets Update",
-          "url": "https://institutional.fidelity.com/advisors/insights/series/capital-markets-update"
+          "label": "Capital Market Assumptions · H1 2026",
+          "url": "https://www.fidelityinternational.com/static/master/media/pdf/download-material/capital-market-assumptions-update-h1-2026-fidelity-international.pdf"
         },
         {
-          "label": "Capital Market Assumptions · H2 2026",
-          "url": "https://www.fidelity.com.au/sites/fidelity/assets/Capital-Market-Assumptions-update---H2-2026.pdf"
+          "label": "Fidelity International · Insights",
+          "url": "https://www.fidelityinternational.com/"
         }
       ]
     },
@@ -108,12 +108,12 @@
       ],
       "sources": [
         {
-          "label": "Investment Outlook",
-          "url": "https://www.invesco.com/it/it/approfondimenti.html"
+          "label": "Tactical Asset Allocation · novembre 2026",
+          "url": "https://www.invesco.com/content/dam/invesco/it/it/pdf/tactical-asset-allocation.pdf"
         },
         {
-          "label": "Capital Market Assumptions",
-          "url": "https://www.invesco.com/content/dam/invesco/emea/en/pdf/invesco-capital-market-assumption-eur.pdf"
+          "label": "Approfondimenti Invesco Italia",
+          "url": "https://www.invesco.com/it/it/approfondimenti.html"
         }
       ]
     },
@@ -335,7 +335,277 @@
       "role": "Flussi tematici, settoriali e materie prime"
     }
   ],
-  "observations": [],
+  "observations": [
+    {
+      "id": "2026-11-blackrock-1",
+      "manager_id": "blackrock",
+      "publisher": "BlackRock Investment Institute",
+      "report": "Weekly market commentary / highest-conviction views",
+      "published_at": "2026-11",
+      "captured_at": "2026-11-15",
+      "horizon": "Tattico, 6-12 mesi",
+      "topic": "Azionario USA",
+      "region": "USA",
+      "view": "Neutrale",
+      "previous_view": null,
+      "change": "Non confrontabile: prima rilevazione strutturata",
+      "summary": "Fondamentali AI ancora solidi, ma incertezza politica e volatilità di breve termine; mantiene esposizione neutrale agli USA.",
+      "url": "https://www.blackrock.com/us/individual/insights/blackrock-investment-institute/weekly-commentary",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: posizione esplicita nel report"
+    },
+    {
+      "id": "2026-11-blackrock-2",
+      "manager_id": "blackrock",
+      "publisher": "BlackRock Investment Institute",
+      "report": "Weekly market commentary / highest-conviction views",
+      "published_at": "2026-11",
+      "captured_at": "2026-11-15",
+      "horizon": "Tattico, 6-12 mesi",
+      "topic": "Azionario emergente",
+      "region": "Mercati emergenti",
+      "view": "Sovrappeso",
+      "previous_view": null,
+      "change": "Non confrontabile: prima rilevazione strutturata",
+      "summary": "Sovrappeso azioni emergenti, pur mantenendo attenzione alla volatilità legata al tema AI.",
+      "url": "https://www.blackrock.com/us/individual/insights/blackrock-investment-institute/weekly-commentary",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: posizione esplicita nel report"
+    },
+    {
+      "id": "2026-11-blackrock-3",
+      "manager_id": "blackrock",
+      "publisher": "BlackRock Investment Institute",
+      "report": "Weekly market commentary / highest-conviction views",
+      "published_at": "2026-11",
+      "captured_at": "2026-11-15",
+      "horizon": "Tattico, 6-12 mesi",
+      "topic": "Treasury USA breve scadenza",
+      "region": "USA",
+      "view": "Sovrappeso",
+      "previous_view": null,
+      "change": "Non confrontabile: prima rilevazione strutturata",
+      "summary": "Preferenza per Treasury USA a breve scadenza per reddito e protezione in caso di tassi più elevati; neutrale sulla duration lunga.",
+      "url": "https://www.blackrock.com/us/individual/insights/blackrock-investment-institute/weekly-commentary",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: posizione esplicita nel report"
+    },
+    {
+      "id": "2026-11-amundi-1",
+      "manager_id": "amundi",
+      "publisher": "Amundi Investment Institute",
+      "report": "Global Investment Views · novembre 2026",
+      "published_at": "2026-11-09",
+      "captured_at": "2026-11-15",
+      "horizon": "Tattico e strategico, secondo la sezione",
+      "topic": "Asset allocation globale",
+      "region": "Globale",
+      "view": "Moderatamente risk-on, selettivo",
+      "previous_view": null,
+      "change": "Non confrontabile: prima rilevazione strutturata",
+      "summary": "Approccio moderatamente favorevole al rischio, con diversificazione, qualità dei bilanci e coperture; attenzione a energia, geopolitica e investimenti AI.",
+      "url": "https://research-center.amundi.com/article/global-investment-views-november-2026",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: sintesi esplicita del report"
+    },
+    {
+      "id": "2026-11-amundi-2",
+      "manager_id": "amundi",
+      "publisher": "Amundi Equity Platform",
+      "report": "Global Investment Views · novembre 2026",
+      "published_at": "2026-11-09",
+      "captured_at": "2026-11-15",
+      "horizon": "Lungo termine / selezione tattica",
+      "topic": "Azioni",
+      "region": "Europa e Giappone",
+      "view": "Positivo",
+      "previous_view": null,
+      "change": "Non confrontabile: prima rilevazione strutturata",
+      "summary": "Preferisce mercati con valutazioni più interessanti, qualità e ciclici selezionati; favorevole anche agli emergenti, con selettività.",
+      "url": "https://research-center.amundi.com/article/global-investment-views-november-2026",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: posizioni regionali esplicite"
+    },
+    {
+      "id": "2026-11-amundi-3",
+      "manager_id": "amundi",
+      "publisher": "Amundi Fixed Income",
+      "report": "Global Investment Views · novembre 2026",
+      "published_at": "2026-11-09",
+      "captured_at": "2026-11-15",
+      "horizon": "Tattico",
+      "topic": "Duration Eurozona",
+      "region": "Eurozona",
+      "view": "Moderatamente positivo; preferenza periferici",
+      "previous_view": null,
+      "change": "Leggero aumento della view costruttiva",
+      "summary": "Più costruttiva sulla duration in Eurozona, con preferenza per periferici e curva più ripida; neutrale negli USA e Giappone.",
+      "url": "https://research-center.amundi.com/article/global-investment-views-november-2026",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: variazione descritta nel report"
+    },
+    {
+      "id": "2026-11-pictet-1",
+      "manager_id": "pictet",
+      "publisher": "Pictet Asset Management Strategy Unit",
+      "report": "Barometro · novembre 2026",
+      "published_at": "2026-11",
+      "captured_at": "2026-11-15",
+      "horizon": "Tattico",
+      "topic": "Azionario globale",
+      "region": "Globale",
+      "view": "Neutrale",
+      "previous_view": "Più positivo",
+      "change": "Ridotto a neutrale",
+      "summary": "Riduce l'esposizione azionaria a neutrale per condizioni finanziarie più restrittive, rischi geopolitici e costi di finanziamento degli investimenti AI.",
+      "url": "https://am.pictet.com/it/it/advisors/analisi-di-mercato/2026/barometro-novembre-2026",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: modifica esplicita nel report"
+    },
+    {
+      "id": "2026-11-pictet-2",
+      "manager_id": "pictet",
+      "publisher": "Pictet Asset Management Strategy Unit",
+      "report": "Barometro · novembre 2026",
+      "published_at": "2026-11",
+      "captured_at": "2026-11-15",
+      "horizon": "Tattico",
+      "topic": "Sanità",
+      "region": "Globale",
+      "view": "Sovrappeso",
+      "previous_view": "Neutrale",
+      "change": "Aumentato a sovrappeso",
+      "summary": "Promuove la sanità a sovrappeso per valutazioni relative e qualità; vede anche benefici potenziali dall'applicazione dell'AI alla diagnostica e alla ricerca farmaceutica.",
+      "url": "https://am.pictet.com/it/it/advisors/analisi-di-mercato/2026/barometro-novembre-2026",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: upgrade esplicito nel report"
+    },
+    {
+      "id": "2026-11-pictet-3",
+      "manager_id": "pictet",
+      "publisher": "Pictet Asset Management Strategy Unit",
+      "report": "Barometro · novembre 2026",
+      "published_at": "2026-11",
+      "captured_at": "2026-11-15",
+      "horizon": "Tattico",
+      "topic": "Azionario Cina",
+      "region": "Cina",
+      "view": "Sottopeso",
+      "previous_view": "Neutrale",
+      "change": "Declassato a sottopeso",
+      "summary": "Più prudente sulla Cina per fragilità di consumi e investimenti domestici; preferisce emergenti esclusa la Cina.",
+      "url": "https://am.pictet.com/it/it/advisors/analisi-di-mercato/2026/barometro-novembre-2026",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: downgrade esplicito nel report"
+    },
+    {
+      "id": "2026-11-fidelity-1",
+      "manager_id": "fidelity",
+      "publisher": "Fidelity International",
+      "report": "Capital Market Assumptions · H1 2026",
+      "published_at": "2026-04",
+      "captured_at": "2026-11-15",
+      "horizon": "Strategico, 10 anni",
+      "topic": "Rendimento atteso azioni emergenti",
+      "region": "Mercati emergenti",
+      "view": "8,0% annuo atteso in USD",
+      "previous_view": null,
+      "change": "Dato strategico; non è una view tattica",
+      "summary": "Stima di rendimento medio annuo a 10 anni per azioni emergenti: 8,0% in USD, lordo delle commissioni. Non confrontabile direttamente con i giudizi tattici mensili degli altri gestori.",
+      "url": "https://www.fidelityinternational.com/static/master/media/pdf/download-material/capital-market-assumptions-update-h1-2026-fidelity-international.pdf",
+      "source_type": "Stima quantitativa",
+      "confidence": "Alta per il dato pubblicato; previsione incerta per natura"
+    },
+    {
+      "id": "2026-11-fidelity-2",
+      "manager_id": "fidelity",
+      "publisher": "Fidelity International",
+      "report": "Capital Market Assumptions · H1 2026",
+      "published_at": "2026-04",
+      "captured_at": "2026-11-15",
+      "horizon": "Strategico, 10 anni",
+      "topic": "Rendimento atteso azioni mercati sviluppati",
+      "region": "Mercati sviluppati",
+      "view": "6,7% annuo atteso in USD",
+      "previous_view": null,
+      "change": "Dato strategico; non è una view tattica",
+      "summary": "Stima di rendimento medio annuo a 10 anni per azioni sviluppate: 6,7% in USD, lordo delle commissioni.",
+      "url": "https://www.fidelityinternational.com/static/master/media/pdf/download-material/capital-market-assumptions-update-h1-2026-fidelity-international.pdf",
+      "source_type": "Stima quantitativa",
+      "confidence": "Alta per il dato pubblicato; previsione incerta per natura"
+    },
+    {
+      "id": "2026-11-invesco-1",
+      "manager_id": "invesco",
+      "publisher": "Invesco",
+      "report": "Tactical Asset Allocation · novembre 2026",
+      "published_at": "2026-11",
+      "captured_at": "2026-11-15",
+      "horizon": "Tattico",
+      "topic": "Azionario rispetto all'obbligazionario",
+      "region": "Globale",
+      "view": "Moderato sovrappeso azionario",
+      "previous_view": null,
+      "change": "Non confrontabile: prima rilevazione strutturata",
+      "summary": "Mantiene un moderato sovrappeso sull'azionario rispetto all'obbligazionario, pur riconoscendo il deterioramento della propensione al rischio.",
+      "url": "https://www.invesco.com/content/dam/invesco/it/it/pdf/tactical-asset-allocation.pdf",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: posizione esplicita nel report"
+    },
+    {
+      "id": "2026-11-invesco-2",
+      "manager_id": "invesco",
+      "publisher": "Invesco",
+      "report": "Tactical Asset Allocation · novembre 2026",
+      "published_at": "2026-11",
+      "captured_at": "2026-11-15",
+      "horizon": "Tattico",
+      "topic": "Fattori azionari",
+      "region": "Globale",
+      "view": "Preferenza difensiva",
+      "previous_view": null,
+      "change": "Non confrontabile: prima rilevazione strutturata",
+      "summary": "Nell'azionario privilegia fattori e settori difensivi per affrontare condizioni finanziarie restrittive e rischi legati alla spesa AI.",
+      "url": "https://www.invesco.com/content/dam/invesco/it/it/pdf/tactical-asset-allocation.pdf",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: preferenza esplicita nel report"
+    },
+    {
+      "id": "2026-11-invesco-3",
+      "manager_id": "invesco",
+      "publisher": "Invesco",
+      "report": "Tactical Asset Allocation · novembre 2026",
+      "published_at": "2026-11",
+      "captured_at": "2026-11-15",
+      "horizon": "Tattico",
+      "topic": "Obbligazioni",
+      "region": "Globale",
+      "view": "Sovrappeso duration; sottopeso credito",
+      "previous_view": null,
+      "change": "Non confrontabile: prima rilevazione strutturata",
+      "summary": "Mantiene sovrappeso sulla duration e sottopeso sul credito, coerentemente con la preferenza per qualità e maggiore diversificazione.",
+      "url": "https://www.invesco.com/content/dam/invesco/it/it/pdf/tactical-asset-allocation.pdf",
+      "source_type": "View ufficiale",
+      "confidence": "Alta: posizioni esplicite nel report"
+    }
+  ],
   "flows": [],
-  "model_signals": []
+  "model_signals": [],
+  "pilot": {
+    "as_of": "2026-11-15",
+    "coverage": [
+      "blackrock",
+      "amundi",
+      "pictet",
+      "fidelity",
+      "invesco"
+    ],
+    "records": 14,
+    "method": "Prima estrazione manuale da fonti ufficiali. I giudizi tattici, le stime strategiche e le view di team diversi restano distinti. Nessun consensus numerico calcolato in assenza di serie storiche omogenee.",
+    "limitations": [
+      "Fidelity International: disponibile nel pilota il CMA H1 2026, orizzonte 10 anni; non confondere con Fidelity Investments/AART.",
+      "Flussi ETF non ancora acquisiti: richiedono una fonte e una metodologia omogenea per raccolta netta, periodo e categoria.",
+      "Le variazioni precedenti sono valorizzate solo quando esplicitamente dichiarate dal report."
+    ]
+  }
 }
