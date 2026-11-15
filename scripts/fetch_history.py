@@ -20,6 +20,14 @@ END = (date.today() + timedelta(days=1)).isoformat()
 # Prefer EUR trading lines. A candidate is accepted only when it returns
 # a usable daily Close series; no prices are synthesized or interpolated.
 CANDIDATES = {
+    "CSSPX": ["CSSPX.MI", "CSSPX.L"],
+    "SMEA": ["SMEA.MI", "SMEA.L", "EUNK.DE"],
+    "SJPA": ["SJPA.MI", "SJPA.L"],
+    "XMME": ["XMME.MI", "XMME.DE"],
+    "IWQU": ["IWQU.MI", "IS3Q.DE", "IWQU.L"],
+    "CEMK": ["CEMK.MI", "CEMK.DE"],
+    "XBLC": ["XBLC.MI", "XBLC.DE"],
+    "SGLN": ["SGLN.MI", "SGLN.L"],
     "DJLEV": ["DJLEV.MI", "DJLEV.PA"],
     "COPA": ["COPA.MI", "COPA.L"],
     "3BAL": ["3BAL.MI", "0LJI.DE", "3BAL.L"],
