@@ -6,6 +6,10 @@ Sistema autonomo di **gestione dinamica di mercato** per ETF, ETN, ETC e certifi
 
 La priorità è la qualità delle decisioni di investimento: selezione, mantenimento, riduzione e sostituzione degli strumenti in base a trend, momentum, forza relativa e rischio. La fiscalità è un livello successivo di ottimizzazione del risultato netto; non deve alterare un segnale di mercato valido.
 
+## Portafogli modello
+
+La dashboard presenta tre portafogli autonomi. I Portafogli 1 e 2 sono mantenuti invariati; il Portafoglio 3 è una proposta basata sulle view dei gestori, con esposizione esplicita al Giappone. I pesi sono obiettivi teorici e non rappresentano posizioni reali. Il modello 3 è definito in `data/targets.json`; gli strumenti e gli ISIN sono registrati in `data/instruments.json`.
+
 ## Architettura
 
 - `index.html`: dashboard operativa.
