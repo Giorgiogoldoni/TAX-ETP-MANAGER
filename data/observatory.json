@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-11-15",
-  "status": "Report sintetico dei cinque gestori aggiornato al 15 novembre 2026; flussi numerici mantenuti separati per universo geografico e metodologia.",
+  "status": "Osservatorio aggiornato al 15 novembre 2026; aggiunto paniere di ETF UCITS ad accumulazione per la verifica delle opinioni e benchmark MSCI World.",
   "managers": [
     {
       "id": "blackrock",
@@ -774,6 +774,206 @@
         "source_url": "https://www.fidelityinternational.com/static/master/media/pdf/download-material/capital-market-assumptions-update-h1-2026-fidelity-international.pdf",
         "flow_status": "Solo visione strategica; flussi non disponibili"
       }
+    ]
+  },
+  "verification_etfs": [
+    {
+      "id": "V_USA",
+      "name": "iShares Core S&P 500 UCITS ETF USD (Acc)",
+      "isin": "IE00B5BMR087",
+      "ticker": "CSSPX",
+      "yahoo_symbols": [
+        "CSSPX.MI"
+      ],
+      "quote_currency": "EUR",
+      "category": "Azionario USA",
+      "role": "Verifica view USA; esposizione core large cap",
+      "topics": [
+        "BlackRock: USA neutrale / AI e tecnologia",
+        "Amundi: opportunità tattiche USA",
+        "State Street: quadro azionario globale"
+      ],
+      "accumulating": true,
+      "benchmark": false,
+      "source_url": "https://www.blackrock.com/it/investitori-privati/products/253743/ishares-sp-500-b-ucits-etf-acc-fund"
+    },
+    {
+      "id": "V_TECH",
+      "name": "Xtrackers Nasdaq 100 UCITS ETF 1C",
+      "isin": "IE00BMFKG444",
+      "ticker": "XNAS",
+      "yahoo_symbols": [
+        "XNAS.MI"
+      ],
+      "quote_currency": "EUR",
+      "category": "Tecnologia / AI proxy",
+      "role": "Proxy azionario per verificare la preferenza su tecnologia e AI; non è un ETF AI puro",
+      "topics": [
+        "BlackRock: preferenza AI e tecnologia",
+        "Amundi: selettività sulle mega-cap tecnologiche",
+        "State Street: flussi settoriali tecnologia"
+      ],
+      "accumulating": true,
+      "benchmark": false,
+      "source_url": "https://www.borsaitaliana.it/borsa/etf/scheda/IE00BMFKG444-ETFP.html"
+    },
+    {
+      "id": "V_EU",
+      "name": "iShares Core MSCI Europe UCITS ETF EUR (Acc)",
+      "isin": "IE00B4K48X80",
+      "ticker": "SMEA",
+      "yahoo_symbols": [
+        "SMEA.MI"
+      ],
+      "quote_currency": "EUR",
+      "category": "Azionario Europa",
+      "role": "Verifica del giudizio sull'azionario europeo",
+      "topics": [
+        "BlackRock: Europa neutrale",
+        "Amundi: positiva sul lungo termine, neutrale tatticamente",
+        "State Street: quadro globale costruttivo"
+      ],
+      "accumulating": true,
+      "benchmark": false,
+      "source_url": "https://www.blackrock.com/it/investitori-privati/products/251861/ishares-msci-europe-ucits-etf-acc-fund"
+    },
+    {
+      "id": "V_EM",
+      "name": "Xtrackers MSCI Emerging Markets UCITS ETF 1C",
+      "isin": "IE00BTJRMP35",
+      "ticker": "XMME",
+      "yahoo_symbols": [
+        "XMME.MI",
+        "XMME.DE"
+      ],
+      "quote_currency": "EUR",
+      "category": "Azionario emergenti",
+      "role": "Verifica del consenso favorevole sui mercati emergenti",
+      "topics": [
+        "BlackRock: sovrappeso emergenti",
+        "Amundi: costruttiva e selettiva",
+        "DWS: quadro emergente differenziato"
+      ],
+      "accumulating": true,
+      "benchmark": false,
+      "source_url": "https://etf.dws.com/en-gb/AssetDownload/Index/de078545-737c-40ca-915b-59d076e18683/Factsheet.pdf"
+    },
+    {
+      "id": "V_TB",
+      "name": "iShares USD Treasury Bond 0-1yr UCITS ETF (Acc)",
+      "isin": "IE00BGSF1X88",
+      "ticker": "IB01",
+      "yahoo_symbols": [
+        "IB01.L"
+      ],
+      "quote_currency": "USD",
+      "category": "Treasury USA brevi",
+      "role": "Verifica della preferenza per Treasury USA a breve scadenza; cambio USD non coperto",
+      "topics": [
+        "BlackRock: sovrappeso Treasury brevi",
+        "State Street: rendimenti obbligazionari interessanti"
+      ],
+      "accumulating": true,
+      "benchmark": false,
+      "source_url": "https://www.ishares.com/it/investitore-privato/it/prodotti/307243/ishares-treasury-bond-0-1yr-ucits-etf-usd-acc-fund"
+    },
+    {
+      "id": "V_IG",
+      "name": "Xtrackers II EUR Corporate Bond UCITS ETF 1C",
+      "isin": "LU0478205379",
+      "ticker": "XBLC",
+      "yahoo_symbols": [
+        "XBLC.MI",
+        "XBLC.DE"
+      ],
+      "quote_currency": "EUR",
+      "category": "Corporate bond EUR IG",
+      "role": "Verifica della view sul credito investment grade europeo",
+      "topics": [
+        "Amundi: positiva sulla duration Eurozona e credito selettivo",
+        "DWS: view migliorata su IG europeo"
+      ],
+      "accumulating": true,
+      "benchmark": false,
+      "source_url": "https://etf.dws.com/it-it/AssetDownload/Index/6ec5d1b9-ea96-4a96-a523-7135e139de98/Factsheet.pdf"
+    },
+    {
+      "id": "V_EMB",
+      "name": "VanEck J.P. Morgan EM Local Currency Bond UCITS ETF",
+      "isin": "IE00BDS67326",
+      "ticker": "EMLC",
+      "yahoo_symbols": [
+        "EMLC.MI",
+        "G2X1.DE"
+      ],
+      "quote_currency": "EUR",
+      "category": "Bond emergenti valuta locale",
+      "role": "Verifica della tesi sui bond emergenti in valuta locale",
+      "topics": [
+        "Fidelity International: preferenza per debito EM locale",
+        "Amundi: positiva sui bond emergenti"
+      ],
+      "accumulating": true,
+      "benchmark": false,
+      "source_url": "https://www.vaneck.com/it/it/documents/kiids/kiid_vaneck-j.p.-morgan-em-local-currency-bond-ucits-etf_it-it.pdf"
+    },
+    {
+      "id": "V_COM",
+      "name": "iShares Bloomberg Roll Select Commodity Swap UCITS ETF USD",
+      "isin": "IE00BZ1NCS44",
+      "ticker": "IS39",
+      "yahoo_symbols": [
+        "ISROLL.L",
+        "ROLL.L"
+      ],
+      "quote_currency": "USD",
+      "category": "Materie prime",
+      "role": "Proxy diversificato sulle commodity; quotazione di riferimento in USD",
+      "topics": [
+        "BlackRock: interesse per real asset e colli di bottiglia energetici",
+        "State Street: commodity selettive",
+        "DWS: view commodity neutrale"
+      ],
+      "accumulating": true,
+      "benchmark": false,
+      "source_url": "https://www.justetf.com/it/etf-profile.html?isin=IE00BZ1NCS44"
+    },
+    {
+      "id": "V_WORLD",
+      "name": "iShares Core MSCI World UCITS ETF USD (Acc)",
+      "isin": "IE00B4L5Y983",
+      "ticker": "SWDA",
+      "yahoo_symbols": [
+        "SWDA.MI"
+      ],
+      "quote_currency": "EUR",
+      "category": "Benchmark globale",
+      "role": "Benchmark neutrale per misurare la forza relativa degli altri ETF; non è una view specifica dei gestori",
+      "topics": [
+        "Benchmark comune per la verifica"
+      ],
+      "accumulating": true,
+      "benchmark": true,
+      "source_url": "https://www.blackrock.com/it/investitori-privati/products/251882/ishares-msci-world-ucits-etf-acc-fund"
+    }
+  ],
+  "verification_method": {
+    "as_of": "2026-11-15",
+    "frequency": "Aggiornamento automatico nei giorni di mercato, insieme allo storico prezzi del repository",
+    "price_source": "Yahoo Finance via yfinance; serie giornaliere Close",
+    "currency_basis": "Prezzi convertiti in EUR; per le quotazioni USD conversione giornaliera tramite EURUSD",
+    "measures": [
+      "Rendimenti 1, 3, 6 e 12 mesi e da inizio anno",
+      "Prezzo rispetto alla media mobile a 200 sedute",
+      "Drawdown dai massimi degli ultimi 6 mesi",
+      "Forza relativa a 3 mesi rispetto a MSCI World"
+    ],
+    "limitations": [
+      "Il paniere è un campione di verifica, non un portafoglio consigliato.",
+      "Le quote Treasury e commodity hanno rischio cambio USD non coperto.",
+      "Il Nasdaq-100 è soltanto un proxy tecnologico/AI, non un indice puro di intelligenza artificiale.",
+      "L'oro fisico non è incluso: in Europa è normalmente rappresentato da ETC, non da ETF UCITS ad accumulazione.",
+      "I prezzi Yahoo sono dati di mercato di terzi e possono mancare o essere ritardati; i dati mancanti non vengono stimati."
     ]
   }
 }
