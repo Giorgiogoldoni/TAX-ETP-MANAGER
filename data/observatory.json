@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-11-15",
-  "status": "pilota flussi iShares avviato: serie mensile EMEA da report ufficiali BlackRock/Markit; flussi per singolo ETF e automazione non ancora attivi",
+  "status": "Report sintetico dei cinque gestori aggiornato al 15 novembre 2026; flussi numerici mantenuti separati per universo geografico e metodologia.",
   "managers": [
     {
       "id": "blackrock",
@@ -16,28 +16,16 @@
       ],
       "sources": [
         {
-          "label": "Weekly Commentary · novembre 2026",
-          "url": "https://www.blackrock.com/us/individual/insights/blackrock-investment-institute/weekly-commentary"
-        },
-        {
-          "label": "BlackRock Investment Institute",
-          "url": "https://www.blackrock.com/institutions/en-global/institutional-insights"
-        },
-        {
-          "label": "iShares · ETP Flow Trends (archivio mensile)",
-          "url": "https://www.ishares.com/uk/professionals/en/insights/market-insights/inside-the-market"
-        },
-        {
-          "label": "Global ETP Flows · October 2026",
+          "label": "Global ETP Flows · ottobre 2026",
           "url": "https://www.ishares.com/uk/professionals/en/insights/global-etp-flows-october-2026"
         },
         {
-          "label": "Global ETP Flows · September 2026",
-          "url": "https://www.ishares.com/uk/professionals/en/insights/global-etp-flows-september-2026"
+          "label": "iShares · Inside the Market / archivio flussi",
+          "url": "https://www.ishares.com/uk/professionals/en/insights/market-insights/inside-the-market"
         },
         {
-          "label": "Global ETP Flows · August 2026",
-          "url": "https://www.ishares.com/uk/professionals/en/insights/global-etp-flows-august-2026"
+          "label": "BlackRock · Weekly Commentary",
+          "url": "https://www.blackrock.com/us/individual/insights/blackrock-investment-institute/weekly-commentary"
         }
       ]
     },
@@ -51,8 +39,16 @@
       ],
       "sources": [
         {
+          "label": "Monthly ETF Flows · ottobre 2026",
+          "url": "https://www.allnews.ch/sites/default/files/20261104_Amundi_ETF_Flows_October_2026.pdf"
+        },
+        {
           "label": "Global Investment Views · novembre 2026",
           "url": "https://research-center.amundi.com/article/global-investment-views-november-2026"
+        },
+        {
+          "label": "Amundi Research Center",
+          "url": "https://research-center.amundi.com/"
         }
       ]
     },
@@ -162,12 +158,12 @@
       ],
       "sources": [
         {
-          "label": "Investment Traffic Lights",
-          "url": "https://etf.dws.com/en-no/knowledge/investment-traffic-lights/"
+          "label": "Investment Traffic Lights · settembre 2026",
+          "url": "https://etf.deutsche-am.com/en-gb/knowledge/investment-traffic-lights/"
         },
         {
-          "label": "DWS Insights",
-          "url": "https://www.dws.com/"
+          "label": "DWS · CIO View / Investment Traffic Lights",
+          "url": "https://www.dws.com/en-dk/insights/cio-view/investment-traffic-lights/"
         }
       ]
     },
@@ -197,12 +193,16 @@
       ],
       "sources": [
         {
-          "label": "Quarterly Investment Outlook · Q4 2026",
-          "url": "https://www.ssga.com/sg/en/institutional/insights/quarterly-investment-outlook-q4-2026"
+          "label": "ETF Flows · ottobre 2026",
+          "url": "https://www.ssga.com/us/en/institutional/insights/fall-back-and-look-forward"
         },
         {
-          "label": "Global Market Outlook",
-          "url": "https://www.ssga.com/us/en/individual/insights/global-market-outlook"
+          "label": "ETF Flows / Market Trends",
+          "url": "https://www.ssga.com/us/en/individual/insights/market-trends"
+        },
+        {
+          "label": "Quarterly Investment Outlook",
+          "url": "https://www.ssga.com/sg/en/institutional/insights/quarterly-investment-outlook-q4-2026"
         }
       ]
     },
@@ -706,6 +706,74 @@
       "Le categorie arrotondate possono differire dal totale per effetto degli arrotondamenti e di altre componenti.",
       "Non sono ancora importati i dati per singolo ISIN né i flussi degli altri emittenti.",
       "La periodicità dipende dalla pubblicazione dei report ufficiali."
+    ]
+  },
+  "report_summary": {
+    "as_of": "2026-11-15",
+    "period": "Ultime pubblicazioni disponibili, prevalentemente riferite a ottobre 2026",
+    "synthesis": "Il quadro di ottobre resta costruttivo ma più selettivo: gli afflussi azionari sono ancora consistenti, mentre il reddito fisso ha recuperato peso. Oro e materie prime hanno rallentato rispetto ai mesi precedenti. Non emerge un segnale uniforme di risk-on puro: si osserva piuttosto una combinazione di esposizione azionaria, ricerca di qualità e maggiore domanda obbligazionaria.",
+    "comparability": "I dati non sono direttamente sommabili: BlackRock misura ETP globali e per area di quotazione; State Street pubblica statistiche del proprio universo ETF, prevalentemente USA; Amundi considera ETF UCITS domiciliati in Europa; DWS analizza circa 1.500 ETF europei per 29 categorie. Fidelity International è inserita per la visione strategica, ma nelle fonti ufficiali consultate non è stato individuato un report mensile di flussi ETF omogeneo ai precedenti.",
+    "items": [
+      {
+        "id": "blackrock",
+        "name": "BlackRock / iShares",
+        "report": "Global ETP Flows · ottobre 2026",
+        "published_at": "2026-11",
+        "captured_at": "2026-11-15",
+        "market": "Globale; dettaglio per area di quotazione, incluso EMEA",
+        "flows": "Global ETP +393,1 mld USD; EMEA-listed +49,0 mld USD (equity 32,5; bond 15,0; commodity 1,5)",
+        "reading": "Azionario ancora forte; obbligazionario in accelerazione; oro positivo ma materie prime in rallentamento.",
+        "source_url": "https://www.ishares.com/uk/professionals/en/insights/global-etp-flows-october-2026",
+        "flow_status": "Dato numerico pubblicato"
+      },
+      {
+        "id": "statestreet",
+        "name": "State Street / SPDR",
+        "report": "ETF Flows · ottobre 2026",
+        "published_at": "2026-11-03",
+        "captured_at": "2026-11-15",
+        "market": "Universo ETF monitorato da State Street; serie di riferimento prevalentemente USA",
+        "flows": "Bond ETF: +74 mld USD nel mese, record; EM equity +4,0 mld USD; Technology +7,4 mld USD; Energy +2,8 mld USD",
+        "reading": "Domanda obbligazionaria eccezionale; forte preferenza per azioni USA e settori tecnologia/energia.",
+        "source_url": "https://www.ssga.com/us/en/institutional/insights/fall-back-and-look-forward",
+        "flow_status": "Dati di categoria pubblicati; non confrontare come totale con EMEA UCITS"
+      },
+      {
+        "id": "amundi",
+        "name": "Amundi",
+        "report": "Monthly ETF Flows · ottobre 2026",
+        "published_at": "2026-11-04",
+        "captured_at": "2026-11-15",
+        "market": "ETF UCITS domiciliati in Europa",
+        "flows": "Totale +40,8 mld EUR; equity +26,9; fixed income +13,4",
+        "reading": "Rotazione verso qualità, reddito e diversificazione; domanda per Treasury USA e credito investment grade.",
+        "source_url": "https://www.allnews.ch/sites/default/files/20261104_Amundi_ETF_Flows_October_2026.pdf",
+        "flow_status": "Dato numerico pubblicato"
+      },
+      {
+        "id": "dws",
+        "name": "DWS / Xtrackers",
+        "report": "Investment Traffic Lights · settembre 2026",
+        "published_at": "2026-10-06",
+        "captured_at": "2026-11-15",
+        "market": "Mercato ETF europeo; circa 1.500 ETF e 29 categorie",
+        "flows": "Flussi per categoria e direzione; nessun totale aggregato unico riportato nella sintesi consultata",
+        "reading": "Flussi positivi in molte categorie azionarie e obbligazionarie; view CIO migliorata su credito IG europeo e HY europeo, più prudente sulle commodity.",
+        "source_url": "https://etf.deutsche-am.com/en-gb/knowledge/investment-traffic-lights/",
+        "flow_status": "Dati categoriali; totale aggregato non disponibile nella sintesi"
+      },
+      {
+        "id": "fidelity",
+        "name": "Fidelity International",
+        "report": "Capital Market Assumptions · H1 2026",
+        "published_at": "2026-05-26",
+        "captured_at": "2026-11-15",
+        "market": "Globale; orizzonte strategico",
+        "flows": "Nessun dato mensile di flussi ETF comparabile individuato nelle fonti ufficiali consultate",
+        "reading": "Utilizzabile per rendimenti attesi e asset allocation strategica; non va trattato come indicatore di flussi o view tattica mensile.",
+        "source_url": "https://www.fidelityinternational.com/static/master/media/pdf/download-material/capital-market-assumptions-update-h1-2026-fidelity-international.pdf",
+        "flow_status": "Solo visione strategica; flussi non disponibili"
+      }
     ]
   }
 }
