@@ -27,7 +27,7 @@ header,.bar,.card-head{display:flex;align-items:center;justify-content:space-bet
 <section class="panel" id="rilevazioni"><div class="bar"><div><h2>Prima rilevazione · cinque operatori</h2><div class="small">Snapshot del 15 novembre 2026 · estrazione da report ufficiali</div></div><span class="tag">PILOTA · 5/12</span></div><div class="toolbar"><select id="obs-manager"><option value="tutti">Tutti i cinque gestori</option><option value="blackrock">BlackRock</option><option value="amundi">Amundi</option><option value="pictet">Pictet</option><option value="fidelity">Fidelity International</option><option value="invesco">Invesco</option></select><select id="obs-horizon"><option value="tutti">Tutti gli orizzonti</option><option value="Tattico">Tattico</option><option value="Strategico">Strategico</option></select></div><div class="table-wrap"><table><thead><tr><th>Gestore / report</th><th>Area</th><th>Indicazione</th><th>Variazione</th><th>Orizzonte</th><th>Fonte</th></tr></thead><tbody id="observations"></tbody></table></div><div class="note">Le stime Fidelity International sono strategiche a 10 anni in USD; non vanno messe sullo stesso piano dei giudizi tattici mensili. Prima rilevazione: nessun punteggio aggregato e nessun confronto con BIG finché non avremo una serie storica omogenea.</div></section>
 <section class="panel" id="etf-verification"><div class="bar"><div><h2>ETF ad accumulazione per verificare le view</h2><div class="small">Paniere di controllo collegato alle opinioni dei gestori · prezzi storici in EUR</div></div><span class="tag">9 ETF ACC</span></div>
 <p class="note">Il paniere non è un portafoglio consigliato: serve a verificare nel tempo se le view dei gestori trovano conferma nei mercati. Il benchmark MSCI World misura la forza relativa. Per gli strumenti quotati in USD, i prezzi sono convertiti in EUR con il cambio giornaliero EUR/USD.</p>
-<div class="table-wrap"><table class="etf-verification-table"><thead><tr><th>ETF / ISIN</th><th>Area e view collegate</th><th class="num">Ultima data</th><th class="num">1 mese</th><th class="num">3 mesi</th><th class="num">6 mesi</th><th class="num">12 mesi</th><th class="num">YTD</th><th class="num">vs SMA 200</th><th class="num">DD 6 mesi</th><th class="num">RS 3m vs World</th></tr></thead><tbody id="verification-etf-rows"><tr><td colspan="11">Caricamento storico ETF…</td></tr></tbody></table></div>
+<p id="verification-etf-summary" class="note">Elaborazione della prima lettura di mercato…</p><div class="table-wrap"><table class="etf-verification-table"><thead><tr><th>ETF / ISIN</th><th>Area e view collegate</th><th class="num">Ultima data</th><th class="num">1 mese</th><th class="num">3 mesi</th><th class="num">6 mesi</th><th class="num">12 mesi</th><th class="num">YTD</th><th class="num">vs SMA 200</th><th class="num">DD 6 mesi</th><th class="num">RS 3m vs World</th></tr></thead><tbody id="verification-etf-rows"><tr><td colspan="11">Caricamento storico ETF…</td></tr></tbody></table></div>
 <div class="note" id="verification-etf-status">Storico separato dalla serie dei portafogli.</div>
 <div class="note">Limiti: XNAS è un proxy tecnologico/AI, non un ETF AI puro. L'oro fisico è escluso perché il prodotto europeo normalmente utilizzato è un ETC, non un ETF UCITS ad accumulazione. Treasury USA e commodity mantengono rischio cambio USD.</div></section>
 <section class="panel" id="flussi"><div class="bar"><div><h2>Flussi ETP quotati in EMEA · iShares / BlackRock</h2><div class="small">Flussi netti aggregati pubblicati da BlackRock/Markit · USD miliardi</div></div><span class="tag">3 MESI VERIFICATI</span></div>
@@ -62,7 +62,7 @@ function renderVerificationEtfs(){
  fetch('./data/observatory_etf_history.json').then(r=>{if(!r.ok)throw Error('storico non ancora disponibile');return r.json()}).then(hist=>{
   const instruments=hist.instruments||{},world=instruments.V_WORLD?.prices||[];
   const world3=ret(world,3);
-  body.innerHTML=list.map(etf=>{
+  const computed=[];\n  body.innerHTML=list.map(etf=>{
    const item=instruments[etf.id],prices=item?.prices||[];
    if(prices.length<2)return '<tr><td><div class="etf-name">'+esc(etf.name)+'</div><div class="etf-meta">'+esc(etf.isin)+' · '+esc(etf.ticker)+'</div></td><td>'+esc(etf.category)+'<div class="etf-meta">'+esc(etf.role)+'</div></td><td colspan="9" class="etf-neutral">Serie non disponibile'+(hist.unresolved||[]).some(x=>x.id===etf.id)?' / ticker da verificare':''+'</td></tr>';
    const last=prices[prices.length-1],r1=ret(prices,1),r3=ret(prices,3),r6=ret(prices,6),r12=ret(prices,12);
@@ -71,9 +71,19 @@ function renderVerificationEtfs(){
    const trend=sma==null?null:(last.close/sma-1)*100;
    const recent=prices.slice(-126),peak=recent.length?Math.max(...recent.map(p=>p.close)):null,dd=peak?(last.close/peak-1)*100:null;
    const relative=etf.benchmark?null:(r3!=null&&world3!=null?r3-world3:null);
+   computed.push({etf,r3,trend,relative});
    const topics=(etf.topics||[]).join(' · ');
    return '<tr><td><div class="etf-name">'+esc(etf.name)+'</div><div class="etf-meta">'+esc(etf.isin)+' · '+esc(etf.ticker)+' · ACC</div></td><td><b>'+esc(etf.category)+'</b><div class="etf-meta">'+esc(topics)+'</div></td><td class="num">'+dateFmt(last.date)+'</td><td class="num '+cls(r1)+'">'+fmt(r1)+'</td><td class="num '+cls(r3)+'">'+fmt(r3)+'</td><td class="num '+cls(r6)+'">'+fmt(r6)+'</td><td class="num '+cls(r12)+'">'+fmt(r12)+'</td><td class="num '+cls(ytd)+'">'+fmt(ytd)+'</td><td class="num '+cls(trend)+'">'+(trend==null?'—':(trend>=0?'Sopra ':'Sotto ')+Math.abs(trend).toLocaleString('it-IT',{maximumFractionDigits:1})+'%')+'</td><td class="num '+cls(dd)+'">'+fmt(dd)+'</td><td class="num '+cls(relative)+'">'+(etf.benchmark?'Benchmark':fmt(relative))+'</td></tr>';
   }).join('');
+  const peers=computed.filter(x=>!x.etf.benchmark&&x.r3!=null);
+  const above=peers.filter(x=>x.trend!=null&&x.trend>=0).length;
+  const beating=peers.filter(x=>x.relative!=null&&x.relative>0).length;
+  const sorted=[...peers].filter(x=>x.relative!=null).sort((a,b)=>b.relative-a.relative);
+  const best=sorted[0],worst=sorted[sorted.length-1];
+  document.getElementById('verification-etf-summary').textContent=
+   above+'/'+peers.length+' ETF di verifica sopra la media mobile a 200 sedute. A 3 mesi '+beating+'/'+peers.length+
+   ' battono MSCI World ('+fmt(world3)+'). Forza relativa migliore: '+(best?best.etf.ticker+' ('+fmt(best.relative)+')':'—')+
+   '; peggiore: '+(worst?worst.etf.ticker+' ('+fmt(worst.relative)+')':'—')+'.';
   status.textContent='Ultimo aggiornamento dati: '+(hist.fetched_at||'—')+' · ultimo giorno disponibile: '+(hist.latest_date||'—')+' · stato: '+(hist.status||'—')+'. Serie in EUR, benchmark MSCI World.';
  }).catch(e=>{
   body.innerHTML='<tr><td colspan="11">Storico ETF non ancora disponibile: il primo aggiornamento verrà prodotto dal workflow GitHub.</td></tr>';
