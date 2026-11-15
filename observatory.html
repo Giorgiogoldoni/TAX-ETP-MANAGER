@@ -62,7 +62,8 @@ function renderVerificationEtfs(){
  fetch('./data/observatory_etf_history.json').then(r=>{if(!r.ok)throw Error('storico non ancora disponibile');return r.json()}).then(hist=>{
   const instruments=hist.instruments||{},world=instruments.V_WORLD?.prices||[];
   const world3=ret(world,3);
-  const computed=[];\n  body.innerHTML=list.map(etf=>{
+  const computed=[];
+  body.innerHTML=list.map(etf=>{
    const item=instruments[etf.id],prices=item?.prices||[];
    if(prices.length<2)return '<tr><td><div class="etf-name">'+esc(etf.name)+'</div><div class="etf-meta">'+esc(etf.isin)+' · '+esc(etf.ticker)+'</div></td><td>'+esc(etf.category)+'<div class="etf-meta">'+esc(etf.role)+'</div></td><td colspan="9" class="etf-neutral">Serie non disponibile'+(hist.unresolved||[]).some(x=>x.id===etf.id)?' / ticker da verificare':''+'</td></tr>';
    const last=prices[prices.length-1],r1=ret(prices,1),r3=ret(prices,3),r6=ret(prices,6),r12=ret(prices,12);
