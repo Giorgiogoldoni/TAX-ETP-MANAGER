@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-11-15",
-  "status": "pilota avviato: prima rilevazione manuale verificata su fonti ufficiali; flussi ETF e automazione non ancora attivi",
+  "status": "pilota flussi iShares avviato: serie mensile EMEA da report ufficiali BlackRock/Markit; flussi per singolo ETF e automazione non ancora attivi",
   "managers": [
     {
       "id": "blackrock",
@@ -22,6 +22,22 @@
         {
           "label": "BlackRock Investment Institute",
           "url": "https://www.blackrock.com/institutions/en-global/institutional-insights"
+        },
+        {
+          "label": "iShares · ETP Flow Trends (archivio mensile)",
+          "url": "https://www.ishares.com/uk/professionals/en/insights/market-insights/inside-the-market"
+        },
+        {
+          "label": "Global ETP Flows · October 2026",
+          "url": "https://www.ishares.com/uk/professionals/en/insights/global-etp-flows-october-2026"
+        },
+        {
+          "label": "Global ETP Flows · September 2026",
+          "url": "https://www.ishares.com/uk/professionals/en/insights/global-etp-flows-september-2026"
+        },
+        {
+          "label": "Global ETP Flows · August 2026",
+          "url": "https://www.ishares.com/uk/professionals/en/insights/global-etp-flows-august-2026"
         }
       ]
     },
@@ -589,7 +605,71 @@
       "confidence": "Alta: posizioni esplicite nel report"
     }
   ],
-  "flows": [],
+  "flows": [
+    {
+      "id": "ishares-emea-2026-08",
+      "publisher": "BlackRock / iShares; dati BlackRock Global Business Intelligence ed EPFR",
+      "brand": "iShares / BlackRock",
+      "period": "2026-08",
+      "period_end": "2026-08-31",
+      "market": "ETP quotati EMEA",
+      "universe": "Aggregato EMEA-listed ETPs, non singoli fondi",
+      "currency": "USD",
+      "unit": "miliardi",
+      "total_flow": 57,
+      "equity_flow": 40.7,
+      "fixed_income_flow": 8.1,
+      "commodity_flow": 7.7,
+      "other_or_rounding": 0.5,
+      "source_type": "Flusso aggregato pubblicato",
+      "method": "Dato aggregato riportato da BlackRock/Markit; categorie come pubblicate. Componenti arrotondate e possono non sommare esattamente al totale.",
+      "source_url": "https://www.ishares.com/uk/professionals/en/insights/global-etp-flows-august-2026",
+      "captured_at": "2026-11-15",
+      "confidence": "Alta: valori esplicitamente pubblicati"
+    },
+    {
+      "id": "ishares-emea-2026-09",
+      "publisher": "BlackRock / iShares; dati BlackRock Global Business Intelligence ed EPFR",
+      "brand": "iShares / BlackRock",
+      "period": "2026-09",
+      "period_end": "2026-09-30",
+      "market": "ETP quotati EMEA",
+      "universe": "Aggregato EMEA-listed ETPs, non singoli fondi",
+      "currency": "USD",
+      "unit": "miliardi",
+      "total_flow": 41.6,
+      "equity_flow": 28.4,
+      "fixed_income_flow": 9.4,
+      "commodity_flow": 3.7,
+      "other_or_rounding": 0.1,
+      "source_type": "Flusso aggregato pubblicato",
+      "method": "Dato aggregato riportato da BlackRock/Markit; categorie come pubblicate. Componenti arrotondate e possono non sommare esattamente al totale.",
+      "source_url": "https://www.ishares.com/uk/professionals/en/insights/global-etp-flows-september-2026",
+      "captured_at": "2026-11-15",
+      "confidence": "Alta: valori esplicitamente pubblicati"
+    },
+    {
+      "id": "ishares-emea-2026-10",
+      "publisher": "BlackRock / iShares; dati BlackRock Global Business Intelligence ed EPFR",
+      "brand": "iShares / BlackRock",
+      "period": "2026-10",
+      "period_end": "2026-10-31",
+      "market": "ETP quotati EMEA",
+      "universe": "Aggregato EMEA-listed ETPs, non singoli fondi",
+      "currency": "USD",
+      "unit": "miliardi",
+      "total_flow": 49,
+      "equity_flow": 32.5,
+      "fixed_income_flow": 15,
+      "commodity_flow": 1.5,
+      "other_or_rounding": 0,
+      "source_type": "Flusso aggregato pubblicato",
+      "method": "Dato aggregato riportato da BlackRock/Markit; categorie come pubblicate. Valori arrotondati.",
+      "source_url": "https://www.ishares.com/uk/professionals/en/insights/global-etp-flows-october-2026",
+      "captured_at": "2026-11-15",
+      "confidence": "Alta: valori esplicitamente pubblicati"
+    }
+  ],
   "model_signals": [],
   "pilot": {
     "as_of": "2026-11-15",
@@ -605,7 +685,27 @@
     "limitations": [
       "Fidelity International: disponibile nel pilota il CMA H1 2026, orizzonte 10 anni; non confondere con Fidelity Investments/AART.",
       "Flussi ETF non ancora acquisiti: richiedono una fonte e una metodologia omogenea per raccolta netta, periodo e categoria.",
-      "Le variazioni precedenti sono valorizzate solo quando esplicitamente dichiarate dal report."
+      "Le variazioni precedenti sono valorizzate solo quando esplicitamente dichiarate dal report.",
+      "Flussi iShares: avviato uno storico aggregato EMEA di tre mesi; non equivale ai flussi dei soli prodotti iShares né ai flussi per singolo ISIN."
+    ]
+  },
+  "flow_pilot": {
+    "provider": "BlackRock / iShares",
+    "scope": "Flussi aggregati degli ETP quotati in EMEA",
+    "frequency": "Mensile, secondo la pubblicazione dei report",
+    "available_periods": [
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ],
+    "methodology": "Usare esclusivamente i flussi netti dichiarati da BlackRock/Markit. Non ricavare i flussi dalla variazione dell'AUM o dai volumi. Non confondere EMEA-listed con fondi detenuti da investitori residenti EMEA: la regione identifica la quotazione, non con certezza la residenza dell'investitore.",
+    "source_underlying": "BlackRock Global Business Intelligence ed EPFR; in alcuni report BlackRock e Markit",
+    "limitations": [
+      "Serie iniziale di tre mesi: non sufficiente per conclusioni statistiche robuste o segnali di trend strutturale.",
+      "Dati aggregati per area di quotazione e asset class, non raccolta dei soli ETF iShares.",
+      "Le categorie arrotondate possono differire dal totale per effetto degli arrotondamenti e di altre componenti.",
+      "Non sono ancora importati i dati per singolo ISIN né i flussi degli altri emittenti.",
+      "La periodicità dipende dalla pubblicazione dei report ufficiali."
     ]
   }
 }
