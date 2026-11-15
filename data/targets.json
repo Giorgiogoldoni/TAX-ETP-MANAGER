@@ -103,46 +103,54 @@
       "id": "global-balanced-3",
       "name": "Portafoglio 3 · Globale bilanciato",
       "short_name": "Globale bilanciato",
-      "description": "Allocazione strategica approvata: azionario diversificato per area, quality globale e componenti difensive in euro e oro.",
-      "note": "Obiettivo su 100% del capitale: USA 28%, Europa 17%, Giappone 8%, Emergenti 17%, Quality globale 10%, governativi EUR brevi 10%, corporate EUR 5%, oro ETC 5%. La componente Quality globale può sovrapporsi geograficamente alle esposizioni regionali. Pesi modello, non posizioni detenute né ordini.",
+      "description": "Portafoglio modello con ETF ad accumulazione per verificare le view di mercato; oro tramite ETC fisico.",
+      "note": "Pesi obiettivo approvati. Le quote azionarie e obbligazionarie sono classi ad accumulazione; SGLN è un ETC fisico sull'oro, non un ETF. La componente Quality globale può sovrapporsi geograficamente alle aree regionali. Pesi modello, non posizioni detenute né ordini.",
       "allocations": [
         {
-          "name": "Azionario USA",
-          "type": "Azionario",
+          "ticker": "CSSPX",
+          "name": "iShares Core S&P 500 UCITS ETF USD (Acc)",
+          "type": "ETF",
           "weight": 28
         },
         {
-          "name": "Azionario Europa",
-          "type": "Azionario",
+          "ticker": "SMEA",
+          "name": "iShares Core MSCI Europe UCITS ETF EUR (Acc)",
+          "type": "ETF",
           "weight": 17
         },
         {
-          "name": "Azionario Giappone",
-          "type": "Azionario",
+          "ticker": "SJPA",
+          "name": "iShares Core MSCI Japan IMI UCITS ETF",
+          "type": "ETF",
           "weight": 8
         },
         {
-          "name": "Azionario Emergenti",
-          "type": "Azionario",
+          "ticker": "XMME",
+          "name": "Xtrackers MSCI Emerging Markets UCITS ETF 1C",
+          "type": "ETF",
           "weight": 17
         },
         {
-          "name": "Quality globale",
-          "type": "Azionario fattoriale",
+          "ticker": "IWQU",
+          "name": "iShares Edge MSCI World Quality Factor UCITS ETF (Acc)",
+          "type": "ETF",
           "weight": 10
         },
         {
-          "name": "Governativi EUR brevi",
-          "type": "Obbligazionario",
+          "ticker": "CEMK",
+          "name": "iShares € Govt Bond 0-1yr UCITS ETF",
+          "type": "ETF",
           "weight": 10
         },
         {
-          "name": "Corporate EUR",
-          "type": "Obbligazionario",
+          "ticker": "XBLC",
+          "name": "Xtrackers II EUR Corporate Bond UCITS ETF 1C",
+          "type": "ETF",
           "weight": 5
         },
         {
-          "name": "Oro ETC",
+          "ticker": "SGLN",
+          "name": "iShares Physical Gold ETC",
           "type": "ETC",
           "weight": 5
         }
