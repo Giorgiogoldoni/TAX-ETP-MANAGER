@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-11-14",
+  "as_of": "2026-11-15",
   "currency": "EUR",
   "description": "Pesi strategici obiettivo dei portafogli modello; non rappresentano posizioni correnti.",
   "portfolios": [
@@ -96,6 +96,55 @@
           "name": "WisdomTree Russell 2000",
           "type": "ETN",
           "weight": 10
+        }
+      ]
+    },
+    {
+      "id": "global-balanced-3",
+      "name": "Portafoglio 3 · Globale bilanciato",
+      "short_name": "Globale bilanciato",
+      "description": "Allocazione strategica approvata: azionario diversificato per area, quality globale e componenti difensive in euro e oro.",
+      "note": "Obiettivo su 100% del capitale: USA 28%, Europa 17%, Giappone 8%, Emergenti 17%, Quality globale 10%, governativi EUR brevi 10%, corporate EUR 5%, oro ETC 5%. La componente Quality globale può sovrapporsi geograficamente alle esposizioni regionali. Pesi modello, non posizioni detenute né ordini.",
+      "allocations": [
+        {
+          "name": "Azionario USA",
+          "type": "Azionario",
+          "weight": 28
+        },
+        {
+          "name": "Azionario Europa",
+          "type": "Azionario",
+          "weight": 17
+        },
+        {
+          "name": "Azionario Giappone",
+          "type": "Azionario",
+          "weight": 8
+        },
+        {
+          "name": "Azionario Emergenti",
+          "type": "Azionario",
+          "weight": 17
+        },
+        {
+          "name": "Quality globale",
+          "type": "Azionario fattoriale",
+          "weight": 10
+        },
+        {
+          "name": "Governativi EUR brevi",
+          "type": "Obbligazionario",
+          "weight": 10
+        },
+        {
+          "name": "Corporate EUR",
+          "type": "Obbligazionario",
+          "weight": 5
+        },
+        {
+          "name": "Oro ETC",
+          "type": "ETC",
+          "weight": 5
         }
       ]
     }
