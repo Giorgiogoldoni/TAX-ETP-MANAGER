@@ -158,6 +158,87 @@
       "currency_hedged": true,
       "exchange_ticker": "WSPE.MI",
       "identification_status": "verified"
+    },
+    {
+      "ticker": "CSSPX",
+      "isin": "IE00B5BMR087",
+      "name": "iShares Core S&P 500 UCITS ETF USD Acc",
+      "type": "ETF",
+      "leverage": "unleveraged",
+      "exchange_ticker": "CSSPX.MI",
+      "price_currency": "EUR",
+      "accumulating": true
+    },
+    {
+      "ticker": "SMEA",
+      "isin": "IE00B4K48X80",
+      "name": "iShares Core MSCI Europe UCITS ETF EUR Acc",
+      "type": "ETF",
+      "leverage": "unleveraged",
+      "exchange_ticker": "SMEA.MI",
+      "price_currency": "EUR",
+      "accumulating": true
+    },
+    {
+      "ticker": "SJPA",
+      "isin": "IE00B4L5YX21",
+      "name": "iShares Core MSCI Japan IMI UCITS ETF Acc",
+      "type": "ETF",
+      "leverage": "unleveraged",
+      "exchange_ticker": "SJPA.MI",
+      "price_currency": "EUR",
+      "accumulating": true
+    },
+    {
+      "ticker": "XMME",
+      "isin": "IE00BTJRMP35",
+      "name": "Xtrackers MSCI Emerging Markets UCITS ETF 1C",
+      "type": "ETF",
+      "leverage": "unleveraged",
+      "exchange_ticker": "XMME.MI",
+      "price_currency": "EUR",
+      "accumulating": true
+    },
+    {
+      "ticker": "IWQU",
+      "isin": "IE00BP3QZ601",
+      "name": "iShares Edge MSCI World Quality Factor UCITS ETF Acc",
+      "type": "ETF",
+      "leverage": "unleveraged",
+      "exchange_ticker": "IWQU.MI",
+      "price_currency": "EUR",
+      "accumulating": true
+    },
+    {
+      "ticker": "CEMK",
+      "isin": "IE000WV38GP5",
+      "name": "iShares EUR Govt Bond 0-1yr UCITS ETF EUR Acc",
+      "type": "ETF",
+      "leverage": "unleveraged",
+      "exchange_ticker": "CEMK.DE",
+      "price_currency": "EUR",
+      "accumulating": true
+    },
+    {
+      "ticker": "XBLC",
+      "isin": "LU0478205379",
+      "name": "Xtrackers II EUR Corporate Bond UCITS ETF 1C",
+      "type": "ETF",
+      "leverage": "unleveraged",
+      "exchange_ticker": "XBLC.MI",
+      "price_currency": "EUR",
+      "accumulating": true
+    },
+    {
+      "ticker": "SGLN",
+      "isin": "IE00B4ND3602",
+      "name": "iShares Physical Gold ETC",
+      "type": "ETC",
+      "leverage": "unleveraged",
+      "exchange_ticker": "SGLN.MI",
+      "price_currency": "EUR",
+      "accumulating": false,
+      "structure": "physically backed gold ETC; not UCITS"
     }
   ]
 }
