@@ -1,0 +1,341 @@
+{
+  "updated_at": "2026-11-15",
+  "status": "struttura iniziale: le opinioni e i flussi non sono ancora importati automaticamente",
+  "managers": [
+    {
+      "id": "blackrock",
+      "name": "BlackRock",
+      "group": "principale",
+      "focus": "Asset allocation tattica, rischio, mercati globali",
+      "streams": [
+        "Weekly Commentary",
+        "BlackRock Investment Institute"
+      ],
+      "brands": [
+        "iShares"
+      ],
+      "sources": [
+        {
+          "label": "Weekly Commentary",
+          "url": "https://www.blackrock.com/us/individual/insights/blackrock-investment-institute/weekly-commentary"
+        },
+        {
+          "label": "Investment Institute",
+          "url": "https://www.blackrock.com/institutions/en-global/institutional-insights"
+        }
+      ]
+    },
+    {
+      "id": "amundi",
+      "name": "Amundi",
+      "group": "principale",
+      "focus": "Global Investment Views, multi-asset, credito e aree geografiche",
+      "brands": [
+        "Amundi ETF"
+      ],
+      "sources": [
+        {
+          "label": "Research Center",
+          "url": "https://research-center.amundi.com/article/global-investment-views-november-2026"
+        }
+      ]
+    },
+    {
+      "id": "pictet",
+      "name": "Pictet Asset Management",
+      "group": "principale",
+      "focus": "Barometer, asset allocation, settori e rotazioni",
+      "sources": [
+        {
+          "label": "Barometer novembre 2026",
+          "url": "https://am.pictet.com/us/en/institutions/investment-views/multi-asset/2026/november-barometer-of-financial-markets-outlook"
+        },
+        {
+          "label": "Investment views",
+          "url": "https://am.pictet.com/"
+        }
+      ]
+    },
+    {
+      "id": "fidelity",
+      "name": "Fidelity International",
+      "group": "principale",
+      "focus": "Capital Market Assumptions, rendimenti attesi e asset allocation",
+      "brands": [
+        "Fidelity ETFs"
+      ],
+      "sources": [
+        {
+          "label": "Capital Markets Update",
+          "url": "https://institutional.fidelity.com/advisors/insights/series/capital-markets-update"
+        },
+        {
+          "label": "Capital Market Assumptions · H2 2026",
+          "url": "https://www.fidelity.com.au/sites/fidelity/assets/Capital-Market-Assumptions-update---H2-2026.pdf"
+        }
+      ]
+    },
+    {
+      "id": "lg",
+      "name": "L&G Asset Management",
+      "group": "principale",
+      "focus": "Asset Allocation Outlook, ETF Outlook, strategie sistematiche",
+      "brands": [
+        "L&G ETFs"
+      ],
+      "sources": [
+        {
+          "label": "Insights",
+          "url": "https://am.landg.com/en-it/institutional/insights/"
+        },
+        {
+          "label": "Q4 2026 Asset Allocation Outlook",
+          "url": "https://am.landg.com/en-nl/institutional/insights/market-insights/q4-2026-asset-allocation-outlook-navigating-crosscurrents/"
+        },
+        {
+          "label": "Q4 2026 ETF Outlook",
+          "url": "https://am.landg.com/en-it/institutional/insights/market-insights/q4-2026-etf-outlook-getting-more-from-core/"
+        }
+      ]
+    },
+    {
+      "id": "invesco",
+      "name": "Invesco",
+      "group": "principale",
+      "focus": "Tactical Asset Allocation, Capital Market Assumptions e fattori",
+      "brands": [
+        "Invesco ETF"
+      ],
+      "sources": [
+        {
+          "label": "Investment Outlook",
+          "url": "https://www.invesco.com/it/it/approfondimenti.html"
+        },
+        {
+          "label": "Capital Market Assumptions",
+          "url": "https://www.invesco.com/content/dam/invesco/emea/en/pdf/invesco-capital-market-assumption-eur.pdf"
+        }
+      ]
+    },
+    {
+      "id": "vanguard",
+      "name": "Vanguard",
+      "group": "principale",
+      "focus": "Economic and Market Outlook, VCMM, previsioni strategiche",
+      "brands": [
+        "Vanguard ETFs"
+      ],
+      "sources": [
+        {
+          "label": "Economic and Market Outlook",
+          "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/vemo.html"
+        },
+        {
+          "label": "Pressroom · Outlook 2026",
+          "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-vanguard-releases-2026-economic-and-market-outlook-121025.html"
+        }
+      ]
+    },
+    {
+      "id": "dws",
+      "name": "DWS",
+      "group": "principale",
+      "focus": "CIO View, performance e flussi ETF tramite Investment Traffic Lights",
+      "brands": [
+        "Xtrackers"
+      ],
+      "sources": [
+        {
+          "label": "Investment Traffic Lights",
+          "url": "https://etf.dws.com/en-no/knowledge/investment-traffic-lights/"
+        },
+        {
+          "label": "DWS Insights",
+          "url": "https://www.dws.com/"
+        }
+      ]
+    },
+    {
+      "id": "jpm",
+      "name": "J.P. Morgan Asset Management",
+      "group": "principale",
+      "focus": "Global Asset Allocation, Equity Views, Fixed Income e Factor Views",
+      "sources": [
+        {
+          "label": "Asset Class Views · 4Q 2026",
+          "url": "https://am.jpmorgan.com/ch/en/asset-management/adv/insights/portfolio-insights/asset-class-views/"
+        },
+        {
+          "label": "Global Asset Allocation Views",
+          "url": "https://am.jpmorgan.com/content/jpm-am-aem/global-institutional/us/en/institutional/insights/portfolio-insights/asset-class-views/asset-allocation.html"
+        }
+      ]
+    },
+    {
+      "id": "statestreet",
+      "name": "State Street Investment Management",
+      "group": "principale",
+      "focus": "Quarterly Investment Outlook, previsioni e flussi",
+      "brands": [
+        "SPDR"
+      ],
+      "sources": [
+        {
+          "label": "Quarterly Investment Outlook · Q4 2026",
+          "url": "https://www.ssga.com/sg/en/institutional/insights/quarterly-investment-outlook-q4-2026"
+        },
+        {
+          "label": "Global Market Outlook",
+          "url": "https://www.ssga.com/us/en/individual/insights/global-market-outlook"
+        }
+      ]
+    },
+    {
+      "id": "goldman",
+      "name": "Goldman Sachs Asset Management",
+      "group": "principale",
+      "focus": "Investment Outlook, CIO views, macro e strategie multi-asset",
+      "sources": [
+        {
+          "label": "Investment Outlook 2026",
+          "url": "https://am.gs.com/it-it/advisors/insights/article/investment-outlook"
+        },
+        {
+          "label": "CIO Investment Views",
+          "url": "https://am.gs.com/it-it/advisors/insights/article/cio-investment-views"
+        }
+      ]
+    },
+    {
+      "id": "pimco",
+      "name": "PIMCO",
+      "group": "principale",
+      "focus": "Cyclical Outlook, tassi, duration, credito e reddito fisso",
+      "sources": [
+        {
+          "label": "Cyclical Outlook · ottobre 2026",
+          "url": "https://www.pimco.com/eu/en/documents/0cda3b5e293e3a83965901412ef7195130e988493bed8396a63793882e463b7d3eee2cb92629f559dd738332e6be3262?app=dot"
+        },
+        {
+          "label": "PIMCO Insights",
+          "url": "https://www.pimco.com/gbl/en/insights"
+        }
+      ]
+    }
+  ],
+  "secondary": [
+    {
+      "id": "hsbc",
+      "name": "HSBC Asset Management",
+      "focus": "Macro internazionale, valute ed emergenti",
+      "sources": [
+        {
+          "label": "HSBC Asset Management",
+          "url": "https://www.assetmanagement.hsbc.com/"
+        }
+      ]
+    },
+    {
+      "id": "bnpp",
+      "name": "BNP Paribas Asset Management",
+      "focus": "Multi-asset, materie prime, credito e scenari",
+      "sources": [
+        {
+          "label": "Investment Outlook 2026",
+          "url": "https://www.bnpparibas-am.com/it-it/investment-outlook-2026/"
+        }
+      ]
+    },
+    {
+      "id": "schroders",
+      "name": "Schroders",
+      "focus": "Valutazioni, macro e diversificazione",
+      "sources": [
+        {
+          "label": "Outlook 2026",
+          "url": "https://www.schroders.com/it-it/it/investitori-privati/outlook/"
+        }
+      ]
+    },
+    {
+      "id": "ubs",
+      "name": "UBS Global Wealth Management",
+      "focus": "CIO House View, asset allocation e scenari",
+      "sources": [
+        {
+          "label": "UBS House View · novembre 2026",
+          "url": "https://advisors.ubs.com/mediahandler/media/845240/UBS%20House%20View%20for%20November%202026.pdf"
+        },
+        {
+          "label": "Global Investment Returns Yearbook",
+          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/2026/global-investment-returns-yearbook.html"
+        }
+      ]
+    }
+  ],
+  "etf_brands": [
+    {
+      "brand": "iShares",
+      "parent": "BlackRock",
+      "type": "ETF",
+      "role": "Flussi, masse gestite, raccolta per asset class e area"
+    },
+    {
+      "brand": "SPDR",
+      "parent": "State Street Investment Management",
+      "type": "ETF",
+      "role": "Flussi, masse gestite e andamento delle categorie"
+    },
+    {
+      "brand": "Xtrackers",
+      "parent": "DWS",
+      "type": "ETF",
+      "role": "Flussi e Investment Traffic Lights"
+    },
+    {
+      "brand": "Amundi ETF",
+      "parent": "Amundi",
+      "type": "ETF",
+      "role": "Flussi, masse e categorie"
+    },
+    {
+      "brand": "Invesco ETF",
+      "parent": "Invesco",
+      "type": "ETF",
+      "role": "Flussi e strategie tematiche/fattoriali"
+    },
+    {
+      "brand": "Vanguard ETFs",
+      "parent": "Vanguard",
+      "type": "ETF",
+      "role": "Flussi e allocazioni core"
+    },
+    {
+      "brand": "L&G ETFs",
+      "parent": "L&G Asset Management",
+      "type": "ETF",
+      "role": "Flussi, core e strategie sistematiche"
+    },
+    {
+      "brand": "Fidelity ETFs",
+      "parent": "Fidelity International",
+      "type": "ETF",
+      "role": "Flussi e sviluppo dell'offerta ETF"
+    },
+    {
+      "brand": "WisdomTree",
+      "parent": "WisdomTree",
+      "type": "ETF/ETP/ETN",
+      "role": "Flussi e posizionamento su materie prime, valute e strategie"
+    },
+    {
+      "brand": "VanEck",
+      "parent": "VanEck",
+      "type": "ETF/ETN",
+      "role": "Flussi tematici, settoriali e materie prime"
+    }
+  ],
+  "observations": [],
+  "flows": [],
+  "model_signals": []
+}
