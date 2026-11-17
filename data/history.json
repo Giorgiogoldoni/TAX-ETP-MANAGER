@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "period_start": "2026-01-01",
-  "period_end_exclusive": "2026-11-16",
-  "fetched_at": "2026-11-15T20:30:08+00:00",
-  "latest_date": "2026-11-13",
+  "period_end_exclusive": "2026-11-18",
+  "fetched_at": "2026-11-17T02:29:16+00:00",
+  "latest_date": "2026-11-16",
   "source": "Yahoo Finance chart history",
   "status": "ok",
   "message": "Scaricate 29 serie storiche.",
@@ -14978,7 +14978,7 @@
           "open": 22.42499924,
           "high": 22.45999908,
           "low": 22.22999954,
-          "adjclose": 21.58954811
+          "adjclose": 21.5895462
         },
         {
           "date": "2026-01-05",
@@ -14986,7 +14986,7 @@
           "open": 22.32999992,
           "high": 22.74500084,
           "low": 22.32999992,
-          "adjclose": 21.98603821
+          "adjclose": 21.98604012
         },
         {
           "date": "2026-01-06",
@@ -15002,7 +15002,7 @@
           "open": 23.14999962,
           "high": 23.14999962,
           "low": 22.82999992,
-          "adjclose": 22.18428802
+          "adjclose": 22.18428612
         },
         {
           "date": "2026-01-08",
@@ -15018,7 +15018,7 @@
           "open": 23.03499985,
           "high": 23.34499931,
           "low": 23.02499962,
-          "adjclose": 22.54209709
+          "adjclose": 22.54209518
         },
         {
           "date": "2026-01-12",
@@ -15114,7 +15114,7 @@
           "open": 25.45999908,
           "high": 25.98999977,
           "low": 25.28000069,
-          "adjclose": 25.13380814
+          "adjclose": 25.13381004
         },
         {
           "date": "2026-01-28",
@@ -15122,7 +15122,7 @@
           "open": 26.01499939,
           "high": 26.39999962,
           "low": 26.01499939,
-          "adjclose": 25.43359566
+          "adjclose": 25.43359756
         },
         {
           "date": "2026-01-29",
@@ -15130,7 +15130,7 @@
           "open": 26.45999908,
           "high": 26.74500084,
           "low": 25.85499954,
-          "adjclose": 25.35139847
+          "adjclose": 25.35139656
         },
         {
           "date": "2026-01-30",
@@ -15138,7 +15138,7 @@
           "open": 26.04999924,
           "high": 26.20999908,
           "low": 25.93000031,
-          "adjclose": 25.1773262
+          "adjclose": 25.17732811
         },
         {
           "date": "2026-02-02",
@@ -15162,7 +15162,7 @@
           "open": 26.56500053,
           "high": 26.69000053,
           "low": 25.82500076,
-          "adjclose": 24.97424507
+          "adjclose": 24.97424698
         },
         {
           "date": "2026-02-05",
@@ -15186,7 +15186,7 @@
           "open": 26.05999947,
           "high": 26.35000038,
           "low": 25.97999954,
-          "adjclose": 25.48194885
+          "adjclose": 25.48195076
         },
         {
           "date": "2026-02-10",
@@ -15202,7 +15202,7 @@
           "open": 26.64999962,
           "high": 27.23999977,
           "low": 26.53499985,
-          "adjclose": 26.23141861
+          "adjclose": 26.23142052
         },
         {
           "date": "2026-02-12",
@@ -15218,7 +15218,7 @@
           "open": 26.62999916,
           "high": 26.70999908,
           "low": 25.90999985,
-          "adjclose": 25.28853798
+          "adjclose": 25.28853989
         },
         {
           "date": "2026-02-16",
@@ -15250,7 +15250,7 @@
           "open": 26.64999962,
           "high": 26.95499992,
           "low": 26.44000053,
-          "adjclose": 26.06702042
+          "adjclose": 26.06701851
         },
         {
           "date": "2026-02-20",
@@ -15274,7 +15274,7 @@
           "open": 27.18000031,
           "high": 27.46500015,
           "low": 27.05999947,
-          "adjclose": 26.59889984
+          "adjclose": 26.59890175
         },
         {
           "date": "2026-02-25",
@@ -15282,7 +15282,7 @@
           "open": 27.60000038,
           "high": 28.02000046,
           "low": 27.39500046,
-          "adjclose": 26.58922958
+          "adjclose": 26.58923149
         },
         {
           "date": "2026-02-26",
@@ -15290,7 +15290,7 @@
           "open": 27.49500084,
           "high": 27.54500008,
           "low": 26.89999962,
-          "adjclose": 26.38614845
+          "adjclose": 26.38615036
         },
         {
           "date": "2026-02-27",
@@ -15362,7 +15362,7 @@
           "open": 26.65999985,
           "high": 26.71500015,
           "low": 25.74500084,
-          "adjclose": 25.11930275
+          "adjclose": 25.11930656
         },
         {
           "date": "2026-03-13",
@@ -15386,7 +15386,7 @@
           "open": 26.02499962,
           "high": 26.47500038,
           "low": 25.87999916,
-          "adjclose": 25.48678398
+          "adjclose": 25.48678589
         },
         {
           "date": "2026-03-18",
@@ -15394,7 +15394,7 @@
           "open": 26.38999939,
           "high": 26.50499916,
           "low": 26.09000015,
-          "adjclose": 25.36107063
+          "adjclose": 25.36106873
         },
         {
           "date": "2026-03-19",
@@ -15410,7 +15410,7 @@
           "open": 25.51499939,
           "high": 25.51499939,
           "low": 24.70999908,
-          "adjclose": 24.35591316
+          "adjclose": 24.35591507
         },
         {
           "date": "2026-03-23",
@@ -15458,7 +15458,7 @@
           "open": 25.79500008,
           "high": 26.11000061,
           "low": 25.63999939,
-          "adjclose": 25.72023964
+          "adjclose": 25.72023773
         },
         {
           "date": "2026-03-31",
@@ -15466,7 +15466,7 @@
           "open": 25.98500061,
           "high": 26.41500092,
           "low": 25.97999954,
-          "adjclose": 25.82367134
+          "adjclose": 25.82366943
         },
         {
           "date": "2026-04-01",
@@ -15522,7 +15522,7 @@
           "open": 28.40999985,
           "high": 28.40999985,
           "low": 28.20999908,
-          "adjclose": 27.83321571
+          "adjclose": 27.83321762
         },
         {
           "date": "2026-04-14",
@@ -15530,7 +15530,7 @@
           "open": 28.5,
           "high": 28.72500038,
           "low": 28.5,
-          "adjclose": 28.25187492
+          "adjclose": 28.25187302
         },
         {
           "date": "2026-04-15",
@@ -15538,7 +15538,7 @@
           "open": 28.60499954,
           "high": 28.69000053,
           "low": 28.43000031,
-          "adjclose": 28.0056057
+          "adjclose": 28.0056076
         },
         {
           "date": "2026-04-16",
@@ -15546,7 +15546,7 @@
           "open": 28.54500008,
           "high": 28.61499977,
           "low": 28.29999924,
-          "adjclose": 27.921875
+          "adjclose": 27.92187309
         },
         {
           "date": "2026-04-17",
@@ -15586,7 +15586,7 @@
           "open": 27.98999977,
           "high": 28.17499924,
           "low": 27.93000031,
-          "adjclose": 27.70023346
+          "adjclose": 27.70023537
         },
         {
           "date": "2026-04-24",
@@ -15594,7 +15594,7 @@
           "open": 27.67499924,
           "high": 27.73500061,
           "low": 27.40999985,
-          "adjclose": 27.0008316
+          "adjclose": 27.00083351
         },
         {
           "date": "2026-04-27",
@@ -15626,7 +15626,7 @@
           "open": 26.61000061,
           "high": 27.08499908,
           "low": 26.61000061,
-          "adjclose": 26.6462059
+          "adjclose": 26.64620399
         },
         {
           "date": "2026-05-04",
@@ -15650,7 +15650,7 @@
           "open": 27.42499924,
           "high": 27.625,
           "low": 27.26000023,
-          "adjclose": 26.94172859
+          "adjclose": 26.94172668
         },
         {
           "date": "2026-05-07",
@@ -15674,7 +15674,7 @@
           "open": 26.75,
           "high": 26.78499985,
           "low": 26.30500031,
-          "adjclose": 25.90740013
+          "adjclose": 25.90740204
         },
         {
           "date": "2026-05-12",
@@ -15690,7 +15690,7 @@
           "open": 26.22500038,
           "high": 26.29999924,
           "low": 25.77499962,
-          "adjclose": 25.67591095
+          "adjclose": 25.67590904
         },
         {
           "date": "2026-05-14",
@@ -15698,7 +15698,7 @@
           "open": 25.27000046,
           "high": 25.62999916,
           "low": 25.05999947,
-          "adjclose": 25.27202988
+          "adjclose": 25.27203178
         },
         {
           "date": "2026-05-15",
@@ -15714,7 +15714,7 @@
           "open": 25.03499985,
           "high": 25.20499992,
           "low": 24.97500038,
-          "adjclose": 24.8287487
+          "adjclose": 24.8287468
         },
         {
           "date": "2026-05-19",
@@ -15722,7 +15722,7 @@
           "open": 25.30999947,
           "high": 25.30999947,
           "low": 24.81500053,
-          "adjclose": 24.41501617
+          "adjclose": 24.41501808
         },
         {
           "date": "2026-05-20",
@@ -15746,7 +15746,7 @@
           "open": 25.62000084,
           "high": 25.62000084,
           "low": 25.06999969,
-          "adjclose": 24.75979424
+          "adjclose": 24.75979233
         },
         {
           "date": "2026-05-25",
@@ -15754,7 +15754,7 @@
           "open": 25.41500092,
           "high": 25.58499908,
           "low": 25.23999977,
-          "adjclose": 24.90262794
+          "adjclose": 24.90262985
         },
         {
           "date": "2026-05-26",
@@ -15770,7 +15770,7 @@
           "open": 25.14500046,
           "high": 25.29000092,
           "low": 24.96500015,
-          "adjclose": 24.72038841
+          "adjclose": 24.72039032
         },
         {
           "date": "2026-05-28",
@@ -15786,7 +15786,7 @@
           "open": 24.79500008,
           "high": 24.89999962,
           "low": 24.5,
-          "adjclose": 24.15397263
+          "adjclose": 24.15397453
         },
         {
           "date": "2026-06-01",
@@ -15842,7 +15842,7 @@
           "open": 23.45000076,
           "high": 23.67499924,
           "low": 23.37999916,
-          "adjclose": 23.06546974
+          "adjclose": 23.06546783
         },
         {
           "date": "2026-06-10",
@@ -15866,7 +15866,7 @@
           "open": 24.03499985,
           "high": 24.53499985,
           "low": 23.89999962,
-          "adjclose": 24.11457062
+          "adjclose": 24.11456871
         },
         {
           "date": "2026-06-15",
@@ -15874,7 +15874,7 @@
           "open": 24.72500038,
           "high": 24.90999985,
           "low": 24.63999939,
-          "adjclose": 24.31158447
+          "adjclose": 24.31158638
         },
         {
           "date": "2026-06-16",
@@ -15890,7 +15890,7 @@
           "open": 24.22999954,
           "high": 24.70999908,
           "low": 24.20999908,
-          "adjclose": 24.34113693
+          "adjclose": 24.34113503
         },
         {
           "date": "2026-06-18",
@@ -18562,7 +18562,7 @@
           "open": 37.15499878,
           "high": 37.40000153,
           "low": 37.09500122,
-          "adjclose": 36.58694839
+          "adjclose": 36.58695221
         },
         {
           "date": "2026-01-06",
@@ -18594,7 +18594,7 @@
           "open": 37.59500122,
           "high": 37.86999893,
           "low": 37.56499863,
-          "adjclose": 37.03706741
+          "adjclose": 37.03707123
         },
         {
           "date": "2026-01-12",
@@ -18610,7 +18610,7 @@
           "open": 37.95500183,
           "high": 37.98500061,
           "low": 37.81499863,
-          "adjclose": 37.06642532
+          "adjclose": 37.06642914
         },
         {
           "date": "2026-01-14",
@@ -18626,7 +18626,7 @@
           "open": 38.07500076,
           "high": 38.18000031,
           "low": 38.06000137,
-          "adjclose": 37.31594849
+          "adjclose": 37.3159523
         },
         {
           "date": "2026-01-16",
@@ -18650,7 +18650,7 @@
           "open": 37.38000107,
           "high": 37.41500092,
           "low": 37.11500168,
-          "adjclose": 36.61141205
+          "adjclose": 36.61141586
         },
         {
           "date": "2026-01-21",
@@ -18674,7 +18674,7 @@
           "open": 37.66999817,
           "high": 37.75999832,
           "low": 37.59999847,
-          "adjclose": 36.91475296
+          "adjclose": 36.91475677
         },
         {
           "date": "2026-01-26",
@@ -18682,7 +18682,7 @@
           "open": 37.74499893,
           "high": 37.875,
           "low": 37.625,
-          "adjclose": 36.96368408
+          "adjclose": 36.9636879
         },
         {
           "date": "2026-01-27",
@@ -18690,7 +18690,7 @@
           "open": 37.90999985,
           "high": 38.03499985,
           "low": 37.82500076,
-          "adjclose": 37.17406464
+          "adjclose": 37.17406845
         },
         {
           "date": "2026-01-28",
@@ -18722,7 +18722,7 @@
           "open": 37.60499954,
           "high": 38.29999924,
           "low": 37.60499954,
-          "adjclose": 37.46762085
+          "adjclose": 37.46762466
         },
         {
           "date": "2026-02-03",
@@ -18738,7 +18738,7 @@
           "open": 38.20500183,
           "high": 38.54999924,
           "low": 38.18500137,
-          "adjclose": 37.4431572
+          "adjclose": 37.44316101
         },
         {
           "date": "2026-02-05",
@@ -18754,7 +18754,7 @@
           "open": 37.78499985,
           "high": 38.25,
           "low": 37.70500183,
-          "adjclose": 37.38444901
+          "adjclose": 37.38445282
         },
         {
           "date": "2026-02-09",
@@ -18762,7 +18762,7 @@
           "open": 38.34000015,
           "high": 38.5,
           "low": 38.18000031,
-          "adjclose": 37.67311478
+          "adjclose": 37.67311096
         },
         {
           "date": "2026-02-10",
@@ -18786,7 +18786,7 @@
           "open": 38.79000092,
           "high": 38.81499863,
           "low": 38.27000046,
-          "adjclose": 37.48719406
+          "adjclose": 37.48719025
         },
         {
           "date": "2026-02-13",
@@ -18810,7 +18810,7 @@
           "open": 38.40000153,
           "high": 38.59999847,
           "low": 38.29999924,
-          "adjclose": 37.75628281
+          "adjclose": 37.75628662
         },
         {
           "date": "2026-02-18",
@@ -54303,10 +54303,18 @@
           "high": 20.92000008,
           "low": 17.63999939,
           "adjclose": 19.29999924
+        },
+        {
+          "date": "2026-11-16",
+          "close": 22.90999985,
+          "open": 20.0,
+          "high": 24.52000046,
+          "low": 19.84000015,
+          "adjclose": 22.90999985
         }
       ],
       "first_date": "2026-01-02",
-      "last_date": "2026-11-13"
+      "last_date": "2026-11-16"
     },
     "VSTOXX": {
       "symbol": "V2TX",
@@ -55205,214 +55213,15 @@
         {
           "date": "2026-11-13",
           "close": 17.1081
+        },
+        {
+          "date": "2026-11-16",
+          "close": 18.3239
         }
       ],
       "first_date": "2026-01-02",
-      "last_date": "2026-11-13"
+      "last_date": "2026-11-16"
     }
   },
-  "unresolved": [],
-  "latest_quotes": {
-    "3BAL": {
-      "symbol": "3BAL.L",
-      "price": 6538.0,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T16:29:00+00:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "3EML": {
-      "symbol": "3EML.MI",
-      "price": 107.44999695,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:26:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "BNK": {
-      "symbol": "BNK.MI",
-      "price": 70.91999817,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T16:51:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "CEMK": {
-      "symbol": "CEMK.DE",
-      "price": 5.12360001,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:21:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "COPA": {
-      "symbol": "COPA.MI",
-      "price": 46.85499954,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:27:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "CSSPX": {
-      "symbol": "CSSPX.MI",
-      "price": 734.46002197,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:29:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "DJLEV": {
-      "symbol": "DJLEV.MI",
-      "price": 86.01000214,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T16:44:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "HSTE": {
-      "symbol": "HSTE.MI",
-      "price": 4.829,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:28:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "IBZL": {
-      "symbol": "IBZL.MI",
-      "price": 22.70000076,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:28:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "IESZ": {
-      "symbol": "IESZ.MI",
-      "price": 12.09799957,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T16:03:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "IMEU": {
-      "symbol": "IMEU.AS",
-      "price": 41.36999893,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:22:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "IWMO": {
-      "symbol": "IWMO.MI",
-      "price": 93.25,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:29:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "IWQU": {
-      "symbol": "IWQU.MI",
-      "price": 81.16000366,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:29:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "IWVL": {
-      "symbol": "IWVL.MI",
-      "price": 69.58999634,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:29:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "LCCN": {
-      "symbol": "LCCN.MI",
-      "price": 17.22400093,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:29:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "LCFE": {
-      "symbol": "LCFE.MI",
-      "price": 2.52150011,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T16:57:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "LCOC": {
-      "symbol": "LCOC.MI",
-      "price": 14.32199955,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:29:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "SGLN": {
-      "symbol": "SGLN.L",
-      "price": 5673.62402344,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T16:29:00+00:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "SJPA": {
-      "symbol": "SJPA.MI",
-      "price": 71.41000366,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:08:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "SMEA": {
-      "symbol": "SMEA.MI",
-      "price": 108.05999756,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:29:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "SPY4": {
-      "symbol": "SPY4.PA",
-      "price": 103.41999817,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:22:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "WNAS": {
-      "symbol": "WNAS.MI",
-      "price": 36.61500168,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:29:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "WS5X": {
-      "symbol": "WS5X.MI",
-      "price": 46.61999893,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:24:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "WSPE": {
-      "symbol": "WSPE.MI",
-      "price": 27.85499954,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T11:40:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "WSPX": {
-      "symbol": "WSPX.MI",
-      "price": 41.49499893,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:26:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "WWRD": {
-      "symbol": "WWRD.MI",
-      "price": 25.74500084,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:25:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "XBLC": {
-      "symbol": "XBLC.MI",
-      "price": 161.66000366,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:29:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    },
-    "XMME": {
-      "symbol": "XMME.MI",
-      "price": 75.40799713,
-      "currency": "EUR",
-      "timestamp": "2026-11-16T17:27:00+01:00",
-      "source": "Yahoo Finance intraday (1m)"
-    }
-  },
-  "quotes_fetched_at": "2026-11-16T21:01:00+00:00",
-  "quotes_status": "partial",
-  "quotes_unresolved": [
-    "WRTY"
-  ]
+  "unresolved": []
 }
