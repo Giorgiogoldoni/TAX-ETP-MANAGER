@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-11-15",
+  "as_of": "2026-11-18",
   "currency": "EUR",
   "description": "Pesi strategici obiettivo dei portafogli modello; non rappresentano posizioni correnti.",
   "portfolios": [
@@ -11,53 +11,14 @@
       "description": "Allocazione diversificata con ETF core, ETN satellite e liquidità.",
       "note": "Allocazione già delineata insieme: 70% ETF, 15% ETN non a leva e 15% liquidità. Pesi indicativi da rivedere prima di nuovi acquisti.",
       "allocations": [
-        {
-          "ticker": "IMEU",
-          "name": "iShares Core MSCI Europe",
-          "type": "ETF",
-          "weight": 25
-        },
-        {
-          "ticker": "SPY4",
-          "name": "SPDR S&P 400 US Mid Cap",
-          "type": "ETF",
-          "weight": 20
-        },
-        {
-          "ticker": "IESZ",
-          "name": "iShares MSCI Europe Mid-Cap Equal Weight",
-          "type": "ETF",
-          "weight": 15
-        },
-        {
-          "ticker": "IWVL",
-          "name": "iShares Edge MSCI World Value",
-          "type": "ETF",
-          "weight": 10
-        },
-        {
-          "ticker": "WWRD",
-          "name": "WisdomTree World",
-          "type": "ETN",
-          "weight": 5
-        },
-        {
-          "ticker": "WRTY",
-          "name": "WisdomTree Russell 2000",
-          "type": "ETN",
-          "weight": 5
-        },
-        {
-          "ticker": "WS5X",
-          "name": "WisdomTree Euro Stoxx 50",
-          "type": "ETN",
-          "weight": 5
-        },
-        {
-          "name": "Liquidità",
-          "type": "Liquidità",
-          "weight": 15
-        }
+        {"ticker":"IMEU","name":"iShares Core MSCI Europe","type":"ETF","weight":25},
+        {"ticker":"SPY4","name":"SPDR S&P 400 US Mid Cap","type":"ETF","weight":20},
+        {"ticker":"IESZ","name":"iShares MSCI Europe Mid-Cap Equal Weight","type":"ETF","weight":15},
+        {"ticker":"IWVL","name":"iShares Edge MSCI World Value","type":"ETF","weight":10},
+        {"ticker":"WWRD","name":"WisdomTree World","type":"ETN","weight":5},
+        {"ticker":"WRTY","name":"WisdomTree Russell 2000","type":"ETN","weight":5},
+        {"ticker":"WS5X","name":"WisdomTree Euro Stoxx 50","type":"ETN","weight":5},
+        {"name":"Liquidità","type":"Liquidità","weight":15}
       ]
     },
     {
@@ -67,36 +28,11 @@
       "description": "Portafoglio autonomo composto esclusivamente da ETP/ETN non a leva.",
       "note": "Proposta iniziale: pesi assegnati per costruire una base globale e diversificare tra USA, Europa e small cap. È un modello separato, non una fotografia degli investimenti attuali.",
       "allocations": [
-        {
-          "ticker": "WWRD",
-          "name": "WisdomTree World",
-          "type": "ETN",
-          "weight": 35
-        },
-        {
-          "ticker": "WSPX",
-          "name": "WisdomTree S&P 500",
-          "type": "ETN",
-          "weight": 25
-        },
-        {
-          "ticker": "WNAS",
-          "name": "WisdomTree Nasdaq-100",
-          "type": "ETN",
-          "weight": 15
-        },
-        {
-          "ticker": "WS5X",
-          "name": "WisdomTree Euro Stoxx 50",
-          "type": "ETN",
-          "weight": 15
-        },
-        {
-          "ticker": "WRTY",
-          "name": "WisdomTree Russell 2000",
-          "type": "ETN",
-          "weight": 10
-        }
+        {"ticker":"WWRD","name":"WisdomTree World","type":"ETN","weight":35},
+        {"ticker":"WSPX","name":"WisdomTree S&P 500","type":"ETN","weight":25},
+        {"ticker":"WNAS","name":"WisdomTree Nasdaq-100","type":"ETN","weight":15},
+        {"ticker":"WS5X","name":"WisdomTree Euro Stoxx 50","type":"ETN","weight":15},
+        {"ticker":"WRTY","name":"WisdomTree Russell 2000","type":"ETN","weight":10}
       ]
     },
     {
@@ -106,54 +42,30 @@
       "description": "Portafoglio modello con ETF ad accumulazione per verificare le view di mercato; oro tramite ETC fisico.",
       "note": "Pesi obiettivo approvati. Le quote azionarie e obbligazionarie sono classi ad accumulazione; SGLN è un ETC fisico sull'oro, non un ETF. La componente Quality globale può sovrapporsi geograficamente alle aree regionali. Pesi modello, non posizioni detenute né ordini.",
       "allocations": [
-        {
-          "ticker": "CSSPX",
-          "name": "iShares Core S&P 500 UCITS ETF USD (Acc)",
-          "type": "ETF",
-          "weight": 28
-        },
-        {
-          "ticker": "SMEA",
-          "name": "iShares Core MSCI Europe UCITS ETF EUR (Acc)",
-          "type": "ETF",
-          "weight": 17
-        },
-        {
-          "ticker": "SJPA",
-          "name": "iShares Core MSCI Japan IMI UCITS ETF",
-          "type": "ETF",
-          "weight": 8
-        },
-        {
-          "ticker": "XMME",
-          "name": "Xtrackers MSCI Emerging Markets UCITS ETF 1C",
-          "type": "ETF",
-          "weight": 17
-        },
-        {
-          "ticker": "IWQU",
-          "name": "iShares Edge MSCI World Quality Factor UCITS ETF (Acc)",
-          "type": "ETF",
-          "weight": 10
-        },
-        {
-          "ticker": "CEMK",
-          "name": "iShares € Govt Bond 0-1yr UCITS ETF",
-          "type": "ETF",
-          "weight": 10
-        },
-        {
-          "ticker": "XBLC",
-          "name": "Xtrackers II EUR Corporate Bond UCITS ETF 1C",
-          "type": "ETF",
-          "weight": 5
-        },
-        {
-          "ticker": "SGLN",
-          "name": "iShares Physical Gold ETC",
-          "type": "ETC",
-          "weight": 5
-        }
+        {"ticker":"CSSPX","name":"iShares Core S&P 500 UCITS ETF USD (Acc)","type":"ETF","weight":28},
+        {"ticker":"SMEA","name":"iShares Core MSCI Europe UCITS ETF EUR (Acc)","type":"ETF","weight":17},
+        {"ticker":"SJPA","name":"iShares Core MSCI Japan IMI UCITS ETF","type":"ETF","weight":8},
+        {"ticker":"XMME","name":"Xtrackers MSCI Emerging Markets UCITS ETF 1C","type":"ETF","weight":17},
+        {"ticker":"IWQU","name":"iShares Edge MSCI World Quality Factor UCITS ETF (Acc)","type":"ETF","weight":10},
+        {"ticker":"CEMK","name":"iShares € Govt Bond 0-1yr UCITS ETF","type":"ETF","weight":10},
+        {"ticker":"XBLC","name":"Xtrackers II EUR Corporate Bond UCITS ETF 1C","type":"ETF","weight":5},
+        {"ticker":"SGLN","name":"iShares Physical Gold ETC","type":"ETC","weight":5}
+      ]
+    },
+    {
+      "id": "advice",
+      "name": "Portafoglio 4 · ADVICE",
+      "short_name": "ADVICE",
+      "description": "Allocazione modello ricevuta dall'utente, con azionario globale, Europa, emergenti e obbligazionario high yield.",
+      "note": "Pesi inseriti come comunicati dall'utente e pari al 100%. Divisa indicata: EUR per tutte le righe; verificare la valuta di negoziazione e l'eventuale copertura valutaria rispetto alla valuta base del fondo. I pesi sono obiettivi, non posizioni effettive.",
+      "allocations": [
+        {"ticker":"IEMB","name":"iShares J.P. Morgan $ EM Bond UCITS ETF EUR (Dist)","type":"ETF obbligazionario","weight":3.31},
+        {"ticker":"HYLD","name":"iShares Global High Yield Corp Bond UCITS ETF EUR (Dist)","type":"ETF obbligazionario","weight":3.72},
+        {"ticker":"EROX","name":"State Street SPDR MSCI Europe UCITS ETF","type":"ETF","weight":18.32},
+        {"ticker":"CSSPX","name":"iShares Core S&P 500 UCITS ETF EUR (Acc)","type":"ETF","weight":21.99},
+        {"ticker":"SWDA","name":"iShares Core MSCI World UCITS ETF EUR (Acc)","type":"ETF","weight":31.14},
+        {"ticker":"EIMI","name":"iShares Core MSCI EM IMI UCITS ETF","type":"ETF","weight":8.82},
+        {"ticker":"SMCX","name":"State Street SPDR MSCI Europe Small Cap UCITS ETF","type":"ETF","weight":12.70}
       ]
     }
   ]
