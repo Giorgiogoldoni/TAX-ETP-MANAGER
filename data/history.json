@@ -66541,5 +66541,250 @@
       "last_date": "2026-11-18"
     }
   },
-  "unresolved": []
+  "unresolved": [],
+  "latest_quotes": {
+    "3BAL": {
+      "symbol": "3BAL.L",
+      "price": 5743.5,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T16:29:00+00:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "3EML": {
+      "symbol": "3EML.MI",
+      "price": 97.69000244,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "BNK": {
+      "symbol": "BNK.MI",
+      "price": 67.94999695,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "CEMK": {
+      "symbol": "CEMK.DE",
+      "price": 5.12260008,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:28:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "COPA": {
+      "symbol": "COPA.MI",
+      "price": 43.99000168,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:20:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "CSSPX": {
+      "symbol": "CSSPX.MI",
+      "price": 719.53997803,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:28:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "DJLEV": {
+      "symbol": "DJLEV.MI",
+      "price": 79.81999969,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:16:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "EIMI": {
+      "symbol": "EIMI.MI",
+      "price": 43.10499954,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "EROX": {
+      "symbol": "EROX.MI",
+      "price": 407.6499939,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T15:35:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "HSTE": {
+      "symbol": "HSTE.MI",
+      "price": 4.62750006,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:16:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "HYLD": {
+      "symbol": "HYLD.MI",
+      "price": 77.09999847,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T16:26:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "IBZL": {
+      "symbol": "IBZL.MI",
+      "price": 21.62999916,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:16:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "IEMB": {
+      "symbol": "IEMB.MI",
+      "price": 79.16999817,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:19:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "IMEU": {
+      "symbol": "IMEU.AS",
+      "price": 39.70999908,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "IWMO": {
+      "symbol": "IWMO.MI",
+      "price": 91.19999695,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "IWQU": {
+      "symbol": "IWQU.MI",
+      "price": 79.01000214,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "IWVL": {
+      "symbol": "IWVL.MI",
+      "price": 67.22000122,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "LCCN": {
+      "symbol": "LCCN.MI",
+      "price": 16.65200043,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T16:14:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "LCFE": {
+      "symbol": "LCFE.MI",
+      "price": 2.5545001,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:18:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "LCOC": {
+      "symbol": "LCOC.MI",
+      "price": 14.20199966,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "SGLN": {
+      "symbol": "SGLN.L",
+      "price": 5443.89990234,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T16:29:00+00:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "SJPA": {
+      "symbol": "SJPA.MI",
+      "price": 69.51000214,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:16:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "SMCX": {
+      "symbol": "SMCX.MI",
+      "price": 390.25,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:14:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "SMEA": {
+      "symbol": "SMEA.MI",
+      "price": 104.12000275,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:22:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "SPY4": {
+      "symbol": "SPY4.PA",
+      "price": 101.16000366,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "SWDA": {
+      "symbol": "SWDA.MI",
+      "price": 126.84999847,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "WNAS": {
+      "symbol": "WNAS.MI",
+      "price": 36.32500076,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:28:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "WRTY": {
+      "symbol": "WRTY.MI",
+      "price": 35.20000076,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T14:56:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "WS5X": {
+      "symbol": "WS5X.MI",
+      "price": 44.86000061,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:27:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "WSPE": {
+      "symbol": "WSPE.MI",
+      "price": 27.19499969,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T09:04:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "WSPX": {
+      "symbol": "WSPX.MI",
+      "price": 40.55500031,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:27:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "WWRD": {
+      "symbol": "WWRD.MI",
+      "price": 25.07999992,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:17:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "XBLC": {
+      "symbol": "XBLC.MI",
+      "price": 161.22999573,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    },
+    "XMME": {
+      "symbol": "XMME.MI",
+      "price": 73.28199768,
+      "currency": "EUR",
+      "timestamp": "2026-11-19T17:29:00+01:00",
+      "source": "Yahoo Finance intraday (1m)"
+    }
+  },
+  "quotes_fetched_at": "2026-11-19T19:29:05+00:00",
+  "quotes_status": "partial",
+  "quotes_unresolved": [
+    "IESZ"
+  ]
 }
