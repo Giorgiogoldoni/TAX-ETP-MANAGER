@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "fetched_at": "2026-11-27T16:06:01+00:00",
+  "fetched_at": "2026-11-27T19:20:24+00:00",
   "start": "2024-01-01",
   "latest_date": "2026-11-27",
   "status": "ok",
@@ -4427,8 +4427,8 @@
         },
         {
           "date": "2026-11-27",
-          "close": 718.66998291,
-          "quote_close": 718.66998291,
+          "close": 719.27001953,
+          "quote_close": 719.27001953,
           "quote_currency": "EUR"
         }
       ],
@@ -8858,8 +8858,8 @@
         },
         {
           "date": "2026-11-27",
-          "close": 56.31000137,
-          "quote_close": 56.31000137,
+          "close": 56.41999817,
+          "quote_close": 56.41999817,
           "quote_currency": "EUR"
         }
       ],
@@ -13283,8 +13283,8 @@
         },
         {
           "date": "2026-11-27",
-          "close": 105.09999847,
-          "quote_close": 105.09999847,
+          "close": 105.04000092,
+          "quote_close": 105.04000092,
           "quote_currency": "EUR"
         }
       ],
@@ -17714,8 +17714,8 @@
         },
         {
           "date": "2026-11-27",
-          "close": 73.73000336,
-          "quote_close": 73.73000336,
+          "close": 73.81600189,
+          "quote_close": 73.81600189,
           "quote_currency": "EUR"
         }
       ],
@@ -22894,10 +22894,10 @@
         },
         {
           "date": "2026-11-27",
-          "close": 112.24547783,
+          "close": 112.27003411,
           "quote_close": 122.77999878,
           "quote_currency": "USD",
-          "eurusd": 1.09385252
+          "eurusd": 1.09361327
         }
       ],
       "first_date": "2024-01-02",
@@ -27326,8 +27326,8 @@
         },
         {
           "date": "2026-11-27",
-          "close": 162.41000366,
-          "quote_close": 162.41000366,
+          "close": 162.36999512,
+          "quote_close": 162.36999512,
           "quote_currency": "EUR"
         }
       ],
@@ -31757,8 +31757,8 @@
         },
         {
           "date": "2026-11-27",
-          "close": 61.70000076,
-          "quote_close": 61.70000076,
+          "close": 61.68000031,
+          "quote_close": 61.68000031,
           "quote_currency": "EUR"
         }
       ],
@@ -36937,10 +36937,10 @@
         },
         {
           "date": "2026-11-27",
-          "close": 9.92184919,
-          "quote_close": 10.85303974,
+          "close": 9.89563667,
+          "quote_close": 10.82199955,
           "quote_currency": "USD",
-          "eurusd": 1.09385252
+          "eurusd": 1.09361327
         }
       ],
       "first_date": "2024-01-02",
@@ -41369,8 +41369,8 @@
         },
         {
           "date": "2026-11-27",
-          "close": 127.01999664,
-          "quote_close": 127.01999664,
+          "close": 127.16999817,
+          "quote_close": 127.16999817,
           "quote_currency": "EUR"
         }
       ],
