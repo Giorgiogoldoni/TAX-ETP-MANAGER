@@ -14,10 +14,11 @@ on:
       - 'data/observatory.json'
       - '.github/workflows/update-history.yml'
   schedule:
-    # Daily ~11:00 Rome (10:00 UTC in winter)
-    - cron: '0 10 * * *'
-    # Daily ~23:00 Rome (22:00 UTC in winter)
-    - cron: '0 22 * * *'
+    # Orari locali italiani: GitHub gestisce automaticamente ora legale/solare.
+    - cron: '0 11 * * *'
+      timezone: 'Europe/Rome'
+    - cron: '0 23 * * *'
+      timezone: 'Europe/Rome'
 permissions:
   contents: write
 concurrency:
@@ -36,13 +37,13 @@ jobs:
       - name: Install market data client
         run: python -m pip install --upgrade pip yfinance
       - name: Download intraday latest quotes
-        if: github.event_name == 'schedule' && github.event.schedule == '0 10 * * *'
+        if: github.event_name != 'schedule' || github.event.schedule == '0 11 * * *'
         run: python scripts/fetch_quotes.py
       - name: Download daily closing history
-        if: github.event_name != 'schedule' || github.event.schedule == '0 22 * * *'
+        if: github.event_name != 'schedule' || github.event.schedule == '0 23 * * *'
         run: python scripts/fetch_history.py
       - name: Update accumulating ETF verification history
-        if: github.event_name != 'schedule' || github.event.schedule == '15 19 * * 1-5'
+        if: github.event_name != 'schedule' || github.event.schedule == '0 23 * * *'
         run: python scripts/fetch_observatory_etfs.py
       - name: Commit updated market data
         run: |
