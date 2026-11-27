@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "fetched_at": "2026-11-27T02:14:01+00:00",
+  "fetched_at": "2026-11-27T15:24:26+00:00",
   "start": "2024-01-01",
-  "latest_date": "2026-11-25",
+  "latest_date": "2026-11-27",
   "status": "ok",
   "instruments": {
     "V_USA": {
@@ -4418,10 +4418,22 @@
           "close": 690.34997559,
           "quote_close": 690.34997559,
           "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-26",
+          "close": 711.88000488,
+          "quote_close": 711.88000488,
+          "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-27",
+          "close": 712.23999023,
+          "quote_close": 712.23999023,
+          "quote_currency": "EUR"
         }
       ],
       "first_date": "2024-01-02",
-      "last_date": "2026-11-25",
+      "last_date": "2026-11-27",
       "fx_missing_rows": 0
     },
     "V_TECH": {
@@ -8837,10 +8849,22 @@
           "close": 53.15999985,
           "quote_close": 53.15999985,
           "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-26",
+          "close": 55.47999954,
+          "quote_close": 55.47999954,
+          "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-27",
+          "close": 55.74000168,
+          "quote_close": 55.74000168,
+          "quote_currency": "EUR"
         }
       ],
       "first_date": "2024-01-02",
-      "last_date": "2026-11-25",
+      "last_date": "2026-11-27",
       "fx_missing_rows": 0
     },
     "V_EU": {
@@ -13250,10 +13274,22 @@
           "close": 102.12000275,
           "quote_close": 102.12000275,
           "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-26",
+          "close": 103.95999908,
+          "quote_close": 103.95999908,
+          "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-27",
+          "close": 104.90000153,
+          "quote_close": 104.90000153,
+          "quote_currency": "EUR"
         }
       ],
       "first_date": "2024-01-02",
-      "last_date": "2026-11-25",
+      "last_date": "2026-11-27",
       "fx_missing_rows": 0
     },
     "V_EM": {
@@ -17669,10 +17705,22 @@
           "close": 69.15599823,
           "quote_close": 69.15599823,
           "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-26",
+          "close": 71.9960022,
+          "quote_close": 71.9960022,
+          "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-27",
+          "close": 73.4260025,
+          "quote_close": 73.4260025,
+          "quote_currency": "EUR"
         }
       ],
       "first_date": "2024-01-02",
-      "last_date": "2026-11-25",
+      "last_date": "2026-11-27",
       "fx_missing_rows": 0
     },
     "V_TB": {
@@ -22836,10 +22884,24 @@
           "quote_close": 122.77999878,
           "quote_currency": "USD",
           "eurusd": 1.09622681
+        },
+        {
+          "date": "2026-11-26",
+          "close": 111.92256259,
+          "quote_close": 122.77999878,
+          "quote_currency": "USD",
+          "eurusd": 1.09700847
+        },
+        {
+          "date": "2026-11-27",
+          "close": 112.20235702,
+          "quote_close": 122.80000305,
+          "quote_currency": "USD",
+          "eurusd": 1.09445119
         }
       ],
       "first_date": "2024-01-02",
-      "last_date": "2026-11-25",
+      "last_date": "2026-11-27",
       "fx_missing_rows": 0
     },
     "V_IG": {
@@ -27255,10 +27317,22 @@
           "close": 162.22000122,
           "quote_close": 162.22000122,
           "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-26",
+          "close": 162.17999268,
+          "quote_close": 162.17999268,
+          "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-27",
+          "close": 162.38999939,
+          "quote_close": 162.38999939,
+          "quote_currency": "EUR"
         }
       ],
       "first_date": "2024-01-02",
-      "last_date": "2026-11-25",
+      "last_date": "2026-11-27",
       "fx_missing_rows": 0
     },
     "V_EMB": {
@@ -31674,10 +31748,22 @@
           "close": 61.06999969,
           "quote_close": 61.06999969,
           "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-26",
+          "close": 61.34999847,
+          "quote_close": 61.34999847,
+          "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-27",
+          "close": 61.70000076,
+          "quote_close": 61.70000076,
+          "quote_currency": "EUR"
         }
       ],
       "first_date": "2024-01-02",
-      "last_date": "2026-11-25",
+      "last_date": "2026-11-27",
       "fx_missing_rows": 0
     },
     "V_COM": {
@@ -36841,10 +36927,24 @@
           "quote_close": 10.58399963,
           "quote_currency": "USD",
           "eurusd": 1.09622681
+        },
+        {
+          "date": "2026-11-26",
+          "close": 9.76291466,
+          "quote_close": 10.71000004,
+          "quote_currency": "USD",
+          "eurusd": 1.09700847
+        },
+        {
+          "date": "2026-11-27",
+          "close": 9.94262668,
+          "quote_close": 10.88171959,
+          "quote_currency": "USD",
+          "eurusd": 1.09445119
         }
       ],
       "first_date": "2024-01-02",
-      "last_date": "2026-11-25",
+      "last_date": "2026-11-27",
       "fx_missing_rows": 0
     },
     "V_WORLD": {
@@ -41260,10 +41360,22 @@
           "close": 122.31999969,
           "quote_close": 122.31999969,
           "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-26",
+          "close": 125.84999847,
+          "quote_close": 125.84999847,
+          "quote_currency": "EUR"
+        },
+        {
+          "date": "2026-11-27",
+          "close": 126.43000031,
+          "quote_close": 126.43000031,
+          "quote_currency": "EUR"
         }
       ],
       "first_date": "2024-01-02",
-      "last_date": "2026-11-25",
+      "last_date": "2026-11-27",
       "fx_missing_rows": 0
     }
   },
